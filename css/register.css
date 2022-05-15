@@ -151,3 +151,54 @@ nav a:hover {
   text-align: center;
   padding: 3vw;
 }
+
+.registerbtn{
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    border-color: black;
+    border-width: 2px;
+  }
+  
+  .registerbtn:hover{
+    background-color: rgb(235, 235, 235);
+  }
+
+  
+.regDiv {
+    flex-direction: column;
+        margin: auto;
+        display: flex;
+        width: auto;
+  }
+  
+  .subdiv{
+    flex-direction: column;
+        margin: auto;
+        display: flex;
+        width: auto;
+  
+  }
+
+  .headingPage {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: 900;
+    font-size: 3.5vw;
+    text-align: center;
+    /* border: 2px solid #FFFF00; */
+  }
+
+  .regBlock {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+      border-color: #fff;
+    width: 30%;
+    margin: auto;
+    box-shadow: 10px 10px 47px -8px rgba(0, 0, 0, 0.75);
+  }
+
+  .formInput{
+      border-radius: 5px;
+  }
