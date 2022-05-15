@@ -1,5 +1,5 @@
 function insertClick(){
-        //changes the input format and button styles to show selected button
+        //changes the input format and button styles to show selected button for insert
     var btnInsert= document.getElementById("insertBtn");
     btnInsert.style.background="#003347";
     document.getElementById("updateBtn").style.background="#004e6d";
