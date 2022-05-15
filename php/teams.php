@@ -4,6 +4,7 @@
 <head>
 
     <link rel="stylesheet" href="../css/teams.css">
+    <link rel="stylesheet" href="../css/headfoot.css">
     <title>COS221 Prac 5</title>
     <script src= "../js/teams.js"></script>
 
@@ -26,21 +27,12 @@
                 <div class="subdiv">
                     <form action="teams-validate.php" method="post" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
-                            <input type="hidden" id="type" name="type" value="insert">
-                            <label for="name" id="nameLabel">Team Name</label>
-                            <input type="text" placeholder="Enter Team Name" name="name" id="name" class="formInput" required>
-                            <br>
-                            <label for="publisher" id="publisherLabel">Publisher ID</label>
-                            <input type="text" placeholder="Enter Publisher ID" name="publisher" id="publisher" class="formInput" required>
-                            <br>
-                            <label for="site" id="siteLabel">Home Site ID</label>
-                            <input type="text" placeholder="Enter Home Site ID" name="site" id="site" class="formInput" required>
                         </div>     
                     </form>
                 </div>   
             </div>
             <div class ="confirmBlock">
-                <button class = "choiceQueryBtn">Confirm</button>
+                <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
             </div>
         </div>
         <div class ="tableBlock">

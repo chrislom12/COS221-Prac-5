@@ -4,6 +4,7 @@
 <head>
 
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/headfoot.css">
     <title>COS221 Prac 5</title>
 
 </head>

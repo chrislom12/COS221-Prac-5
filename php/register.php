@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/headfoot.css">
     <title></title>                          
     <script src= "../js/register.js"></script>
 </head>

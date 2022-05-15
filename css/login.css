@@ -12,94 +12,18 @@ body {
   background-image: linear-gradient(0deg, #0083b7, #004e6d);
 }
 
-img.logo {
-  width: 15%;
-  height: auto;
-  /*      border: 5px solid #555;  */
-  flex-direction: row;
-  display: flex;
-}
-
-.containerNav {
-  width: 80%;
-  margin: auto;
-  /*      border: 5px solid rgb(60, 15, 145);  */
-  display: flex;
-  text-align: right;
-  padding: 15px;
-}
-
-header {
-  background: #ffffff;
-  box-shadow: 0px 3px 20px 1px rgba(0, 0, 0, 0.50);
-  margin-bottom: 50px;
-}
-
-.logo {
-  margin-right: auto;
-}
-
-nav {
-  float: right;
-  vertical-align: middle;
-  /*    border: 5px solid #555;  */
-  flex-direction: row;
-  /* margin: auto; */
-  display: flex;
-
-}
-
-nav ul {
-  display: inline-block;
-  margin: auto;
-  list-style: none;
-  width: max-content;
-  /*   border: 5px solid #555;  */
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 3vw;
-  position: relative;
-  /*   border: 5px solid #555;  */
-}
-
-nav a {
-  color: #212121;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 1.1vw !important;
-}
-
-nav a:hover {
-  color: #0083b7;
-}
-
-.foot{
-  margin-top: 100px;
-  background-color: #ffffff;
-  height: 150px;
-  width: 100%;
-  
-}
-
-.foottext{
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  text-align: center;
-  padding: 3vw;
-}
 
 .loginbtn{
     border-radius: 15px;
-    background-color: white;
-    color: black;
-    border-color: black;
+    background-color: #004e6d;
+    border: none;
+    color: white;
     border-width: 2px;
+    height: 25px;
   }
   
   .loginbtn:hover{
-    background-color: rgb(235, 235, 235);
+    background-color: #003347;
   }
 
   
