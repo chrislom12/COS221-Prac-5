@@ -21,7 +21,8 @@
                         echo "<li><a href=''>My Account</a></li>";
                     }
                 ?>
-                <li><a href="">Teams & Swimmers</a></li>
+                <li><a href="teams.php">Teams</a></li>
+                <li><a href="">Swimmers</a></li>
                 <li><a href="">Locations</a></li>
                 <li><a href="">Scores</a></li>
                 <li><a href="">Media</a></li>

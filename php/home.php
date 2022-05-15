@@ -17,7 +17,7 @@
     <div class="mainBlock">
         <div class="menuBlock">
 
-            <a href="home.php" class="menuItem"
+            <a href="teams.php" class="menuItem"
                 style="background-image: url('../img/swimmers.png') !important; background-size: cover;">
                 <h1 class=menuHead>Teams & Swimmers</h1>
                 <p class="menuPar">Manage teams and swimmers</p>
