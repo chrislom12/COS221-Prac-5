@@ -64,3 +64,15 @@ body {
   .formInput{
       border-radius: 5px;
   }
+
+  #continue{
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  #continue2{
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }

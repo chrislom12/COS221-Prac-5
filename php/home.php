@@ -13,6 +13,7 @@
 
     <?php
     include 'header.php';
+    session_start();
     ?>
 
     <div class="mainBlock">
@@ -61,7 +62,7 @@
 
 
             <?php
-                        $temp = 1;/* if logged in */
+                        $temp = 0;/* if logged in */
                         if($temp==1){
                             echo "
                             <a href='home.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
@@ -72,7 +73,7 @@
                         }
                         else if($temp!=1){
                             echo "
-                            <a href='home.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
+                            <a href='login.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
                             <h1 class=menuHead>Log in</h1>
                             <p class='menuPar'>Log into your account</p>                
                             </a>
