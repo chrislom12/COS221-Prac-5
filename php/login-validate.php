@@ -12,6 +12,7 @@
     <?php
         //require ("header.php");
         session_start();
+        include ("connect.php");
 
         $email = $_POST["email"];
         $password = $_POST["pass"];
@@ -29,7 +30,7 @@
     }
 }
 if($valid == true){
-    $_SESSION['loggedIn']="True";
+    $_SESSION['loggedIn']="TRUE";
     include ("home.php");
     echo '<script> alert("Logged In")</script>';
 }else{

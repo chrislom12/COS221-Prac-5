@@ -63,6 +63,11 @@
 
             <?php
                         $temp = 0;/* if logged in */
+                        if(isset($_SESSION['loggedIn'])){
+                            if($_SESSION['loggedIn']=="TRUE"){
+                                $temp=1;
+                            }
+                        }
                         if($temp==1){
                             echo "
                             <a href='home.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
