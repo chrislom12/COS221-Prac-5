@@ -13,12 +13,18 @@
             <ul>
                 <li><a href="home.php">Home</a></li>
                 <?php
+                    session_start();
                     $temp = 0;/* if logged in */
+                    if(isset($_SESSION['loggedIn'])){
+                        if($_SESSION['loggedIn']=="TRUE"){
+                            $temp=1;
+                        }
+                    }
                     if($temp==1){
-                        echo "<li><a href=''>Log in</a></li>";
+                        echo "<li><a href='my-account.php'>My Account</a></li>";
                     }
                     else if($temp!=1){
-                        echo "<li><a href=''>My Account</a></li>";
+                        echo "<li><a href='login.php'>Log In</a></li>";
                     }
                 ?>
                 <li><a href="teams.php">Teams</a></li>

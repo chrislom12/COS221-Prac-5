@@ -14,7 +14,6 @@
 
     <?php
     include 'header.php';
-    session_start();
     ?>
     <h1 class=headingPage id="heading">Teams</h1>
     <div class="mainBlock">

@@ -17,7 +17,7 @@
         $email = $_POST["email"];
         $password = $_POST["pass"];
 
-        $query = "Select * from users;";
+      $query = "Select * from users;";
         $result = $conn->query($query);
         $respassword = hash("sha256",$password);
         $valid = false;
@@ -31,12 +31,40 @@
 }
 if($valid == true){
     $_SESSION['loggedIn']="TRUE";
-    include ("home.php");
-    echo '<script> alert("Logged In")</script>';
+    //include ("home.php");
+    //echo '<script> alert("Logged In")</script>';
+   echo '<div id= "mainDiv" class="loginBlock">
+   <div class="subdiv">
+       <form action="login-validate.php" method="post" id="loginForm">
+       <div class="loginDiv">
+         <br>
+         <label for="email" id="emailLabel">Logged In</label>
+        <br>
+         <a href = "home.php">Continue</a>
+         <br>
+       </div>       
+     </form>
+   </div>
+   
+</div>'; 
+
 }else{
-  
-    include ("login.php");
-    echo '<script> alert("INVALID CREDENTIALS")</script>';
+
+    echo '<div id= "mainDiv" class="loginBlock">
+    <div class="subdiv">
+        <form action="login-validate.php" method="post" id="loginForm">
+        <div class="loginDiv">
+          <br>
+          <label for="email" id="emailLabel">Invalid</label>
+         <br>
+          <a href = "login.php">Try Again</a>
+          <br>
+        </div>       
+      </form>
+    </div>
+    
+ </div>'; 
+   
 }
 
 ?>

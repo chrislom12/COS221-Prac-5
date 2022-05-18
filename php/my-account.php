@@ -11,7 +11,6 @@
 
     <?php
         require ("header.php");
-
         ?>
 
     
@@ -24,7 +23,7 @@
             <a href="login.php"><button id="loginbtn" class="loginbtn" onclick="">Log In</button></a>
 
             <!-- implement log out below -->
-            <a href=""><button id="loginbtn" type="submit" class="loginbtn" onclick="">Log out</button></a>
+            <a href="logout.php"><button id="loginbtn" type="submit" class="loginbtn" onclick="">Log out</button></a>
         </div>
         
     </div>

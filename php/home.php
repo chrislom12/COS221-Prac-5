@@ -13,7 +13,6 @@
 
     <?php
     include 'header.php';
-    session_start();
     ?>
 
     <div class="mainBlock">
@@ -38,9 +37,6 @@
                 <h1 class=menuHead>Scores</h1>
                 <p class="menuPar">Captures scores for a tournament</p>
             </a>
-
-
-
 
         </div>
     </div>
@@ -70,7 +66,7 @@
                         }
                         if($temp==1){
                             echo "
-                            <a href='home.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
+                            <a href='my-account.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
                             <h1 class=menuHead>My Account</h1>
                             <p class='menuPar'>View your account</p>                
                             </a>
