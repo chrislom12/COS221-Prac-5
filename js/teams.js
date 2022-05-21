@@ -27,5 +27,22 @@ function deleteClick(){
 
 function submitForm(){
     /* insert validation */
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function()
+    {
+        document.getElementById("table").innerHTML = this.responseText;
+    }
+    xmlhttp.open("GET", "populateTable.php?type=team");
+    xmlhttp.send();
     document.getElementById("insertForm").submit();
+}
+
+function tableClick(){
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function()
+    {
+        document.getElementById("table").innerHTML = this.responseText;
+    }
+    xmlhttp.open("GET", "populateTable.php?type=team");
+    xmlhttp.send();
 }
