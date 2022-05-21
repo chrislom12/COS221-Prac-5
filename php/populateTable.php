@@ -60,5 +60,19 @@ else if($type=="team"){
     </tbody>
 </table>';
 }
+else if($type=="swimmer"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>swimmer</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>swimmer</td>
+        </tr>       
+    </tbody>
+</table>';
+}
 
 ?>
