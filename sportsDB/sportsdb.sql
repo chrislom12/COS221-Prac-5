@@ -4147,7 +4147,6 @@ DROP TABLE IF EXISTS `swimming_tournament`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_tournament` (
   `series_index` int(11) NOT NULL AUTO_INCREMENT,
-  `teams` int(11) NOT NULL,
   `end_date` date NOT NULL,
   `location` varchar(45) NOT NULL,
   `start_date` date NOT NULL,
@@ -4574,7 +4573,6 @@ CREATE TABLE `users` (
   `email` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL,
   `surname` varchar(45) NOT NULL,
-  `username` varchar(45) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -4823,6 +4821,10 @@ UNLOCK TABLES;
 --
 -- Dumping events for database 'sportsdb'
 --
+
+--
+-- Dumping routines for database 'sportsdb'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -4833,4 +4835,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-17  8:31:28
+-- Dump completed on 2022-05-21 11:11:01
