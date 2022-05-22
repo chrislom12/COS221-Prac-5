@@ -74,5 +74,47 @@ else if($type=="swimmer"){
     </tbody>
 </table>';
 }
+else if($type=="location"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>location</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>location</td>
+        </tr>       
+    </tbody>
+</table>';
+}
+else if($type=="address"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>address</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>address</td>
+        </tr>       
+    </tbody>
+</table>';
+}
+else if($type=="site"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>site</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>site</td>
+        </tr>       
+    </tbody>
+</table>';
+}
 
 ?>

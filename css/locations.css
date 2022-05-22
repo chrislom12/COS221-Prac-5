@@ -33,7 +33,7 @@ body {
     border-radius: 20px;
       border-color: #fff;
     width: 30%;
-    height: 500px;
+    height: 700px;
     margin: auto;
     box-shadow: 10px 10px 47px -8px rgba(0, 0, 0, 0.75);
     text-align: center;
@@ -43,10 +43,10 @@ body {
 
     /* background-color: rgb(177, 67, 67); */
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
   }
 
@@ -57,7 +57,7 @@ body {
     color: rgb(255, 255, 255);
     margin: auto;    
     width: 120px;
-    height: 40px;
+    height: 30px;
     font-size: 14px;
     text-align: center;
     /* box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3); */
@@ -88,18 +88,31 @@ body {
 
   .tableBlock {
     
-    flex-direction: column;
-    overflow:hidden;
-        overflow-y: scroll;
-        overflow-x: scroll;
     display: flex;
+    flex-direction: column;
     background-color: white;
     border-radius: 20px;
       border-color: #fff;
     width: 60%;
-    height: 500px;
+    height: 700px;
     margin: auto;
     box-shadow: 10px 10px 47px -8px rgba(0, 0, 0, 0.75);
+  }
+
+  .innerTableBlock {
+    
+    overflow:hidden;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+      border-color: #fff;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  /*   box-shadow: 10px 10px 47px -8px rgba(0, 0, 0, 0.75); */
   }
 
   .formInput{
