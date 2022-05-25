@@ -14,6 +14,7 @@
 
     <?php
     include 'header.php';
+    include 'addScores.php';
     ?>
     <h1 class=headingPage id="heading">Scores</h1>
     <div class="mainBlock">
@@ -26,14 +27,14 @@
             <div class ="inputBlock">
                 <div class="subdiv">
                     <div class ="stateOptionsBlock" id = "stateOptions">
-                        
+
                     </div>
-                    <form action="teams-validate.php" method="post" id="insertForm">
+                    <form action="<?php addScores($conn) ?>" method="post" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
-                            
-                        </div>     
+
+                        </div>
                     </form>
-                </div>   
+                </div>
             </div>
             <div class ="confirmBlock">
                 <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
@@ -51,7 +52,7 @@
             </div>
         </div>
     </div>
-    
+
     <?php
         require ("footer.php");
     ?>
