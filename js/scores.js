@@ -25,13 +25,14 @@ function eventStateClick() {
     document.getElementById("tournamentBtn").style.background = "#004e6d";
     document.getElementById("eventBtn").style.background = "#004e6d";
     document.getElementById("dataDiv").innerHTML = '<div class="insertDiv"><br><input type="hidden" id="eventState" name="eventState" value="eventState"><label for="event" id="eventLabel">Event ID</label><input type="text" placeholder="Enter Event ID" name="event" id="event" class="formInput"><br><label for="sequence" id="sequenceLabel">Sequence Number</label><input type="text" placeholder="Enter Sequence Number" name="sequence" id="sequence" class="formInput" ><br><label for="time" id="timeLabel">Time Elapsed</label><input id="time" name="time" type="time"><br><label for="raceState" id="raceStateLabel">Current Race State</label><select name="raceState" id="raceState" class = "formInput"><option value="before">before</option><option value="during">during</option><option value="after">after</option></select></div><br><div class="insertDiv" id = "stateDiv"></div><br>';
-    
+
     document.getElementById("stateOptions").innerHTML = '<button id="startBtn" class = "stateBtn" onclick="startClick()">Start</button><button id="finishBtn" class = "stateBtn" onclick="finishClick()">Finish</button><button id="overtakeBtn" class = "stateBtn" onclick="overtakeClick()">Overtake</button><button id="disqBtn" class = "stateBtn" onclick="disqClick()">Disqualify</button>';
 }
 
 function submitForm() {
     /* insert validation */
     document.getElementById("insertForm").submit();
+    
 }
 
 function startClick() {

@@ -29,7 +29,7 @@
                     <div class ="stateOptionsBlock" id = "stateOptions">
 
                     </div>
-                    <form action="<?php addScores($conn) ?>" method="post" id="insertForm">
+                    <form method="POST" action="<?php addScores($conn); ?>" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
 
                         </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class ="confirmBlock">
-                <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
+                <button class = "choiceQueryBtn" id="confirmBtn" name="confirmBtn" onclick="submitForm()">Confirm</button>
             </div>
         </div>
         <div class ="tableBlock">
