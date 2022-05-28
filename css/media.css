@@ -95,7 +95,7 @@ body {
 
   .inputBlock{
     display: flex;
-    height: 600x;
+    height: 90%;
     width: 100%;
     background-color: rgb(235, 235, 235);
     overflow:hidden;
@@ -130,7 +130,6 @@ body {
     
     overflow:hidden;
         overflow-y: scroll;
-        overflow-x: scroll;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -199,5 +198,29 @@ body {
       width: auto;
 
 }
+
+.menuBlock {
+    flex-direction: row;
+    /*     border: 2px solid #1b1368;
+  */
+    width: 80%;
+    margin: auto;
+    display: flex;
+  
+  }
+  
+  .menuItem {
+  
+    border: 2px solid #004e6d;
+    width: 28%;
+    height: 150px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+  }
 
   

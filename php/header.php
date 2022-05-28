@@ -28,9 +28,9 @@
                     }
                 ?>
                 <li><a href="teams.php">Teams</a></li>
-                <li><a href="">Swimmers</a></li>
-                <li><a href="">Locations</a></li>
-                <li><a href="">Scores</a></li>
+                <li><a href="swimmers.php">Swimmers</a></li>
+                <li><a href="locations.php">Locations</a></li>
+                <li><a href="scores.php">Scores</a></li>
                 <li><a href="">Media</a></li>
                 <li><a href="">Statistics</a></li>
             </ul>
