@@ -86,14 +86,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     
         else 
         {
-            $sqlInsert = "INSERT INTO users(email, name, surname, password_hash) VALUES('$email', '$name', '$surname', '$hashedPassword');";
+            $key = $surname . $name;
+            $sqlFirstInsert = "INSERT INTO publishers(publisher_key, publisher_name) VALUES('$key', '$name');"; 
+            
+            
         
-            if($conn->query($sqlInsert) === TRUE)
+            if($conn->query($sqlFirstInsert) === TRUE)
             {
-                echo "<meta http-equiv = 'refresh' content = '1; url = login.php' />"; 
-                echo "<script type='text/javascript'>alert('User Successfully Created');window.location.href='login.php';</script>";
-            }
+                $sqlFetch = "SELECT * FROM sportsDB.publishers ORDER BY id DESC;";
+                $sqlResult = $conn->query($sqlFetch);
+                
+                if($sqlResult->num_rows > 0)
+                {
+                    $row = $sqlResult -> fetch_row();
+                    $id = $row[0];
+                    
+                    
+                    $sqlInsert = "INSERT INTO users(email, name, surname, password_hash, publisher_id) VALUES('$email', '$name', '$surname', '$hashedPassword', '$id');";
+                    
+                    if($conn->query($sqlInsert) === TRUE)
+                    {
+                        echo "<meta http-equiv = 'refresh' content = '1; url = login.php' />"; 
+                        echo "<script type='text/javascript'>alert('User Successfully Created');window.location.href='login.php';</script>";
+                    }   
         
+                    else
+                    {
+                        echo "<meta http-equiv = 'refresh' content = '1; url = signup.php' />"; 
+                        echo "<script type='text/javascript'>alert('Error Creating User');window.location.href='register.php';</script>";
+                    }
+                }
+            }
+            
             else
             {
                 echo "<meta http-equiv = 'refresh' content = '1; url = signup.php' />"; 
