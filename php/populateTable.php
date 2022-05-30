@@ -102,6 +102,50 @@ else if($type=="address"){
     </tbody>
 </table>';
 }
+else if($type=="swimmerStats"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>Swimmer Stats</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Swimmer Stats</td>
+        </tr>       
+    </tbody>
+</table>';
+}
+else if($type=="teamStats"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>teamStats</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>teamStats</td>
+        </tr>       
+    </tbody>
+</table>';
+}
+
+else if($type=="eventStats"){
+    echo '<table class="content-table" id="table">
+    <thead>
+        <tr>
+        <th>eventStats</th>                  
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventStats</td>
+        </tr>       
+    </tbody>
+</table>';
+}
+
 else if($type=="site"){
     echo '<table class="content-table" id="table">
     <thead>
@@ -116,5 +160,6 @@ else if($type=="site"){
     </tbody>
 </table>';
 }
+
 
 ?>

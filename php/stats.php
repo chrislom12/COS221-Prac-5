@@ -10,7 +10,7 @@
 
 </head>
 
-<body onload="swimmerClickz(), swimmerTableClickz()">
+<body onload="swimmerClick(), swimmerTableClick()">
 
     <?php
     include 'header.php';
@@ -19,55 +19,13 @@
     <div class="mainBlock">
         <div class ="queriesBlock">
             <div class ="optionsBlock">
-                <button id="swimmerBtn" class = "choiceQueryBtn" onclick="swimmerClick()">Add Swimmer Stats</button>
-                <button id="teamBtn" class = "choiceQueryBtn" onclick="teamClick()">Add Team Stats</button>
+                <button id="swimmerBtn" class = "choiceQueryBtn" onclick="swimmerClick()">Swimmer Stats</button>
+                <button id="teamBtn" class = "choiceQueryBtn" onclick="teamClick()">Team Stats</button>
+                <button id="eventBtn" class = "choiceQueryBtn" onclick="eventClick()">Event Stats</button>
             </div>
             <div class ="inputBlock">
                 <div class="subdiv">
-                    <div class ="stateOptionsBlock" id = "stateOptions">
-                    '<br>
-                    <div class="insertDiv" id = "dataDiv">
-                        <input type="hidden" id="swimLabel" name="swim" value="swim">
-                        <label for="person" id="person">Person ID</label>
-                        <input type="text" placeholder="Enter Person ID" name="person" id="person" class="formInput">
-                        <br>
-                        <label for="event" id="eventLabel">Event ID</label>
-                        <input type="text" placeholder="Enter Event ID" name="event" id="event" class="formInput">
-                        <br>
-                        <label for="position" id="positionLabel">Finishing Position</label>
-                        <select name="position" id="position" class = "formInput">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                        <label for="speed" id="speedLabel">Speed</label>
-                        <input type="text" placeholder="Enter Speed" name="speed" id="speed" class="formInput">
-                        <br>
-                        <label for="stroke" id="strokeLabel">Stroke count</label>
-                        <input type="text" placeholder="Enter stroke count" name="stroke" id="stroke" class="formInput">
-                        <br>
-                        <label for="heartRate" id="heartRateLabel">Average Heart Rate</label>
-                        <input type="text" placeholder="Enter average heart rate" name="heartRate" id="heartRate" class="formInput">
-                        <br>
-                        <label for="start" id="startLabel">Start Date</label>
-                        <input type="date" name="start" id="start" class="formInput" required>
-                        <br>
-                        <label for="end" id="endLabel">End Date</label>
-                        <input type="date" name="end" id="end" class="formInput" required>
-                        <br>
-                        <label for="location" id="locationLabel">Location ID</label>
-                        <input type="text" placeholder="Enter Location ID" name="location" id="location" class="formInput">
-                        <br>
-                        <label for="winner" id="winnerLabel">Winning Team ID</label>
-                        <input type="text" placeholder="Enter Winning Team ID" name="winner" id="winner" class="formInput">
-                        <br><br>
-                    </div>
-                    <form action="" method="post" id="insertForm">
+                     <form action="" method="post" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
 
                         </div>
@@ -75,20 +33,26 @@
                 </div>
             </div>
             <div class ="confirmBlock">
-                <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
+                <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Add Stats</button>
             </div>
         </div>
         <div class ="tableBlock">
             <div class ="optionsBlock">
-                <button id="swimmerTableBtn" class = "choiceQueryBtn" onclick="swimmerTableClick()">swimmers</button>
-                <button id="teamTableBtn" class = "choiceQueryBtn" onclick="teamTableClick()">teams</button>
-                <button id="teamStateTableBtn" class = "choiceQueryBtn" onclick="teamStateTableClick()">team States</button>
+                <button id="swimmerTableBtn" class = "choiceQueryBtn" onclick="swimmerTableClick()">View Swimmers</button>
+                <button id="teamTableBtn" class = "choiceQueryBtn" onclick="teamTableClick()">View Teams</button>
+                <button id="eventTableBtn" class = "choiceQueryBtn" onclick="eventTableClick()">View Events</button>
             </div>
 
             <div class= "innerTableBlock" id="table">
 
             </div>
         </div>
+    </div>
+    <div class="mainBlock" id="statsBlock1">
+
+    </div>
+    <div class="mainBlock" id="statsBlock2">
+
     </div>
 
     <?php
