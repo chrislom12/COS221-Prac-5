@@ -1,27 +1,21 @@
 <?php
 //check value of each hidden element instead
-function addScores($conn){
+include 'scores.php';
   //add tournament
   if (isset($_POST['torn'])){
-    echo "home.php";
-    // $start_date = $_POST['start'];
-    // $end_date = $_POST['end'];
-    // $name = $_POST['name'];
-    // $location = $_POST['location'];
-    // $winner = $_POST['winner'];
-    //
-    // $sql = "INSERT INTO test (name) VALUES ($name)";
-    // $sql = "INSERT INTO swimming_tournament (series_index, end_date, location, start_date, winner) VALUES ($name, $end_date, $location, $start_date, $winner)";
-    //
-    // $result = $conn->query($sql);
-    //
-    // $name = '';
-    // $location = '';
-    // $winner = '';
+
+    $start_date = $_POST['start'];
+    $end_date = $_POST['end'];
+    $name = $_POST['name'];
+    $location = $_POST['location'];
+    $winner = $_POST['winner'];
+
+
+    $sql = "INSERT INTO swimming_tournament (end_date, location, start_date, winner) VALUES ('$end_date', '$location', '$start_date', '$winner')";
+
+    $result = $conn->query($sql);
   }
-  else{
-    echo "media.php";
-  }
+
 //   //add event
 //   if (isset($_POST['addevent'])){
 //     $event = $_POST['event'];
@@ -72,6 +66,9 @@ function addScores($conn){
 //       $reason = $_POST['reason'];
 //     }
 //   }
-
-
+?>
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
 }
+</script>

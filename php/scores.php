@@ -14,7 +14,6 @@
 
     <?php
     include 'header.php';
-    include 'addScores.php';
     ?>
     <h1 class=headingPage id="heading">Scores</h1>
     <div class="mainBlock">
@@ -29,7 +28,7 @@
                     <div class ="stateOptionsBlock" id = "stateOptions">
 
                     </div>
-                    <form method="POST" action="<?php addScores($conn); ?>" id="insertForm">
+                    <form method="POST" action="addscores.php" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
 
                         </div>
