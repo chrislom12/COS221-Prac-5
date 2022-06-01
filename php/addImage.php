@@ -17,7 +17,7 @@
     if($imageType=="Person"){
 
 
-        $target_file = $target_dir ."people/".$image['name'];
+        $target_file = $target_dir ."persons/".$image['name'];
 
 
         if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
@@ -45,7 +45,7 @@
     } else if($imageType=="Team"){
 
 
-        $target_file = $target_dir ."people/".$image['name'];
+        $target_file = $target_dir ."teams/".$image['name'];
 
 
         if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
@@ -73,7 +73,7 @@
     } else if($imageType=="Event"){
 
 
-        $target_file = $target_dir ."people/".$image['name'];
+        $target_file = $target_dir ."Events/".$image['name'];
 
 
         if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
