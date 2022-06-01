@@ -14,7 +14,13 @@ if (isset($type)){
     $team = $_POST['team'];
     $address = $_POST['address'];
 
-    echo 'this works';
+    $key = $name . " " . $surname;
+    $publisher = '1';
+    $gender = 'N/A';
+    $locationdef = "1";
+
+    $sql = "INSERT INTO persons (id, person_key, publisher_id, gender, birth_date, death_date, final_resting_location_id, birth_location_id, hometown_location_id, residence_location_id, death_location_id) VALUES ('NULL', '$key', '$publisher', '$gender', '$DOB', 'N/A', '$locationdef', '$locationdef', '$locationdef', '$address', '$locationdef')";
+    $result = $conn->query($sql);
 
     //do SQL here
 
