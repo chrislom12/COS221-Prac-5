@@ -59,20 +59,7 @@ function eventsClick(){
     xmlhttp.send();
 }
 
-function tournamentsClick(){
-    document.getElementById("tournamentsBtn").style.background="#003347";
-    document.getElementById("peopleBtn").style.background = "#004e6d";
-    document.getElementById("teamsBtn").style.background = "#004e6d";
-    document.getElementById("eventsBtn").style.background = "#004e6d";
-    document.getElementById("allBtn").style.background = "#004e6d";
 
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function () {
-        document.getElementById("table").innerHTML = this.responseText;
-    }
-    xmlhttp.open("GET", "retrieveImages.php?type=tournaments");
-    xmlhttp.send();
-}
 
 
 function submitForm() {

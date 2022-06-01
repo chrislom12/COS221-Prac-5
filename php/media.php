@@ -38,9 +38,9 @@
                         <br>
                         <label for="img">Select image:</label>
                         <input type="file" class="formInput"id="img" name="img" accept="image/*">
-                        </div>     
+                        </div>
                     </form>
-                </div>   
+                </div>
             </div>
             <div class ="confirmBlock">
                 <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
@@ -52,7 +52,6 @@
                 <button id="peopleBtn" class = "choiceQueryBtn" onclick="peopleClick()">People</button>
                 <button id="teamsBtn" class = "choiceQueryBtn" onclick="teamsClick()">Teams</button>
                 <button id="eventsBtn" class = "choiceQueryBtn" onclick="eventsClick()">Events</button>
-                <button id="tournamentsBtn" class = "choiceQueryBtn" onclick="tournamentsClick()">Tournaments</button>
             </div>
 
             <div class= "innerTableBlock" id="table">
@@ -94,7 +93,7 @@
             </div>
         </div>
     </div>
-    
+
     <?php
         require ("footer.php");
     ?>
