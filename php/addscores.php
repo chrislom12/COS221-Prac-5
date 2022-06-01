@@ -41,7 +41,7 @@ include 'scores.php';
     $series = $_POST['series'];
 
 
-    $sql = "INSERT INTO events (id, event_key, publisher_id, start_date_time, site_id, site_alignment, event_status, duration, attendance, last_update, event_number, round_number, time_certainty, broadcast_listing, start_date_time_local, medal_event, series_index) VALUES ('NULL', '$event_key', '$publisher', 'NULL', '$site', 'NULL', 'NULL', 'NULL', '$attendance', '$lastUpdate', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$series')";
+    $sql = "INSERT INTO events (id, event_key, publisher_id, start_date_time, site_id, site_alignment, event_status, duration, attendance, last_update, event_number, round_number, time_certainty, broadcast_listing, start_date_time_local, medal_event, series_index) VALUES (NULL, '$event_key', '$publisher', NULL, '$site', NULL, NULL, NULL, '$attendance', '$lastUpdate', NULL, NULL, NULL, NULL, NULL, NULL, '$series')";
 
     $result = $conn->query($sql);
 
@@ -63,11 +63,11 @@ include 'scores.php';
       $person = $_POST['person1'];
       $position = $_POST['position'];
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES ('NULL')";
+      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
       $result = $conn->query($sql);
       $res = $conn->insert_id;
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES ('NULL', '$sequence', '$time', '$person', 'NULL', '$state', '$res', '$event')";
+      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
       $result2 = $conn->query($sql2);
 
       $sql3 = "INSERT INTO swimming_start (start_position, play_type_start_id) VALUES ('$position', '$res')";
@@ -81,11 +81,11 @@ include 'scores.php';
       $newposition = $_POST['position'];
       $oldposition = $newposition-1;
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES ('NULL')";
+      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
       $result = $conn->query($sql);
       $res = $conn->insert_id;
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES ('NULL', '$sequence', '$time', '$person1', '$person2', '$state', '$res', '$event')";
+      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person1', '$person2', '$state', '$res', '$event')";
       $result2 = $conn->query($sql2);
 
       $sql3 = "INSERT INTO swimming_overtake (new_position, old_position, play_type_overtake_id) VALUES ('$newposition', '$oldposition', '$res')";
@@ -120,11 +120,11 @@ include 'scores.php';
         $points = 0;
       }
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES ('NULL')";
+      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
       $result = $conn->query($sql);
       $res = $conn->insert_id;
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES ('NULL', '$sequence', '$time', '$person', 'NULL', '$state', '$res', '$event')";
+      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
       $result2 = $conn->query($sql2);
 
       $sql3 = "INSERT INTO swimming_finish (points_gained, play_type_finish_id) VALUES ('$points', '$res')";
@@ -136,11 +136,11 @@ include 'scores.php';
       $person = $_POST['person1'];
       $reason = $_POST['reason'];
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES ('NULL')";
+      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
       $result = $conn->query($sql);
       $res = $conn->insert_id;
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES ('NULL', '$sequence', '$time', '$person', 'NULL', '$state', '$res', '$event')";
+      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
       $result2 = $conn->query($sql2);
 
       $sql3 = "INSERT INTO swimming_disqualified (reason, play_type_disqualified_id) VALUES ('$reason', '$res');";
