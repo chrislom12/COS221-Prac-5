@@ -16,8 +16,10 @@
 
         $email = $_POST["email"];
         $password = $_POST["pass"];
+        $name = '';
+        $surname = '';
 
-      $query = "Select * from users;";
+        $query = "Select * from users;";
         $result = $conn->query($query);
         $respassword = hash("sha256",$password);
         $valid = false;
@@ -25,12 +27,29 @@
         while($row = $result->fetch_assoc()){
         if($row["email"]==$email&&$respassword == $row["password_hash"]){
             $valid = true;
+            $name = $row['name'];
+            $surname = $row['surname'];
             break;
         }
     }
 }
 if($valid == true){
     $_SESSION['loggedIn']="TRUE";
+    $_SESSION['name']=$name;
+    $_SESSION['surname']=$surname;
+
+    $query = "Select * from publishers;";
+    $result = $conn->query($query);
+
+    if($result->num_rows>0){
+      while($row = $result->fetch_assoc()){
+      if($row["publisher_name"]==$name){
+        $_SESSION['PubID']= $row["publisher_key"];
+          break;
+      }
+  }
+}
+
     //include ("home.php");
     //echo '<script> alert("Logged In")</script>';
    echo '<div id= "mainDiv" class="loginBlock">
