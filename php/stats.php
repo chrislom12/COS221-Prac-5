@@ -25,7 +25,7 @@
             </div>
             <div class ="inputBlock">
                 <div class="subdiv">
-                     <form action="" method="post" id="insertForm">
+                     <form action="addstats.php" method="post" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
 
                         </div>
