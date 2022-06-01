@@ -2,7 +2,8 @@
 //check value of each hidden element instead
 //no way to identify which state we are adding
 include 'scores.php';
-
+//test code for type:
+  //echo "<script>alert('".$_POST['type']."')</script>";
   // add tournament
   if (isset($_POST['torn'])){
 

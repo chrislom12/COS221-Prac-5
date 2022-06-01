@@ -178,4 +178,11 @@ body {
 
 }
 
+.formInputTime{
+  border-radius: 5px;
+  width: 30px;
+  justify-content: flex-start;
+  
+}
+
   
