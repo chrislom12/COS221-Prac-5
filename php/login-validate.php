@@ -44,7 +44,7 @@ if($valid == true){
     if($result->num_rows>0){
       while($row = $result->fetch_assoc()){
       if($row["publisher_name"]==$name){
-        $_SESSION['PubID']= $row["publisher_key"];
+        $_SESSION['PubID']= $row["id"];
           break;
       }
   }
