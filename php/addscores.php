@@ -12,27 +12,37 @@ include 'scores.php';
     $location = $_POST['location'];
     $winner = $_POST['winner'];
 
+    //tournament name
 
-    // $sql = "INSERT INTO swimming_tournament (end_date, location, start_date, winner) VALUES ('$end_date', '$location', '$start_date', '$winner')";
-    //
-    // $result = $conn->query($sql);
+    $sql = "INSERT INTO swimming_tournament (end_date, location, start_date, winner) VALUES ('$end_date', '$location', '$start_date', '$winner')";
+
+    $result = $conn->query($sql);
   }
 
   //add event
   if (isset($_POST['addevent'])){
-    $event = $_POST['event'];
+    $event_key = $_POST['event'];
+    $publisher = '1';
+    $startdate = null;
     $site = $_POST['site'];
+    $sitealign = null;
+    $eventstatus = null;
+    $duration = null;
     $attendance = $_POST['attendance'];
+    $lastUpdate = date('Y/m/d');
+    $num = null;
+    $round = null;
+    $time = null;
+    $broadcast = null;
+    $local = null;
+    $medal = null;
     $series = $_POST['series'];
 
-    //
-    // $sql = "INSERT INTO events (event_key, site_id, attendance, series_index) VALUES ('$event', '$site', '$attendance', '$series')";
-    //
-    // $result = $conn->query($sql);
-    //
-    // $site = '';
-    // $attendance = '';
-    // $series = '';
+
+    $sql = "INSERT INTO events (id, event_key, publisher_id, start_date_time, site_id, site_alignment, event_status, duration, attendance, last_update, event_number, round_number, time_certainty, broadcast_listing, start_date_time_local, medal_event, series_index) VALUES ('NULL', '$event_key', '$publisher', 'NULL', '$site', 'NULL', 'NULL', 'NULL', '$attendance', '$lastUpdate', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '$series')";
+
+    $result = $conn->query($sql);
+
   }
 
 

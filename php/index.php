@@ -21,13 +21,13 @@
             <a href="teams.php" class="menuItem"
                 style="background-image: url('../img/swimmers.png') !important; background-size: cover;">
                 <h1 class=menuHead>Teams</h1>
-                <p class="menuPar">Add a team</p>
+                <p class="menuPar">Manage teams</p>
             </a>
 
             <a href="swimmers.php" class="menuItem"
                 style="background-image: url('../img/swimmer (1).jpg') !important; background-size: cover;">
                 <h1 class=menuHead>Swimmer</h1>
-                <p class="menuPar">Add a swimmer</p>
+                <p class="menuPar">Manage swimmers</p>
             </a>
 
 

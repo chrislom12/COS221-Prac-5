@@ -45,6 +45,7 @@ else if ($type == 'addSite'){
   $location = $_POST['location'];
 
 } else if ($type == 'updateSite'){
+  
 
 } else if ($type == 'deleteSite'){
 
