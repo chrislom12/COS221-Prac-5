@@ -6,12 +6,12 @@
 ?>
 <header>
     <div class="containerNav">
-        
+
         <img src="../img/logo.png" alt="logo" class="logo">
-        
+
         <nav>
             <ul>
-                <li><a href="home.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <?php
                     session_start();
                     $temp = 0;/* if logged in */
@@ -31,8 +31,8 @@
                 <li><a href="swimmers.php">Swimmers</a></li>
                 <li><a href="locations.php">Locations</a></li>
                 <li><a href="scores.php">Scores</a></li>
-                <li><a href="">Media</a></li>
-                <li><a href="">Statistics</a></li>
+                <li><a href="media.php">Media</a></li>
+                <li><a href="stats.php">Statistics</a></li>
             </ul>
         </nav>
 

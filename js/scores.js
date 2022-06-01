@@ -32,7 +32,7 @@ function eventStateClick() {
 function submitForm() {
     /* insert validation */
     document.getElementById("insertForm").submit();
-    
+
 }
 
 function startClick() {

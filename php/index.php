@@ -20,8 +20,14 @@
 
             <a href="teams.php" class="menuItem"
                 style="background-image: url('../img/swimmers.png') !important; background-size: cover;">
-                <h1 class=menuHead>Teams & Swimmers</h1>
-                <p class="menuPar">Manage teams and swimmers</p>
+                <h1 class=menuHead>Teams</h1>
+                <p class="menuPar">Add a team</p>
+            </a>
+
+            <a href="swimmers.php" class="menuItem"
+                style="background-image: url('../img/swimmer (1).jpg') !important; background-size: cover;">
+                <h1 class=menuHead>Swimmer</h1>
+                <p class="menuPar">Add a swimmer</p>
             </a>
 
 
@@ -43,14 +49,14 @@
     <div class="mainBlock">
         <div class="menuBlock">
 
-            <a href="home.php" class="menuItem"
+            <a href="media.php" class="menuItem"
                 style="background-image: url('../img/pool.png') !important; background-size: cover;">
                 <h1 class=menuHead>Media</h1>
                 <p class="menuPar">Upload media for a tournament or swimmer</p>
             </a>
 
 
-            <a href="home.php" class="menuItem"
+            <a href="stats.php" class="menuItem"
                 style="background-image: url('../img/stats.png') !important; background-size: cover;">
                 <h1 class=menuHead>Statistics</h1>
                 <p class="menuPar">View statistics for tournaments and swimmers</p>

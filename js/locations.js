@@ -55,7 +55,7 @@ function insertAddressClick() {
     document.getElementById("updateSBtn").style.background = "#004e6d";
     document.getElementById("deleteSBtn").style.background = "#004e6d";
     document.getElementById("insertSBtn").style.background = "#004e6d";
-    document.getElementById("dataDiv").innerHTML = '<input type="hidden" id="type" name="type" value="addAddress"><label for="streetName" id="streetNameLabel">Street Name</label><input type="text" placeholder="Enter the Street" name="streetName" id="streetName" class="formInput"><br><label for="streetNum" id="streetNumLabel">Street Name</label><input type="text" placeholder="Enter the Street Nr." name="streetNum" id="streetNum" class="formInput"><br>';
+    document.getElementById("dataDiv").innerHTML = '<input type="hidden" id="type" name="type" value="addAddress"><label for="streetName" id="streetNameLabel">Street Name</label><input type="text" placeholder="Enter the Street" name="streetName" id="streetName" class="formInput"><br><label for="streetNum" id="streetNumLabel">Street Number</label><input type="text" placeholder="Enter the Street Nr." name="streetNum" id="streetNum" class="formInput"><br>';
 }
 
 function updateAddressClick() {
@@ -130,7 +130,7 @@ function deleteSiteClick() {
     document.getElementById("updateSBtn").style.background = "#004e6d";
     document.getElementById("deleteABtn").style.background = "#004e6d";
     document.getElementById("insertSBtn").style.background = "#004e6d";
-    document.getElementById("dataDiv").innerHTML = '<label for="delete" id="deleteLabel">Site ID</label><input type="text" placeholder="Enter the site ID to delete" name="delete" id="delete" class="formInput"><br>';
+    document.getElementById("dataDiv").innerHTML = '<input type="hidden" id="type" name="type" value="deleteSite"><label for="delete" id="deleteLabel">Site ID</label><input type="text" placeholder="Enter the site ID to delete" name="delete" id="delete" class="formInput"><br>';
 }
 
 function submitForm() {

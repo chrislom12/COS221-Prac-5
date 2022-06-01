@@ -35,7 +35,7 @@
             </div>
             <div class ="inputBlock">
                 <div class="subdiv">
-                    <form action="swimmers-validate.php" method="post" id="insertForm">
+                    <form action="locations-validate.php" method="post" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
                         <input type="hidden" id="type" name="type" value="addSite">
                         <label for="site" id="siteLabel">Site Name</label>
@@ -67,9 +67,9 @@
                         <label for="delete" id="deleteLabel">Site ID</label>
                         <input type="text" placeholder="Enter the site ID to delete" name="delete" id="delete" class="formInput">
                         <br>
-                        </div>     
+                        </div>
                     </form>
-                </div>   
+                </div>
             </div>
             <div class ="confirmBlock">
                 <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    
+
     <?php
         require ("footer.php");
     ?>

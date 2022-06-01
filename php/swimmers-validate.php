@@ -1,27 +1,31 @@
 <?php
-include 'teams.php';
+include 'swimmers.php';
 
 $type = $_POST['type'];
 
 if (isset($type)){
   if ($type == "insert"){
-    //inserting a team
+    //inserting a swimmer
+
 
     $name = $_POST['name'];
-    $site = $_POST['site'];
+    $surname = $_POST['surname'];
+    $DOB = $_POST['dob'];
+    $team = $_POST['team'];
+    $address = $_POST['address'];
 
     echo 'this works';
 
     //do SQL here
 
   }else if ($type == "update"){
-      //updating a team
+      //updating a swimmer
 
 
 
 
   } else if ($type == "delete"){
-    //deleting a team
+    //deleting a swimmer
   }
 }
 ?>

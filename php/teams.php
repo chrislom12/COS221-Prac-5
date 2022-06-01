@@ -27,19 +27,20 @@
                 <div class="subdiv">
                     <form action="teams-validate.php" method="post" id="insertForm">
                         <div class="insertDiv" id = "dataDiv">
-                        </div>     
+                          
+                        </div>
                     </form>
-                </div>   
+                </div>
             </div>
             <div class ="confirmBlock">
                 <button class = "choiceQueryBtn" id="confirmBtn" onclick="submitForm()">Confirm</button>
             </div>
         </div>
         <div class ="tableBlock" id="table">
-            
+
         </div>
     </div>
-    
+
     <?php
         require ("footer.php");
     ?>
