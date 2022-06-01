@@ -11,7 +11,7 @@ if (isset($type)){
     $site = $_POST['site'];
     $publisher = '1';
 
-    $sql = "INSERT INTO teams (id, team_key, publisher_id, home_site_id) VALUES ('NULL', '$name', '$publisher', '$site')";
+    $sql = "INSERT INTO teams (id, team_key, publisher_id, home_site_id) VALUES (NULL, '$name', '$publisher', '$site')";
     $result = $conn->query($sql);
 
   }else if ($type == "update"){
