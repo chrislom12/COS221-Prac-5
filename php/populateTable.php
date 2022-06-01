@@ -75,7 +75,7 @@ else if($type == "eventState"){
         <tr>
         <th>id</th>
         <th>sequence_nr</th>
-        <th>publisher_id</th>
+        <th>time</th>
         <th>attendance</th>
         <th>last_update</th>
         <th>series_index</th>
