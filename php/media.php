@@ -31,11 +31,10 @@
                             <option value="Person">Person Image</option>
                             <option value="Team">Team Image</option>
                             <option value="Event">Event Image</option>
-                            <option value="Tournament">Tournament Image</option>
                         </select>
                         <br>
                         <label for="id" id="idLabel">Relevant ID</label>
-                        <input type="text" placeholder="Person/Team/Event/Tournament" name="id" id="id" class="formInput">
+                        <input type="text" placeholder="Person/Team/Event" name="id" id="id" class="formInput">
                         <br>
                         <label for="img">Select image:</label>
                         <input type="file" class="formInput"id="img" name="img" accept="image/*">
