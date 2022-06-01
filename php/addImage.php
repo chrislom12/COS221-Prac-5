@@ -35,6 +35,23 @@
           $loadtime = date('Y/m/d');
           $location = '1';
 
+          if (isset($credit)){
+            $valid = "SELECT id FROM persons WHERE id=$credit";
+            $res = $conn->query($valid);
+
+            if (!$res){
+              echo "<script>alert('That is not registered swimmer.')</script>";
+              header("Location: media.php");
+            }
+          } else if (isset($location)){
+            $valid = "SELECT id FROM locations WHERE id=$location";
+            $res = $conn->query($valid);
+
+            if (!$res){
+              echo "<script>alert('That is not a valid location.')</script>";
+              header("Location: media.php");
+            } 
+
           $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
           $result = $conn->query($sql);
           $media = $conn->insert_id;
@@ -63,6 +80,23 @@
           $loadtime = date('Y/m/d');
           $location = '1';
 
+          if (isset($credit)){
+            $valid = "SELECT id FROM persons WHERE id=$credit";
+            $res = $conn->query($valid);
+
+            if (!$res){
+              echo "<script>alert('That is not registered swimmer.')</script>";
+              header("Location: media.php");
+            }
+          } else if (isset($location)){
+            $valid = "SELECT id FROM locations WHERE id=$location";
+            $res = $conn->query($valid);
+
+            if (!$res){
+              echo "<script>alert('That is not a valid location.')</script>";
+              header("Location: media.php");
+            }
+
           $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
           $result = $conn->query($sql);
           $media = $conn->insert_id;
@@ -90,6 +124,23 @@
           $credit = $_POST['id'];
           $loadtime = date('Y/m/d');
           $location = '1';
+
+          if (isset($credit)){
+            $valid = "SELECT id FROM persons WHERE id=$credit";
+            $res = $conn->query($valid);
+
+            if (!$res){
+              echo "<script>alert('That is not registered swimmer.')</script>";
+              header("Location: media.php");
+            }
+          } else if (isset($location)){
+            $valid = "SELECT id FROM locations WHERE id=$location";
+            $res = $conn->query($valid);
+
+            if (!$res){
+              echo "<script>alert('That is not a valid location.')</script>";
+              header("Location: media.php");
+            }
 
           $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
           $result = $conn->query($sql);

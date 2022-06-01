@@ -2,6 +2,8 @@
 include 'stats.php';
 
 if (isset($_POST['swim'])){
+  //foreign keys: event id, person id
+
   $person = $_POST['person'];
   $event = $_POST['event'];
   $position = $_POST['position'];
@@ -42,6 +44,27 @@ if (isset($_POST['swim'])){
     $points = 0;
   }
 
+
+  if (isset($event)){
+    $valid = "SELECT id FROM events WHERE id=$event";
+    $res = $conn->query($valid);
+
+    if (!$res){
+      echo "<script>alert('That is not a valid event ID.')</script>";
+      header("Location: stats.php");
+    }
+
+  } else if (isset($person)){
+    $valid = "SELECT id FROM persons WHERE id=$person";
+    $res = $conn->query($valid);
+
+    if (!$res){
+      echo "<script>alert('That is not a valid swimmer ID.')</script>";
+      header("Location: stats.php");
+    }
+
+  }
+
   $sql = "INSERT INTO swimmer_stats (id, position, speed, SWOLF, points, stroke_count, swim_time, avg_heartrate, distance_per_stroke, personal_best, event_identity, person_identity) VALUES (NULL, '$position', '$speed', '$SWOLF', '$points', '$stroke', '$totaltime', '$heartRate', '$distanceStroke', '$personalbest', '$event', '$person')";
 
   $result = $conn->query($sql);
@@ -50,6 +73,7 @@ if (isset($_POST['swim'])){
 
 }
 else if (isset($_POST['team'])){
+  //foreign key: eventid and teamid
 
   $teamID = $_POST['teamID'];
   $event = $_POST['event'];
@@ -66,12 +90,33 @@ else if (isset($_POST['team'])){
 
   $worstTotaltime = "00:" . $worstTimeMin . ":" . $worstTimeSec;
 
+  if (isset($event)){
+    $valid = "SELECT id FROM events WHERE id=$event";
+    $res = $conn->query($valid);
+
+    if (!$res){
+      echo "<script>alert('That is not a valid event ID.')</script>";
+      header("Location: stats.php");
+    }
+
+  } else if (isset($teamID)){
+    $valid = "SELECT id FROM teams WHERE id=$teamID";
+    $res = $conn->query($valid);
+
+    if (!$res){
+      echo "<script>alert('That is not a valid swimmer ID.')</script>";
+      header("Location: stats.php");
+    }
+
+  }
+
   $sql = "INSERT INTO swimming_team_stats (id, points, max_points, best_time, worst_time, event_id, team_id) VALUES (NULL, '$pointsGained', '$pointsMax', '$bestTotaltime', '$worstTotaltime', '$event', '$teamID')";
 
   $result = $conn->query($sql);
 
 
 } else if (isset($_POST['event'])){
+  //foreign key: event id
 
   $eventID = $_POST['eventID'];
   $event = $_POST['event'];
@@ -85,6 +130,17 @@ else if (isset($_POST['team'])){
   $timeSec = $_POST['timeSec'];
 
   $totaltime = "00:" . $timeMin . ":" . $timeSec;
+
+  if (isset($eventID)){
+    $valid = "SELECT id FROM events WHERE id=$eventID";
+    $res = $conn->query($valid);
+
+    if (!$res){
+      echo "<script>alert('That is not a valid event ID.')</script>";
+      header("Location: stats.php");
+    }
+
+  }
 
   $sql = "INSERT INTO swimming_stats_of_events (id, first_place, second_place, third_place, no_swimmers, swim_style, distance, no_finished, race_time, event_number) VALUES (NULL, '$first', '$second', '$third', '$numSwimmers', '$event', '$distance', '$numFinished', '$totaltime', '$eventID')";
 

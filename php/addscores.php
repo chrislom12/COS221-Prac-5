@@ -5,7 +5,9 @@ include 'scores.php';
 //test code for type:
   //echo "<script>alert('".$_POST['type']."')</script>";
   // add tournament
-  if (isset($_POST['torn'])){
+  $type = $_POST['type'];
+
+  if ($type == 'tournament'){
 
     $start_date = $_POST['start'];
     $end_date = $_POST['end'];
@@ -22,7 +24,9 @@ include 'scores.php';
   }
 
   //add event
-  if (isset($_POST['addevent'])){
+  if ($type == 'event'){
+    //foreign keys: publisher id, site id
+
     $event_key = $_POST['event'];
     $publisher = '1';
     $startdate = null;
@@ -40,6 +44,25 @@ include 'scores.php';
     $medal = null;
     $series = $_POST['series'];
 
+    if (isset($publisher)){
+      $valid = "SELECT id FROM publishers WHERE id=$publisher";
+      $res = $conn->query($valid);
+
+      if (!$res){
+        echo "<script>alert('You are not a registered user.')</script>";
+        header("Location: scores.php");
+      }
+
+    } else (isset($site)){
+      $valid = "SELECT id FROM sites WHERE id=$site";
+      $res = $conn->query($valid);
+
+      if (!$res){
+        echo "<script>alert('That is not a vaid site ID.')</script>";
+        header("Location: scores.php");
+      }
+    }
+
 
     $sql = "INSERT INTO events (id, event_key, publisher_id, start_date_time, site_id, site_alignment, event_status, duration, attendance, last_update, event_number, round_number, time_certainty, broadcast_listing, start_date_time_local, medal_event, series_index) VALUES (NULL, '$event_key', '$publisher', NULL, '$site', NULL, NULL, NULL, '$attendance', '$lastUpdate', NULL, NULL, NULL, NULL, NULL, NULL, '$series')";
 
@@ -51,15 +74,29 @@ include 'scores.php';
 
 
 //add state
-  if (isset($_POST['eventState'])){
+  if ($type == 'eventState'){
+    //foreign keys: play type id, event id
+
+    $playType = $_POST['typeEventState'];
 
     $event = $_POST['event'];
     $sequence = $_POST['sequence'];
     $time = $_POST['time'];
     $state = $_POST['raceState'];
 
+    if (isset($event)){
+      $valid = "SELECT id FROM events WHERE id=$event";
+      $res = $conn->query($valid);
 
-    if (isset($_POST['startBtn'])){
+      if (!$res){
+        echo "<script>alert('That is not a valid event ID.')</script>";
+        header("Location: scores.php");
+      }
+
+    }
+
+    //start
+    if ($playType == 'start'){
       $person = $_POST['person1'];
       $position = $_POST['position'];
 
@@ -75,7 +112,9 @@ include 'scores.php';
 
     }
 
-    if (isset($_POST['overtakeBtn'])){
+
+    //overtake
+    if ($playType == 'overtake'){
       $person1 = $_POST['overtaker'];
       $person2 = $_POST['overtakee'];
       $newposition = $_POST['position'];
@@ -94,7 +133,9 @@ include 'scores.php';
 
     }
 
-    if (isset($_POST['finishBtn'])){
+
+    //finish
+    if ($playType == 'finish'){
       $person = $_POST['person1'];
       $position = $_POST['position'];
 
@@ -132,7 +173,9 @@ include 'scores.php';
 
     }
 
-    if (isset($_POST['disqBtn'])){
+
+    //disqualify
+    if ($playType == 'disqualify'){
       $person = $_POST['person1'];
       $reason = $_POST['reason'];
 
