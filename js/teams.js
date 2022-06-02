@@ -13,7 +13,7 @@ function updateClick() {
     btnInsert.style.background = "#003347";
     document.getElementById("insertBtn").style.background = "#004e6d";
     document.getElementById("deleteBtn").style.background = "#004e6d";
-    document.getElementById("dataDiv").innerHTML = '<input type="hidden" id="type" name="type" value="update"><label for="update" id="updateLabel">What do you need updated?</label><select name="updateNeeded" id="updateNeeded" class = "formInput"><option value="name">Team Name</option><option value="site">Team Home Site ID</option></select><br><label for="team" id="teamLabel">Team ID</label><input type="text" placeholder="Enter the Team ID" name="team" id="team" class="formInput"><br><label for="newVal" id="newValLabel">New Value</label><input type="text" placeholder="Enter the new value" name="newVal" id="newVal" class="formInput" required>';
+    document.getElementById("dataDiv").innerHTML = '<input type="hidden" id="type" name="type" value="update"><label for="update" id="updateLabel">What do you need updated?</label><select name="updateNeeded" id="updateNeeded" class = "formInput"><option value="teamName">Team Name</option><option value="teamHomeSite">Team Home Site ID</option></select><br><label for="team" id="teamLabel">Team ID</label><input type="text" placeholder="Enter the Team ID" name="team" id="team" class="formInput"><br><label for="newVal" id="newValLabel">New Value</label><input type="text" placeholder="Enter the new value" name="newVal" id="newVal" class="formInput" required>';
 }
 
 function deleteClick() {
