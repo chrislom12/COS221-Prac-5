@@ -46,7 +46,7 @@ CREATE TABLE `addresses` (
   KEY `IDX_addresses_3` (`postal_code`),
   KEY `IDX_FK_add_loc_id__loc_id` (`location_id`),
   CONSTRAINT `FK_add_loc_id__loc_id` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2313,6 +2313,7 @@ CREATE TABLE `persons` (
   `hometown_location_id` int(11) DEFAULT NULL,
   `residence_location_id` int(11) DEFAULT NULL,
   `death_location_id` int(11) DEFAULT NULL,
+  `team_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_persons_final_resting_location_id_locations_id` (`final_resting_location_id`),
   KEY `FK_per_bir_loc_id__loc_id` (`birth_location_id`),
@@ -2395,7 +2396,7 @@ CREATE TABLE `publishers` (
   `publisher_name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_publishers_1` (`publisher_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2876,13 +2877,13 @@ DROP TABLE IF EXISTS `swimmer_stats`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimmer_stats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `position` tinyint(3) unsigned zerofill NOT NULL,
-  `speed` float unsigned zerofill NOT NULL,
-  `points` float unsigned zerofill NOT NULL,
-  `stroke_count` int(10) unsigned zerofill NOT NULL,
+  `position` tinyint(3) unsigned NOT NULL,
+  `speed` float unsigned NOT NULL,
+  `points` float unsigned NOT NULL,
+  `stroke_count` int(10) unsigned NOT NULL,
   `swim_time` time NOT NULL,
   `avg_heartrate` float NOT NULL,
-  `distance_per_stroke` float unsigned zerofill NOT NULL,
+  `distance_per_stroke` float unsigned NOT NULL,
   `event_identity` int(11) NOT NULL,
   `person_identity` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -2917,7 +2918,7 @@ DROP TABLE IF EXISTS `swimming_event_states`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_event_states` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sequence_nr` int(10) unsigned zerofill NOT NULL,
+  `sequence_nr` int(10) unsigned NOT NULL,
   `time_elapsed` time NOT NULL,
   `person_1` varchar(100) NOT NULL,
   `person_2` varchar(100) DEFAULT NULL,
@@ -2940,7 +2941,7 @@ DROP TABLE IF EXISTS `swimming_finish`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_finish` (
-  `points_gained` int(10) unsigned zerofill NOT NULL,
+  `points_gained` int(10) unsigned NOT NULL,
   `play_type_finish_id` int(11) NOT NULL,
   KEY `play_type_identity_idx` (`play_type_finish_id`),
   CONSTRAINT `play_type_finish_id` FOREIGN KEY (`play_type_finish_id`) REFERENCES `swimming_play_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -3042,7 +3043,7 @@ DROP TABLE IF EXISTS `swimming_team_stats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_team_stats` (
-  `id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `points` int(11) NOT NULL,
   `max_points` int(11) NOT NULL,
   `best_time` time NOT NULL,
@@ -3597,4 +3598,4 @@ CREATE TABLE `weather_conditions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-28 10:51:42
+-- Dump completed on 2022-06-02 22:57:09
