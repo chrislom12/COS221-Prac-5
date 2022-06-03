@@ -36,6 +36,12 @@
                         <label for="id" id="idLabel">Relevant ID</label>
                         <input type="text" placeholder="Person/Team/Event" name="id" id="id" class="formInput">
                         <br>
+                        <label for="credit" id="creditLabel">Credit ID</label>
+                        <input type="text" placeholder="Give credit to a person" name="credit" id="credit" class="formInput">
+                        <br>
+                        <label for="location" id="locationLabel">Location ID</label>
+                        <input type="text" placeholder="Where was the media created" name="location" id="location" class="formInput">
+                        <br>
                         <label for="img">Select image:</label>
                         <input type="file" class="formInput"id="img" name="img" accept="image/*">
                         </div>

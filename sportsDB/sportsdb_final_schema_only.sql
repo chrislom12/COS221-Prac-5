@@ -45,8 +45,8 @@ CREATE TABLE `addresses` (
   KEY `IDX_addresses_2` (`region`),
   KEY `IDX_addresses_3` (`postal_code`),
   KEY `IDX_FK_add_loc_id__loc_id` (`location_id`),
-  CONSTRAINT `FK_add_loc_id__loc_id` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  CONSTRAINT `FK_add_loc_id__loc_id` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1487,8 +1487,8 @@ CREATE TABLE `events` (
   KEY `IDX_events_1` (`event_key`),
   KEY `IDX_FK_eve_pub_id__pub_id` (`publisher_id`),
   KEY `IDX_FK_eve_sit_id__sit_id` (`site_id`),
-  CONSTRAINT `FK_eve_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`),
-  CONSTRAINT `FK_eve_sit_id__sit_id` FOREIGN KEY (`site_id`) REFERENCES `sites` (`id`)
+  CONSTRAINT `FK_eve_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_eve_sit_id__sit_id` FOREIGN KEY (`site_id`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1926,9 +1926,9 @@ CREATE TABLE `media` (
   KEY `FK_med_cre_id__per_id` (`credit_id`),
   KEY `FK_med_pub_id__pub_id` (`publisher_id`),
   KEY `FK_med_cre_loc_id__loc_id` (`creation_location_id`),
-  CONSTRAINT `FK_med_cre_id__per_id` FOREIGN KEY (`credit_id`) REFERENCES `persons` (`id`),
-  CONSTRAINT `FK_med_cre_loc_id__loc_id` FOREIGN KEY (`creation_location_id`) REFERENCES `locations` (`id`),
-  CONSTRAINT `FK_med_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`)
+  CONSTRAINT `FK_med_cre_id__per_id` FOREIGN KEY (`credit_id`) REFERENCES `persons` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_med_cre_loc_id__loc_id` FOREIGN KEY (`creation_location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_med_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2313,6 +2313,7 @@ CREATE TABLE `persons` (
   `hometown_location_id` int(11) DEFAULT NULL,
   `residence_location_id` int(11) DEFAULT NULL,
   `death_location_id` int(11) DEFAULT NULL,
+  `team_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_persons_final_resting_location_id_locations_id` (`final_resting_location_id`),
   KEY `FK_per_bir_loc_id__loc_id` (`birth_location_id`),
@@ -2321,12 +2322,12 @@ CREATE TABLE `persons` (
   KEY `FK_per_hom_loc_id__loc_id` (`hometown_location_id`),
   KEY `IDX_FK_per_pub_id__pub_id` (`publisher_id`),
   KEY `IDX_persons_1` (`person_key`),
-  CONSTRAINT `FK_per_bir_loc_id__loc_id` FOREIGN KEY (`birth_location_id`) REFERENCES `locations` (`id`),
-  CONSTRAINT `FK_per_dea_loc_id__loc_id` FOREIGN KEY (`death_location_id`) REFERENCES `locations` (`id`),
-  CONSTRAINT `FK_per_hom_loc_id__loc_id` FOREIGN KEY (`hometown_location_id`) REFERENCES `locations` (`id`),
-  CONSTRAINT `FK_per_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`),
-  CONSTRAINT `FK_per_res_loc_id__loc_id` FOREIGN KEY (`residence_location_id`) REFERENCES `locations` (`id`),
-  CONSTRAINT `FK_persons_final_resting_location_id_locations_id` FOREIGN KEY (`final_resting_location_id`) REFERENCES `locations` (`id`)
+  CONSTRAINT `FK_per_bir_loc_id__loc_id` FOREIGN KEY (`birth_location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_per_dea_loc_id__loc_id` FOREIGN KEY (`death_location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_per_hom_loc_id__loc_id` FOREIGN KEY (`hometown_location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_per_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_per_res_loc_id__loc_id` FOREIGN KEY (`residence_location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_persons_final_resting_location_id_locations_id` FOREIGN KEY (`final_resting_location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2395,7 +2396,7 @@ CREATE TABLE `publishers` (
   `publisher_name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_publishers_1` (`publisher_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2498,8 +2499,8 @@ CREATE TABLE `sites` (
   KEY `IDX_FK_sit_loc_id__loc_id` (`location_id`),
   KEY `IDX_FK_sit_pub_id__pub_id` (`publisher_id`),
   KEY `IDX_sites_1` (`site_key`),
-  CONSTRAINT `FK_sit_loc_id__loc_id` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`),
-  CONSTRAINT `FK_sit_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`)
+  CONSTRAINT `FK_sit_loc_id__loc_id` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_sit_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2876,13 +2877,13 @@ DROP TABLE IF EXISTS `swimmer_stats`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimmer_stats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `position` tinyint(3) unsigned zerofill NOT NULL,
-  `speed` float unsigned zerofill NOT NULL,
-  `points` float unsigned zerofill NOT NULL,
-  `stroke_count` int(10) unsigned zerofill NOT NULL,
+  `position` tinyint(3) unsigned NOT NULL,
+  `speed` float unsigned NOT NULL,
+  `points` float unsigned NOT NULL,
+  `stroke_count` int(10) unsigned NOT NULL,
   `swim_time` time NOT NULL,
   `avg_heartrate` float NOT NULL,
-  `distance_per_stroke` float unsigned zerofill NOT NULL,
+  `distance_per_stroke` float unsigned NOT NULL,
   `event_identity` int(11) NOT NULL,
   `person_identity` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -2917,7 +2918,7 @@ DROP TABLE IF EXISTS `swimming_event_states`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_event_states` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sequence_nr` int(10) unsigned zerofill NOT NULL,
+  `sequence_nr` int(10) unsigned NOT NULL,
   `time_elapsed` time NOT NULL,
   `person_1` varchar(100) NOT NULL,
   `person_2` varchar(100) DEFAULT NULL,
@@ -2940,7 +2941,7 @@ DROP TABLE IF EXISTS `swimming_finish`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_finish` (
-  `points_gained` int(10) unsigned zerofill NOT NULL,
+  `points_gained` int(10) unsigned NOT NULL,
   `play_type_finish_id` int(11) NOT NULL,
   KEY `play_type_identity_idx` (`play_type_finish_id`),
   CONSTRAINT `play_type_finish_id` FOREIGN KEY (`play_type_finish_id`) REFERENCES `swimming_play_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -3029,8 +3030,8 @@ CREATE TABLE `swimming_team_members` (
   PRIMARY KEY (`id`),
   KEY `team_id_idx` (`team_id`),
   KEY `swimmer_id_idx` (`swimmer_id`),
-  CONSTRAINT `swimmer_id` FOREIGN KEY (`swimmer_id`) REFERENCES `persons` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `swimming_team_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `swimmer_id` FOREIGN KEY (`swimmer_id`) REFERENCES `persons` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `swimming_team_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3042,7 +3043,7 @@ DROP TABLE IF EXISTS `swimming_team_stats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `swimming_team_stats` (
-  `id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `points` int(11) NOT NULL,
   `max_points` int(11) NOT NULL,
   `best_time` time NOT NULL,
@@ -3090,7 +3091,7 @@ CREATE TABLE `swimming_tournament` (
   `winner` int(11) DEFAULT NULL,
   PRIMARY KEY (`series_index`),
   KEY `tournament_site_id_idx` (`location`),
-  CONSTRAINT `tournament_site_id` FOREIGN KEY (`location`) REFERENCES `sites` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `tournament_site_id` FOREIGN KEY (`location`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3141,8 +3142,8 @@ CREATE TABLE `teams` (
   KEY `FK_tea_pub_id__pub_id` (`publisher_id`),
   KEY `FK_tea_hom_sit_id__sit_id` (`home_site_id`),
   KEY `IDX_teams_team_key` (`team_key`),
-  CONSTRAINT `FK_tea_hom_sit_id__sit_id` FOREIGN KEY (`home_site_id`) REFERENCES `sites` (`id`),
-  CONSTRAINT `FK_tea_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`)
+  CONSTRAINT `FK_tea_hom_sit_id__sit_id` FOREIGN KEY (`home_site_id`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_tea_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3399,7 +3400,7 @@ CREATE TABLE `users` (
   `publisher_id` int(11) NOT NULL,
   PRIMARY KEY (`email`),
   KEY `users_publisher_id_idx` (`publisher_id`),
-  CONSTRAINT `users_publisher_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `users_publisher_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3597,4 +3598,4 @@ CREATE TABLE `weather_conditions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-28 10:51:42
+-- Dump completed on 2022-06-02 23:19:40
