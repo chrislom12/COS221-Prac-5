@@ -55,7 +55,7 @@ else if ($type == 'updateLocation')
   if ($statement) {
     header("location: locations.php");
 } else {
-    echo '<script>alert("Failed to update location :( "); window.location.href = "locations.php"</script>';
+    echo '<script>alert("Failed to update location!"); window.location.href = "locations.php"</script>';
 }
 } 
 else if ($type == 'deleteLocation')
@@ -64,41 +64,65 @@ else if ($type == 'deleteLocation')
 
   if (!empty($locationID)) 
   {
+    
     //check if id(primary key is referenced by anything)sites, addresses, persons, media
     //remove it from the tables it references then delete it
+    
     $queryMedia = "SELECT `creation_location_id` FROM `media` WHERE creation_location_id = '" . $locationID . "'";
     $resultFromMedia = mysqli_query($conn, $queryMedia);
+    $rowsFromMedia = mysqli_num_rows($resultFromMedia);
+    //echo '<script>alert("'.$rowsFromMedia.'");</script>';
         
     $queryAddresses = "SELECT `location_id` FROM `addresses` WHERE location_id = '" . $locationID . "'";
     $resultFromAddresses = mysqli_query($conn, $queryAddresses);
+    $rowsFromAddresses = mysqli_num_rows($resultFromAddresses);
+    //echo '<script>alert("'.$rowsFromAddresses.'");</script>';
 
     $querySites = "SELECT `location_id` FROM `sites` WHERE location_id = '" . $locationID . "'";
     $resultFromSites = mysqli_query($conn, $querySites);
+    $rowsFromSites = mysqli_num_rows($resultFromSites);
+    //echo '<script>alert("'.$rowsFromSites.'");</script>';
 
-    $queryPersons = "SELECT `hometown_location_id` FROM `persons` WHERE hometown_location_id = '" . $locationID . "' AND birth_location_id = '" . $locationID . "' AND residence_location_id = '" . $locationID . "'";
+    $queryPersons = "SELECT `hometown_location_id` FROM `persons` WHERE hometown_location_id = '" . $locationID . "' ";
     $resultFromPersons = mysqli_query($conn, $queryPersons);
+    $rowsFromPersons = mysqli_num_rows($resultFromPersons);
+    //echo '<script>alert("'.$rowsFromPersons.'");</script>';
 
-    if($resultFromMedia)
+    if($rowsFromMedia > 0 )
     {
       $query = "DELETE FROM 'media' WHERE creation_location_id = '" . $locationID . "'";
-      $statement = mysqli_query($conn, $query);}
+      $statement = mysqli_query($conn, $query);
+      if($statement)
+      {echo '<script>alert("Selected from media I deleted");</script>';}
+    }
 
-    if($resultFromAddresses)
+    if($rowsFromAddresses > 0)
     {
       $query = "DELETE FROM 'addresses' WHERE location_id = '" . $locationID . "'";
-      $statement = mysqli_query($conn, $query);}
+      $statement = mysqli_query($conn, $query);
+      if($statement)
+      {echo '<script>alert("Selected from addresses I deleted");</script>';}
+    }
     
 
-    if($resultFromSites)
+    if($rowsFromSites > 0)
     {
-      $query = "DELETE FROM 'sites' WHERE location_id = '" . $locationID . "'";
-      $statement = mysqli_query($conn, $query);}
+      $query = "DELETE FROM `sites` WHERE location_id = '" . $locationID . "'";
+      $statement = mysqli_query($conn, $query);
+      $deleteResultFromSites = mysqli_num_rows($statement);
+      //echo '<script>alert("'.$deleteResultFromSites.'");</script>';
+
+      if($deleteResultFromSites > 0)
+      {echo '<script>alert("Selected from sites I deleted");</script>';}}
     
 
-    if($resultFromPersons)
+    if($rowsFromPersons > 0)
     {
       $query = "DELETE FROM 'persons' WHERE hometown_location_id = '" . $locationID . "' AND birth_location_id = '" . $locationID . "' AND residence_location_id = '" . $locationID . "'";
       $statement = mysqli_query($conn, $query);
+      if($statement)
+      {echo '<script>alert("Selected from persons I deleted");</script>';}
+      
     }
     
 
@@ -114,7 +138,7 @@ else if ($type == 'deleteLocation')
   } 
   else 
   {
-      echo '<script type="text/javascript"> alert ("Field cannot be empty")</script>';
+      echo '<script type="text/javascript"> alert ("Location ID cannot be empty")</script>';
   }
 }
 
@@ -273,7 +297,7 @@ else if ($type == 'deleteSite')
     $queryEvents = "SELECT `site_id` FROM `events` WHERE  site_id = '" . $siteID . "'";
     $queryFromEvents = mysqli_query($conn, $queryEvents);
 
-    $queryTeams = "SELECT `home_site_id` FROM `events` WHERE  home_site_id = '" . $siteID . "'";
+    $queryTeams = "SELECT `home_site_id` FROM `teams` WHERE  home_site_id = '" . $siteID . "'";
     $queryFromTeams = mysqli_query($conn, $queryTeams);
 
     if($queryFromEvents)
@@ -294,12 +318,12 @@ else if ($type == 'deleteSite')
     if ($statement) {
         header("location: locations.php");
     } else {
-        echo '<script>alert("Failed to delete site"); window.location.href = "locations.php"</script>';
+        echo '<script>alert("Failed to delete site!"); window.location.href = "locations.php"</script>';
     }
   } 
   else 
   {
-      echo '<script type="text/javascript"> alert ("Field cannot be empty")</script>';
+      echo '<script type="text/javascript"> alert ("Site ID cannot be empty")</script>';
   }
 }
 ?>
