@@ -13,7 +13,7 @@ function updateClick() {
     btnInsert.style.background = "#003347";
     document.getElementById("insertBtn").style.background = "#004e6d";
     document.getElementById("deleteBtn").style.background = "#004e6d";
-    document.getElementById("dataDiv").innerHTML = '<div class="insertDiv" id = "dataDiv"><input type="hidden" id="type" name="type" value="update"><label for="update" id="updateLabel">What do you need updated?</label><select name="updateNeeded" id="updateNeeded" class = "formInput"><option value="name">Name</option><option value="surname">Surname</option><option value="team">Team ID</option><option value="address">Address ID</option></select><br><label for="person" id="personLabel">Person ID</label><input type="text" placeholder="Enter the person ID" name="person" id="person" class="formInput"><br><label for="newVal" id="newValLabel">New Value</label><input type="text" placeholder="Enter the new value" name="newVal" id="newVal" class="formInput">';
+    document.getElementById("dataDiv").innerHTML = '<div class="insertDiv" id = "dataDiv"><input type="hidden" id="type" name="type" value="update"><label for="update" id="updateLabel">What do you need updated?</label><select name="updateNeeded" id="updateNeeded" class = "formInput"><option value="name">Name</option><option value="surname">Surname</option><option value="team">Team ID</option><option value="address">Residence ID</option></select><br><label for="person" id="personLabel">Person ID</label><input type="text" placeholder="Enter the person ID" name="person" id="person" class="formInput"><br><label for="newVal" id="newValLabel">New Value</label><input type="text" placeholder="Enter the new value" name="newVal" id="newVal" class="formInput">';
 }
 
 function deleteClick() {
