@@ -33,7 +33,7 @@
                             <option value="name">Name</option>
                             <option value="surname">Surname</option>
                             <option value="team">Team ID</option>
-                            <option value="address">Address ID</option>
+                            <option value="address">Residence ID</option>
                         </select>
                         <br>
                         <label for="person" id="personLabel">Person ID</label>
