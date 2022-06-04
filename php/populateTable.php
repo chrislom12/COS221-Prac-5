@@ -136,6 +136,7 @@ else if($type=="swimmer"){
         <th>publisher_id</th>
         <th>DOB</th>
         <th>Residence</th>
+        <th>Team id</th>
         </tr>
     </thead>
     <tbody>
@@ -145,6 +146,7 @@ else if($type=="swimmer"){
             <td>' .  $rows['publisher_id'] . '</td>
             <td>' . $rows['birth_date'] . '</td>
             <td>' . $rows['residence_location_id'] . '</td>
+            <td>' . $rows['team_id'] . '</td>
         </tr>
     </tbody>
     </table>';
@@ -207,36 +209,34 @@ else if($type=="swimmerStats"){
   $sql = "SELECT * FROM swimmer_stats";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
-    echo '<table class="content-table" id="table">
+  echo '<table class="content-table" id="table">
     <thead>
         <tr>
         <th>id</th>
         <th>position</th>
         <th>speed</th>
-        <th>SWOLF</th>
         <th>points</th>
         <th>stroke_count</th>
         <th>swim_time</th>
         <th>avg_heartrate</th>
         <th>distance_per_stroke</th>
-        <th>personal_best</th>
         <th>event_id</th>
         <th>person_id</th>
         </tr>
-    </thead>
+    </thead>';
+
+  while ($rows = $result->fetch_assoc()){
+    echo '<table class="content-table" id="table">
     <tbody>
         <tr>
             <td>' . $rows['id'] . '</td>
             <td>' . $rows['position'] . '</td>
             <td>' .  $rows['speed'] . '</td>
-            <td>' . $rows['SWOLF'] . '</td>
             <td>' . $rows['points'] . '</td>
             <td>' . $rows['stroke_count'] . '</td>
             <td>' . $rows['swim_time'] . '</td>
             <td>' . $rows['avg_heartrate'] . '</td>
             <td>' .  $rows['distance_per_stroke'] . '</td>
-            <td>' . $rows['personal_best'] . '</td>
             <td>' . $rows['event_identity'] . '</td>
             <td>' . $rows['person_identity'] . '</td>
         </tr>
@@ -244,6 +244,7 @@ else if($type=="swimmerStats"){
     </table>';
 
   }
+
 }
 else if($type=="teamStats"){
   $sql = "SELECT * FROM swimming_team_stats";

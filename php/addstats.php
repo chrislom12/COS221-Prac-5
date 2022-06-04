@@ -11,16 +11,12 @@ if (isset($_POST['swim'])){
   $timeSec = $_POST['timeMin'];
 
   $totaltime = "00:" . $timeMin . ":" . $timeSec;
-  $SWOLFtime = $timeMin*60 + $timeSec;
 
   $speed = $_POST['speed'];
   $stroke = $_POST['stroke'];
   $heartRate = $_POST['heartRate'];
   $distanceStroke = $_POST['distanceStroke'];
 
-  $SWOLF = $SWOLFtime+$stroke;
-
-  $personalbest = NULL;
 
   if ($position == 1){
     $points =6;
@@ -65,10 +61,9 @@ if (isset($_POST['swim'])){
 
   }
 
-  $sql = "INSERT INTO swimmer_stats (id, position, speed, SWOLF, points, stroke_count, swim_time, avg_heartrate, distance_per_stroke, personal_best, event_identity, person_identity) VALUES (NULL, '$position', '$speed', '$SWOLF', '$points', '$stroke', '$totaltime', '$heartRate', '$distanceStroke', '$personalbest', '$event', '$person')";
+  $sql = "INSERT INTO swimmer_stats (id, position, speed, points, stroke_count, swim_time, avg_heartrate, distance_per_stroke, event_identity, person_identity) VALUES (NULL, '$position', '$speed', '$points', '$stroke', '$totaltime', '$heartRate', '$distanceStroke', '$event', '$person')";
 
   $result = $conn->query($sql);
-
 
 
 }

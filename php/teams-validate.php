@@ -1,46 +1,57 @@
 <?php
 include 'teams.php';
 
+if(isset($_SESSION['PubID'])){
+  echo $_SESSION['PubID'];
+}else{
+  echo "no";
+}
+
 //Foreign Keys: team_key, publisher_id and home_site_id
 
 $type = $_POST['type'];
 if (isset($type)) {
+
+
+
   if ($type == "insert") {
     //inserting a team
-
+    $canExecute = true;
     $name = $_POST['name'];
     $site = $_POST['site'];
     $publisher = '1';
 
-    if (isset($publisher))
-    {
-      $valid = "SELECT id FROM publishers WHERE id=$publisher";
-      $res = $conn->query($valid);
+    // $psql = "SELECT id FROM publishers WHERE id=$publisher";
+    // $publisherq = $conn->query($psql);
+    
 
-      if (!$res)
-      {
-        echo "<script>alert('You are not a registered user.')</script>";
-        header("Location: teams.php");
+    if($name == '' || $site == '')
+    {
+        $canExecute = false;
+    }else{
+      $ssql = "SELECT id FROM `sites`";
+      $siteq = $conn->query($ssql);
+      while ($row = $siteq->fetch_assoc()){
+        if ($row['id'] == $site){
+          $num++;
+        }
       }
-
-    } 
-    else (isset($site))
-    {
-      $valid = "SELECT id FROM sites WHERE id=$site";
-      $res = $conn->query($valid);
-
-      if (!$res)
-      {
-        echo "<script>alert('That is not a valid site ID.')</script>";
-        header("Location: teams.php");
+      if ($num<=0){
+        $canExecute = false;
       }
     }
 
-
-    $sql = "INSERT INTO teams (id, team_key, publisher_id, home_site_id) VALUES (NULL, '$name', '$publisher', '$site')";
-    $result = $conn->query($sql);
-
-  } else if ($type == "update") {
+    if ($canExecute == true){
+      $sql = "INSERT INTO teams (id, team_key, publisher_id, home_site_id) VALUES (NULL, '$name', '$publisher', '$site')";
+      $result = $conn->query($sql);
+    } else {
+      echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='teams.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = teams.php' />"; 
+    }
+    
+  } 
+  
+  else if ($type == "update") {
     //updating a team 
     $teamID = $_POST['team'];
     $teamNewVal = $_POST['newVal'];

@@ -8,43 +8,61 @@ $type = $_POST['type'];
 if (isset($type)) {
   if ($type == "insert") {
     //inserting a swimmer
-
-
+    $num = 0;
+    $nums = 0;
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $DOB = $_POST['dob'];
-    $team = $_POST['team'];
     $address = $_POST['address'];
+    $canExecute = true;
 
     $key = $name . " " . $surname;
     $publisher = '1';
     $gender = 'N/A';
     $locationdef = "1";
 
-    if (isset($publisher))
+    $teamid = $_POST['team'];
+
+    if($name == '' || $surname == '' || $DOB == '' || $teamid = '' || $address == '')
     {
-      $valid = "SELECT id FROM publishers WHERE id=$publisher";
-      $res = $conn->query($valid);
-
-      if (!$res){
-        echo "<script>alert('You are not a registered user.')</script>";
-        header("Location: swimmers.php");
+        $canExecute = false;
+    }else{
+      $ssql = "SELECT id FROM `sites`";
+      $siteq = $conn->query($ssql);
+      while ($row = $siteq->fetch_assoc()){
+        if ($row['id'] == $address){
+          $nums++;
+        }
       }
+      if ($nums<=0){
+        $canExecute = false;
+      }
+      else {
+        $tsql = "SELECT id FROM `teams`";
+        $teamq = $conn->query($ssql);
 
-    } else (isset($address)){
-      $valid = "SELECT id FROM sites WHERE id=$address";
-      $res = $conn->query($valid);
-
-      if (!$res){
-        echo "<script>alert('That is not a valid address ID.')</script>";
-        header("Location: swimmers.php");
+        while ($row = $teamq->fetch_assoc()){
+          if ($row['id'] == $teamid){
+            $num++;
+          }
+        }
+        if ($num<=0){
+          $canExecute = false;
+        }
       }
     }
 
-    $sql = "INSERT INTO persons (id, person_key, publisher_id, gender, birth_date, death_date, final_resting_location_id, birth_location_id, hometown_location_id, residence_location_id, death_location_id) VALUES (NULL, '$key', '$publisher', '$gender', '$DOB', 'N/A', '$locationdef', '$locationdef', '$locationdef', '$address', '$locationdef')";
-    $result = $conn->query($sql);
+    
 
-    //do SQL here
+    if ($canExecute == true){
+      $sql = "INSERT INTO persons (id, person_key, publisher_id, gender, birth_date, death_date, final_resting_location_id, birth_location_id, hometown_location_id, residence_location_id, death_location_id, team_id) VALUES (NULL, '$key', '$publisher', '$gender', '$DOB', 'N/A', '$locationdef', '$locationdef', '$locationdef', '$address', '$locationdef', '$teamid')";
+      $result = $conn->query($sql);
+    } else {
+      echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='swimmers.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = swimmers.php' />"; 
+    }
+
+
 
   } 
   else if ($type == "update") 
