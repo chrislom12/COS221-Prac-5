@@ -50,6 +50,21 @@ CREATE TABLE `addresses` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `addresses`
+--
+
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+INSERT INTO `addresses` VALUES
+(1,4,'English',NULL,NULL,NULL,'25',NULL,'School Street',NULL,NULL,NULL,NULL,NULL,NULL,'1826','South Africa'),
+(2,8,'English',NULL,NULL,NULL,'89',NULL,'Walking Street',NULL,NULL,NULL,NULL,NULL,NULL,'2656','South Africa'),
+(3,6,'English',NULL,NULL,NULL,'1',NULL,'Running Street',NULL,NULL,NULL,NULL,NULL,NULL,'4585','South Africa'),
+(4,1,'English',NULL,NULL,NULL,'158',NULL,'Senior Avenue',NULL,NULL,NULL,NULL,NULL,NULL,'1562','South Africa'),
+(5,5,'English',NULL,NULL,NULL,'1598',NULL,'Root Avenue',NULL,NULL,NULL,NULL,NULL,NULL,'1654','South Africa');
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `affiliation_phases`
 --
 
@@ -78,6 +93,15 @@ CREATE TABLE `affiliation_phases` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `affiliation_phases`
+--
+
+LOCK TABLES `affiliation_phases` WRITE;
+/*!40000 ALTER TABLE `affiliation_phases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `affiliation_phases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `affiliations`
 --
 
@@ -99,6 +123,15 @@ CREATE TABLE `affiliations` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `affiliations`
+--
+
+LOCK TABLES `affiliations` WRITE;
+/*!40000 ALTER TABLE `affiliations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `affiliations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `affiliations_documents`
 --
 
@@ -114,6 +147,15 @@ CREATE TABLE `affiliations_documents` (
   CONSTRAINT `FK_aff_doc_doc_id__doc_id` FOREIGN KEY (`document_id`) REFERENCES `documents` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `affiliations_documents`
+--
+
+LOCK TABLES `affiliations_documents` WRITE;
+/*!40000 ALTER TABLE `affiliations_documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `affiliations_documents` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `affiliations_events`
@@ -133,6 +175,15 @@ CREATE TABLE `affiliations_events` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `affiliations_events`
+--
+
+LOCK TABLES `affiliations_events` WRITE;
+/*!40000 ALTER TABLE `affiliations_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `affiliations_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `affiliations_media`
 --
 
@@ -148,6 +199,15 @@ CREATE TABLE `affiliations_media` (
   CONSTRAINT `FK_aff_med_med_id__med_id` FOREIGN KEY (`media_id`) REFERENCES `media` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `affiliations_media`
+--
+
+LOCK TABLES `affiliations_media` WRITE;
+/*!40000 ALTER TABLE `affiliations_media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `affiliations_media` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_action_participants`
@@ -177,6 +237,15 @@ CREATE TABLE `american_football_action_participants` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `american_football_action_participants`
+--
+
+LOCK TABLES `american_football_action_participants` WRITE;
+/*!40000 ALTER TABLE `american_football_action_participants` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_action_participants` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `american_football_action_plays`
 --
 
@@ -203,6 +272,15 @@ CREATE TABLE `american_football_action_plays` (
   CONSTRAINT `FK_american_football_action_plays_team_id_teams_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_action_plays`
+--
+
+LOCK TABLES `american_football_action_plays` WRITE;
+/*!40000 ALTER TABLE `american_football_action_plays` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_action_plays` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_defensive_stats`
@@ -267,6 +345,15 @@ CREATE TABLE `american_football_defensive_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `american_football_defensive_stats`
+--
+
+LOCK TABLES `american_football_defensive_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_defensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_defensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `american_football_down_progress_stats`
 --
 
@@ -288,6 +375,15 @@ CREATE TABLE `american_football_down_progress_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_down_progress_stats`
+--
+
+LOCK TABLES `american_football_down_progress_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_down_progress_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_down_progress_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_event_states`
@@ -326,6 +422,15 @@ CREATE TABLE `american_football_event_states` (
   CONSTRAINT `FK_ame_foo_eve_sta_tea_in_pos_id__tea_id` FOREIGN KEY (`team_in_possession_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_event_states`
+--
+
+LOCK TABLES `american_football_event_states` WRITE;
+/*!40000 ALTER TABLE `american_football_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_fumbles_stats`
@@ -369,6 +474,15 @@ CREATE TABLE `american_football_fumbles_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `american_football_fumbles_stats`
+--
+
+LOCK TABLES `american_football_fumbles_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_fumbles_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_fumbles_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `american_football_offensive_stats`
 --
 
@@ -387,6 +501,15 @@ CREATE TABLE `american_football_offensive_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_offensive_stats`
+--
+
+LOCK TABLES `american_football_offensive_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_offensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_offensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_passing_stats`
@@ -421,6 +544,15 @@ CREATE TABLE `american_football_passing_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `american_football_passing_stats`
+--
+
+LOCK TABLES `american_football_passing_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_passing_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_passing_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `american_football_penalties_stats`
 --
 
@@ -435,6 +567,15 @@ CREATE TABLE `american_football_penalties_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_penalties_stats`
+--
+
+LOCK TABLES `american_football_penalties_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_penalties_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_penalties_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_rushing_stats`
@@ -456,6 +597,15 @@ CREATE TABLE `american_football_rushing_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `american_football_rushing_stats`
+--
+
+LOCK TABLES `american_football_rushing_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_rushing_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_rushing_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `american_football_sacks_against_stats`
 --
 
@@ -469,6 +619,15 @@ CREATE TABLE `american_football_sacks_against_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_sacks_against_stats`
+--
+
+LOCK TABLES `american_football_sacks_against_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_sacks_against_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_sacks_against_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_scoring_stats`
@@ -500,6 +659,15 @@ CREATE TABLE `american_football_scoring_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_scoring_stats`
+--
+
+LOCK TABLES `american_football_scoring_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_scoring_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_scoring_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `american_football_special_teams_stats`
@@ -559,6 +727,15 @@ CREATE TABLE `american_football_special_teams_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `american_football_special_teams_stats`
+--
+
+LOCK TABLES `american_football_special_teams_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_special_teams_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_special_teams_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `american_football_team_stats`
 --
 
@@ -575,6 +752,15 @@ CREATE TABLE `american_football_team_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `american_football_team_stats`
+--
+
+LOCK TABLES `american_football_team_stats` WRITE;
+/*!40000 ALTER TABLE `american_football_team_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `american_football_team_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `awards`
@@ -600,6 +786,15 @@ CREATE TABLE `awards` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `awards`
+--
+
+LOCK TABLES `awards` WRITE;
+/*!40000 ALTER TABLE `awards` DISABLE KEYS */;
+/*!40000 ALTER TABLE `awards` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `baseball_action_contact_details`
 --
 
@@ -620,6 +815,15 @@ CREATE TABLE `baseball_action_contact_details` (
   CONSTRAINT `FK_bas_act_con_det_bas_act_pit_id__bas_act_pit_id` FOREIGN KEY (`baseball_action_pitch_id`) REFERENCES `baseball_action_pitches` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `baseball_action_contact_details`
+--
+
+LOCK TABLES `baseball_action_contact_details` WRITE;
+/*!40000 ALTER TABLE `baseball_action_contact_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_action_contact_details` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `baseball_action_pitches`
@@ -655,6 +859,15 @@ CREATE TABLE `baseball_action_pitches` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `baseball_action_pitches`
+--
+
+LOCK TABLES `baseball_action_pitches` WRITE;
+/*!40000 ALTER TABLE `baseball_action_pitches` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_action_pitches` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `baseball_action_plays`
 --
 
@@ -684,6 +897,15 @@ CREATE TABLE `baseball_action_plays` (
   CONSTRAINT `FK_bas_act_pla_bas_eve_sta_id__bas_eve_sta_id` FOREIGN KEY (`baseball_event_state_id`) REFERENCES `baseball_event_states` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `baseball_action_plays`
+--
+
+LOCK TABLES `baseball_action_plays` WRITE;
+/*!40000 ALTER TABLE `baseball_action_plays` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_action_plays` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `baseball_action_substitutions`
@@ -720,6 +942,15 @@ CREATE TABLE `baseball_action_substitutions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `baseball_action_substitutions`
+--
+
+LOCK TABLES `baseball_action_substitutions` WRITE;
+/*!40000 ALTER TABLE `baseball_action_substitutions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_action_substitutions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `baseball_defensive_group`
 --
 
@@ -731,6 +962,15 @@ CREATE TABLE `baseball_defensive_group` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `baseball_defensive_group`
+--
+
+LOCK TABLES `baseball_defensive_group` WRITE;
+/*!40000 ALTER TABLE `baseball_defensive_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_defensive_group` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `baseball_defensive_players`
@@ -755,6 +995,15 @@ CREATE TABLE `baseball_defensive_players` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `baseball_defensive_players`
+--
+
+LOCK TABLES `baseball_defensive_players` WRITE;
+/*!40000 ALTER TABLE `baseball_defensive_players` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_defensive_players` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `baseball_defensive_stats`
 --
 
@@ -777,6 +1026,15 @@ CREATE TABLE `baseball_defensive_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `baseball_defensive_stats`
+--
+
+LOCK TABLES `baseball_defensive_stats` WRITE;
+/*!40000 ALTER TABLE `baseball_defensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_defensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `baseball_event_states`
@@ -826,6 +1084,15 @@ CREATE TABLE `baseball_event_states` (
   CONSTRAINT `FK_bas_eve_sta_run_on_thi_id__per_id` FOREIGN KEY (`runner_on_third_id`) REFERENCES `persons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `baseball_event_states`
+--
+
+LOCK TABLES `baseball_event_states` WRITE;
+/*!40000 ALTER TABLE `baseball_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `baseball_offensive_stats`
@@ -884,6 +1151,15 @@ CREATE TABLE `baseball_offensive_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `baseball_offensive_stats`
+--
+
+LOCK TABLES `baseball_offensive_stats` WRITE;
+/*!40000 ALTER TABLE `baseball_offensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_offensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `baseball_pitching_stats`
 --
 
@@ -935,6 +1211,15 @@ CREATE TABLE `baseball_pitching_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `baseball_pitching_stats`
+--
+
+LOCK TABLES `baseball_pitching_stats` WRITE;
+/*!40000 ALTER TABLE `baseball_pitching_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baseball_pitching_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `basketball_defensive_stats`
 --
 
@@ -950,6 +1235,15 @@ CREATE TABLE `basketball_defensive_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `basketball_defensive_stats`
+--
+
+LOCK TABLES `basketball_defensive_stats` WRITE;
+/*!40000 ALTER TABLE `basketball_defensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `basketball_defensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `basketball_event_states`
@@ -975,6 +1269,15 @@ CREATE TABLE `basketball_event_states` (
   CONSTRAINT `FK_bask_eve_sta_eve_id__eve_id` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `basketball_event_states`
+--
+
+LOCK TABLES `basketball_event_states` WRITE;
+/*!40000 ALTER TABLE `basketball_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `basketball_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `basketball_offensive_stats`
@@ -1016,6 +1319,15 @@ CREATE TABLE `basketball_offensive_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `basketball_offensive_stats`
+--
+
+LOCK TABLES `basketball_offensive_stats` WRITE;
+/*!40000 ALTER TABLE `basketball_offensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `basketball_offensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `basketball_rebounding_stats`
 --
 
@@ -1037,6 +1349,15 @@ CREATE TABLE `basketball_rebounding_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `basketball_rebounding_stats`
+--
+
+LOCK TABLES `basketball_rebounding_stats` WRITE;
+/*!40000 ALTER TABLE `basketball_rebounding_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `basketball_rebounding_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `basketball_team_stats`
 --
 
@@ -1052,6 +1373,15 @@ CREATE TABLE `basketball_team_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `basketball_team_stats`
+--
+
+LOCK TABLES `basketball_team_stats` WRITE;
+/*!40000 ALTER TABLE `basketball_team_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `basketball_team_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `bookmakers`
@@ -1072,6 +1402,15 @@ CREATE TABLE `bookmakers` (
   CONSTRAINT `FK_boo_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bookmakers`
+--
+
+LOCK TABLES `bookmakers` WRITE;
+/*!40000 ALTER TABLE `bookmakers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bookmakers` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `core_stats`
@@ -1099,6 +1438,15 @@ CREATE TABLE `core_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `core_stats`
+--
+
+LOCK TABLES `core_stats` WRITE;
+/*!40000 ALTER TABLE `core_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `core_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `db_info`
 --
 
@@ -1110,6 +1458,17 @@ CREATE TABLE `db_info` (
   KEY `IDX_db_info_1` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `db_info`
+--
+
+LOCK TABLES `db_info` WRITE;
+/*!40000 ALTER TABLE `db_info` DISABLE KEYS */;
+INSERT INTO `db_info` VALUES
+('27');
+/*!40000 ALTER TABLE `db_info` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `display_names`
@@ -1135,9 +1494,29 @@ CREATE TABLE `display_names` (
   PRIMARY KEY (`id`),
   KEY `IDX_display_names_1` (`entity_id`),
   KEY `IDX_display_names_2` (`entity_type`),
-  CONSTRAINT `person_name_id` FOREIGN KEY (`entity_id`) REFERENCES `persons` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `person_name_id` FOREIGN KEY (`entity_id`) REFERENCES `persons` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `display_names`
+--
+
+LOCK TABLES `display_names` WRITE;
+/*!40000 ALTER TABLE `display_names` DISABLE KEYS */;
+INSERT INTO `display_names` VALUES
+(1,'English','Swimmer',1,'John Doe','John',NULL,'Doe',NULL,NULL,NULL,NULL,NULL),
+(2,'English','Swimmer',2,'Bob Smith','Bob',NULL,'Smith',NULL,NULL,NULL,NULL,NULL),
+(3,'English','Swimmer',3,'Olivia Johnson','Olivia',NULL,'Johnson',NULL,NULL,NULL,NULL,NULL),
+(4,'English','Swimmer',4,'Oliver Brown','Oliver',NULL,'Brown',NULL,NULL,NULL,NULL,NULL),
+(5,'English','Swimmer',5,'Emma Miller','Emma',NULL,'Miller',NULL,NULL,NULL,NULL,NULL),
+(6,'English','Swimmer',6,'James Wilson','James',NULL,'Wilson',NULL,NULL,NULL,NULL,NULL),
+(7,'English','Swimmer',7,'Sophia Rodriguez','Sophia',NULL,'Rodriguez',NULL,NULL,NULL,NULL,NULL),
+(8,'English','Swimmer',8,'Isabella Lopez','Isabella',NULL,'Lopez',NULL,NULL,NULL,NULL,NULL),
+(9,'English','Swimmer',9,'Henry Jackson','Henry',NULL,'Jackson',NULL,NULL,NULL,NULL,NULL),
+(10,'English','Swimmer',10,'Mia Thompson','Mia',NULL,'Thompson',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `display_names` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `document_classes`
@@ -1153,6 +1532,15 @@ CREATE TABLE `document_classes` (
   KEY `IDX_document_classes_1` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `document_classes`
+--
+
+LOCK TABLES `document_classes` WRITE;
+/*!40000 ALTER TABLE `document_classes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `document_classes` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `document_contents`
@@ -1175,6 +1563,15 @@ CREATE TABLE `document_contents` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `document_contents`
+--
+
+LOCK TABLES `document_contents` WRITE;
+/*!40000 ALTER TABLE `document_contents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `document_contents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `document_fixtures`
 --
 
@@ -1195,6 +1592,15 @@ CREATE TABLE `document_fixtures` (
   CONSTRAINT `FK_doc_fix_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `document_fixtures`
+--
+
+LOCK TABLES `document_fixtures` WRITE;
+/*!40000 ALTER TABLE `document_fixtures` DISABLE KEYS */;
+/*!40000 ALTER TABLE `document_fixtures` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `document_fixtures_events`
@@ -1220,6 +1626,15 @@ CREATE TABLE `document_fixtures_events` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `document_fixtures_events`
+--
+
+LOCK TABLES `document_fixtures_events` WRITE;
+/*!40000 ALTER TABLE `document_fixtures_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `document_fixtures_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `document_package_entry`
 --
 
@@ -1242,6 +1657,15 @@ CREATE TABLE `document_package_entry` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `document_package_entry`
+--
+
+LOCK TABLES `document_package_entry` WRITE;
+/*!40000 ALTER TABLE `document_package_entry` DISABLE KEYS */;
+/*!40000 ALTER TABLE `document_package_entry` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `document_packages`
 --
 
@@ -1256,6 +1680,15 @@ CREATE TABLE `document_packages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `document_packages`
+--
+
+LOCK TABLES `document_packages` WRITE;
+/*!40000 ALTER TABLE `document_packages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `document_packages` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `documents`
@@ -1292,6 +1725,15 @@ CREATE TABLE `documents` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `documents`
+--
+
+LOCK TABLES `documents` WRITE;
+/*!40000 ALTER TABLE `documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `documents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `documents_media`
 --
 
@@ -1312,6 +1754,15 @@ CREATE TABLE `documents_media` (
   CONSTRAINT `FK_doc_med_med_id__med_id` FOREIGN KEY (`media_id`) REFERENCES `media` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `documents_media`
+--
+
+LOCK TABLES `documents_media` WRITE;
+/*!40000 ALTER TABLE `documents_media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `documents_media` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `event_action_fouls`
@@ -1337,6 +1788,15 @@ CREATE TABLE `event_action_fouls` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `event_action_fouls`
+--
+
+LOCK TABLES `event_action_fouls` WRITE;
+/*!40000 ALTER TABLE `event_action_fouls` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_action_fouls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `event_action_participants`
 --
 
@@ -1358,6 +1818,15 @@ CREATE TABLE `event_action_participants` (
   CONSTRAINT `FK_persons_event_action_participants` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_action_participants`
+--
+
+LOCK TABLES `event_action_participants` WRITE;
+/*!40000 ALTER TABLE `event_action_participants` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_action_participants` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `event_action_penalties`
@@ -1382,6 +1851,15 @@ CREATE TABLE `event_action_penalties` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `event_action_penalties`
+--
+
+LOCK TABLES `event_action_penalties` WRITE;
+/*!40000 ALTER TABLE `event_action_penalties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_action_penalties` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `event_action_plays`
 --
 
@@ -1400,6 +1878,15 @@ CREATE TABLE `event_action_plays` (
   CONSTRAINT `FK_event_states_event_action_plays` FOREIGN KEY (`event_state_id`) REFERENCES `event_states` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_action_plays`
+--
+
+LOCK TABLES `event_action_plays` WRITE;
+/*!40000 ALTER TABLE `event_action_plays` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_action_plays` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `event_action_substitutions`
@@ -1432,6 +1919,15 @@ CREATE TABLE `event_action_substitutions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `event_action_substitutions`
+--
+
+LOCK TABLES `event_action_substitutions` WRITE;
+/*!40000 ALTER TABLE `event_action_substitutions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_action_substitutions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `event_states`
 --
 
@@ -1457,6 +1953,15 @@ CREATE TABLE `event_states` (
   CONSTRAINT `FK_events_event_states` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event_states`
+--
+
+LOCK TABLES `event_states` WRITE;
+/*!40000 ALTER TABLE `event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `event_states` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `events`
@@ -1493,6 +1998,21 @@ CREATE TABLE `events` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES
+(1,'Race 1',1,'2022-05-20 07:30:00',1,NULL,'Finished','00:00:29','200/200','2022-05-28 00:00:00','1',NULL,NULL,NULL,NULL,NULL,'1'),
+(2,'Race 2',2,'2022-05-20 08:30:00',2,NULL,'Finished','00:00:30','150/200','2022-05-28 00:00:00','1',NULL,NULL,NULL,NULL,NULL,'1'),
+(3,'Race 3',2,'2022-05-21 07:30:00',2,NULL,'Finished','00:00:29','173/200','2022-05-28 00:00:00','1',NULL,NULL,NULL,NULL,NULL,'1'),
+(4,'Race4',3,'2022-05-22 07:30:00',3,NULL,'Finished','00:00:30','166/200','2022-05-28 00:00:00','1',NULL,NULL,NULL,NULL,NULL,'1'),
+(5,'Race 5',3,'2022-05-23 07:30:00',3,NULL,'Finished','00:00:30','184/200','2022-05-28 00:00:00','1',NULL,NULL,NULL,NULL,NULL,'1');
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `events_documents`
 --
 
@@ -1508,6 +2028,15 @@ CREATE TABLE `events_documents` (
   CONSTRAINT `FK_eve_doc_eve_id__eve_id` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events_documents`
+--
+
+LOCK TABLES `events_documents` WRITE;
+/*!40000 ALTER TABLE `events_documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `events_documents` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `events_media`
@@ -1527,6 +2056,15 @@ CREATE TABLE `events_media` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `events_media`
+--
+
+LOCK TABLES `events_media` WRITE;
+/*!40000 ALTER TABLE `events_media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `events_media` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `events_sub_seasons`
 --
 
@@ -1542,6 +2080,15 @@ CREATE TABLE `events_sub_seasons` (
   CONSTRAINT `FK_eve_sub_sea_sub_sea_id__sub_sea_id` FOREIGN KEY (`sub_season_id`) REFERENCES `sub_seasons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events_sub_seasons`
+--
+
+LOCK TABLES `events_sub_seasons` WRITE;
+/*!40000 ALTER TABLE `events_sub_seasons` DISABLE KEYS */;
+/*!40000 ALTER TABLE `events_sub_seasons` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ice_hockey_action_participants`
@@ -1568,6 +2115,15 @@ CREATE TABLE `ice_hockey_action_participants` (
   CONSTRAINT `FK_persons_ice_hockey_action_participants` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ice_hockey_action_participants`
+--
+
+LOCK TABLES `ice_hockey_action_participants` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_action_participants` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_action_participants` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ice_hockey_action_plays`
@@ -1603,6 +2159,15 @@ CREATE TABLE `ice_hockey_action_plays` (
   CONSTRAINT `FK_ice_hockey_event_states_ice_hockey_action_plays` FOREIGN KEY (`ice_hockey_event_state_id`) REFERENCES `ice_hockey_event_states` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ice_hockey_action_plays`
+--
+
+LOCK TABLES `ice_hockey_action_plays` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_action_plays` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_action_plays` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ice_hockey_defensive_stats`
@@ -1646,6 +2211,15 @@ CREATE TABLE `ice_hockey_defensive_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ice_hockey_defensive_stats`
+--
+
+LOCK TABLES `ice_hockey_defensive_stats` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_defensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_defensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ice_hockey_event_states`
 --
 
@@ -1679,6 +2253,15 @@ CREATE TABLE `ice_hockey_event_states` (
   CONSTRAINT `FK_ice_hoc_eve_sta_eve_id__eve_id` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ice_hockey_event_states`
+--
+
+LOCK TABLES `ice_hockey_event_states` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ice_hockey_faceoff_stats`
@@ -1715,6 +2298,15 @@ CREATE TABLE `ice_hockey_faceoff_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ice_hockey_faceoff_stats`
+--
+
+LOCK TABLES `ice_hockey_faceoff_stats` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_faceoff_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_faceoff_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ice_hockey_offensive_stats`
@@ -1763,6 +2355,15 @@ CREATE TABLE `ice_hockey_offensive_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ice_hockey_offensive_stats`
+--
+
+LOCK TABLES `ice_hockey_offensive_stats` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_offensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_offensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ice_hockey_player_stats`
 --
 
@@ -1775,6 +2376,15 @@ CREATE TABLE `ice_hockey_player_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ice_hockey_player_stats`
+--
+
+LOCK TABLES `ice_hockey_player_stats` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_player_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_player_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ice_hockey_time_on_ice_stats`
@@ -1800,6 +2410,15 @@ CREATE TABLE `ice_hockey_time_on_ice_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ice_hockey_time_on_ice_stats`
+--
+
+LOCK TABLES `ice_hockey_time_on_ice_stats` WRITE;
+/*!40000 ALTER TABLE `ice_hockey_time_on_ice_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ice_hockey_time_on_ice_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `injury_phases`
@@ -1832,6 +2451,15 @@ CREATE TABLE `injury_phases` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `injury_phases`
+--
+
+LOCK TABLES `injury_phases` WRITE;
+/*!40000 ALTER TABLE `injury_phases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `injury_phases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `key_aliases`
 --
 
@@ -1850,6 +2478,15 @@ CREATE TABLE `key_aliases` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `key_aliases`
+--
+
+LOCK TABLES `key_aliases` WRITE;
+/*!40000 ALTER TABLE `key_aliases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `key_aliases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `key_roots`
 --
 
@@ -1863,6 +2500,15 @@ CREATE TABLE `key_roots` (
   KEY `IDX_key_aliases_1` (`key_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `key_roots`
+--
+
+LOCK TABLES `key_roots` WRITE;
+/*!40000 ALTER TABLE `key_roots` DISABLE KEYS */;
+/*!40000 ALTER TABLE `key_roots` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `latest_revisions`
@@ -1881,6 +2527,15 @@ CREATE TABLE `latest_revisions` (
   CONSTRAINT `FK_lat_rev_lat_doc_id__doc_id` FOREIGN KEY (`latest_document_id`) REFERENCES `documents` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `latest_revisions`
+--
+
+LOCK TABLES `latest_revisions` WRITE;
+/*!40000 ALTER TABLE `latest_revisions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `latest_revisions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `locations`
@@ -1903,6 +2558,26 @@ CREATE TABLE `locations` (
   KEY `IDX_locations_1` (`country_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `locations`
+--
+
+LOCK TABLES `locations` WRITE;
+/*!40000 ALTER TABLE `locations` DISABLE KEYS */;
+INSERT INTO `locations` VALUES
+(1,'Johannesburg','Gauteng','Roodepoort','South Africa','GMT +2','26.1201 S','27.9015 E','za'),
+(2,'Johannesburg','Gauteng','Midrand','South Africa','GMT +2','25.9992 S','28.1263 E','za'),
+(3,'Pretoria','Gauteng','Irene','South Africa','GMT +2','25.8812 S','28.2263 E','za'),
+(4,'Pretoria','Gauteng','Centurion','South Africa','GMT +2','25.8640 S','28.0889 E','za'),
+(5,'Durban','KwaZulu-Natal','Umhlanga','South Africa','GMT +2','29.7330 S','31.0593 E','za'),
+(6,'Durban','KwaZulu-Natal','Pinetown','South Africa','GMT +2','29.8345 S','30.8384 E','za'),
+(7,'Durban','KwaZulu-Natal','Westville','South Africa','GMT +2','29.8317 S','30.9303 E','za'),
+(8,'Cape Town','Western Cape','Camps Bay','South Africa','GMT +2','33.9513 S','18.3831 E','za'),
+(9,'Cape Town','Western Cape','Clifton','South Africa','GMT +2','33.9415 S','18.3738 E','za'),
+(10,'Cape Town','Western Cape','Hout Bay','South Africa','GMT +2','34.0209 S','18.3683 E','za');
+/*!40000 ALTER TABLE `locations` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `media`
@@ -1933,6 +2608,15 @@ CREATE TABLE `media` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `media`
+--
+
+LOCK TABLES `media` WRITE;
+/*!40000 ALTER TABLE `media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `media` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `media_captions`
 --
 
@@ -1954,6 +2638,15 @@ CREATE TABLE `media_captions` (
   CONSTRAINT `FK_med_cap_med_id__med_id` FOREIGN KEY (`media_id`) REFERENCES `media` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `media_captions`
+--
+
+LOCK TABLES `media_captions` WRITE;
+/*!40000 ALTER TABLE `media_captions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `media_captions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `media_contents`
@@ -1980,6 +2673,15 @@ CREATE TABLE `media_contents` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `media_contents`
+--
+
+LOCK TABLES `media_contents` WRITE;
+/*!40000 ALTER TABLE `media_contents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `media_contents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `media_keywords`
 --
 
@@ -1995,6 +2697,15 @@ CREATE TABLE `media_keywords` (
   CONSTRAINT `FK_med_key_med_id__med_id` FOREIGN KEY (`media_id`) REFERENCES `media` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `media_keywords`
+--
+
+LOCK TABLES `media_keywords` WRITE;
+/*!40000 ALTER TABLE `media_keywords` DISABLE KEYS */;
+/*!40000 ALTER TABLE `media_keywords` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `motor_racing_event_states`
@@ -2023,6 +2734,15 @@ CREATE TABLE `motor_racing_event_states` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `motor_racing_event_states`
+--
+
+LOCK TABLES `motor_racing_event_states` WRITE;
+/*!40000 ALTER TABLE `motor_racing_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `motor_racing_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `motor_racing_event_stats`
 --
 
@@ -2044,6 +2764,15 @@ CREATE TABLE `motor_racing_event_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `motor_racing_event_stats`
+--
+
+LOCK TABLES `motor_racing_event_stats` WRITE;
+/*!40000 ALTER TABLE `motor_racing_event_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `motor_racing_event_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `motor_racing_qualifying_stats`
 --
 
@@ -2062,6 +2791,15 @@ CREATE TABLE `motor_racing_qualifying_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `motor_racing_qualifying_stats`
+--
+
+LOCK TABLES `motor_racing_qualifying_stats` WRITE;
+/*!40000 ALTER TABLE `motor_racing_qualifying_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `motor_racing_qualifying_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `motor_racing_race_stats`
@@ -2101,6 +2839,15 @@ CREATE TABLE `motor_racing_race_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `motor_racing_race_stats`
+--
+
+LOCK TABLES `motor_racing_race_stats` WRITE;
+/*!40000 ALTER TABLE `motor_racing_race_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `motor_racing_race_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `outcome_totals`
@@ -2143,6 +2890,15 @@ CREATE TABLE `outcome_totals` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `outcome_totals`
+--
+
+LOCK TABLES `outcome_totals` WRITE;
+/*!40000 ALTER TABLE `outcome_totals` DISABLE KEYS */;
+/*!40000 ALTER TABLE `outcome_totals` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `participants_events`
 --
 
@@ -2173,6 +2929,15 @@ CREATE TABLE `participants_events` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `participants_events`
+--
+
+LOCK TABLES `participants_events` WRITE;
+/*!40000 ALTER TABLE `participants_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `participants_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `penalty_stats`
 --
 
@@ -2187,6 +2952,15 @@ CREATE TABLE `penalty_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `penalty_stats`
+--
+
+LOCK TABLES `penalty_stats` WRITE;
+/*!40000 ALTER TABLE `penalty_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `penalty_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `periods`
@@ -2210,6 +2984,15 @@ CREATE TABLE `periods` (
   CONSTRAINT `FK_per_par_eve_id__par_eve_id` FOREIGN KEY (`participant_event_id`) REFERENCES `participants_events` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `periods`
+--
+
+LOCK TABLES `periods` WRITE;
+/*!40000 ALTER TABLE `periods` DISABLE KEYS */;
+/*!40000 ALTER TABLE `periods` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `person_event_metadata`
@@ -2244,6 +3027,15 @@ CREATE TABLE `person_event_metadata` (
   CONSTRAINT `FK_per_eve_met_tea_id__tea_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `person_event_metadata`
+--
+
+LOCK TABLES `person_event_metadata` WRITE;
+/*!40000 ALTER TABLE `person_event_metadata` DISABLE KEYS */;
+/*!40000 ALTER TABLE `person_event_metadata` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `person_phases`
@@ -2295,6 +3087,15 @@ CREATE TABLE `person_phases` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `person_phases`
+--
+
+LOCK TABLES `person_phases` WRITE;
+/*!40000 ALTER TABLE `person_phases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `person_phases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `persons`
 --
 
@@ -2332,6 +3133,26 @@ CREATE TABLE `persons` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `persons`
+--
+
+LOCK TABLES `persons` WRITE;
+/*!40000 ALTER TABLE `persons` DISABLE KEYS */;
+INSERT INTO `persons` VALUES
+(1,'abcdefg123',1,'M','2003-05-15',NULL,NULL,1,10,4,NULL,NULL),
+(2,'cdwnaod732',4,'M','2003-06-20',NULL,NULL,5,5,9,NULL,NULL),
+(3,'akdnwda981',2,'F','2003-01-22',NULL,NULL,7,8,9,NULL,NULL),
+(4,'mbodgir135',3,'M','2003-04-25',NULL,NULL,6,7,5,NULL,NULL),
+(5,'daowdmo098',1,'F','2003-08-17',NULL,NULL,5,7,10,NULL,NULL),
+(6,'lfdsngr642',3,'M','2003-10-11',NULL,NULL,7,7,8,NULL,NULL),
+(7,'ngtooda743',2,'F','2003-11-21',NULL,NULL,10,8,3,NULL,NULL),
+(8,'mtpsmfe069',1,'F','2003-12-12',NULL,NULL,4,2,5,NULL,NULL),
+(9,'lllfeoa069',2,'M','2003-02-26',NULL,NULL,1,6,1,NULL,NULL),
+(10,'kgropas069',3,'F','2003-08-10',NULL,NULL,5,6,10,NULL,NULL);
+/*!40000 ALTER TABLE `persons` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `persons_documents`
 --
 
@@ -2349,6 +3170,15 @@ CREATE TABLE `persons_documents` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `persons_documents`
+--
+
+LOCK TABLES `persons_documents` WRITE;
+/*!40000 ALTER TABLE `persons_documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `persons_documents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `persons_media`
 --
 
@@ -2364,6 +3194,15 @@ CREATE TABLE `persons_media` (
   CONSTRAINT `FK_per_med_per_id__per_id` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `persons_media`
+--
+
+LOCK TABLES `persons_media` WRITE;
+/*!40000 ALTER TABLE `persons_media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `persons_media` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `positions`
@@ -2384,6 +3223,15 @@ CREATE TABLE `positions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `positions`
+--
+
+LOCK TABLES `positions` WRITE;
+/*!40000 ALTER TABLE `positions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `positions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `publishers`
 --
 
@@ -2398,6 +3246,22 @@ CREATE TABLE `publishers` (
   KEY `IDX_publishers_1` (`publisher_key`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `publishers`
+--
+
+LOCK TABLES `publishers` WRITE;
+/*!40000 ALTER TABLE `publishers` DISABLE KEYS */;
+INSERT INTO `publishers` VALUES
+(1,'dfeafef823','Walking Publishers'),
+(2,'gtrgerw548','We Find The Best'),
+(3,'rrgkhje645','The Publishers'),
+(4,'reuhjfg891','We Find People'),
+(5,'dkjfskh789','Publishing Is Our Thing'),
+(6,'KeshavSameet','Sameet');
+/*!40000 ALTER TABLE `publishers` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rankings`
@@ -2422,6 +3286,15 @@ CREATE TABLE `rankings` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `rankings`
+--
+
+LOCK TABLES `rankings` WRITE;
+/*!40000 ALTER TABLE `rankings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rankings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `records`
 --
 
@@ -2444,6 +3317,15 @@ CREATE TABLE `records` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `records`
+--
+
+LOCK TABLES `records` WRITE;
+/*!40000 ALTER TABLE `records` DISABLE KEYS */;
+/*!40000 ALTER TABLE `records` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `roles`
 --
 
@@ -2459,6 +3341,15 @@ CREATE TABLE `roles` (
   KEY `IDX_roles_1` (`role_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `seasons`
@@ -2484,6 +3375,15 @@ CREATE TABLE `seasons` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `seasons`
+--
+
+LOCK TABLES `seasons` WRITE;
+/*!40000 ALTER TABLE `seasons` DISABLE KEYS */;
+/*!40000 ALTER TABLE `seasons` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sites`
 --
 
@@ -2503,6 +3403,21 @@ CREATE TABLE `sites` (
   CONSTRAINT `FK_sit_pub_id__pub_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sites`
+--
+
+LOCK TABLES `sites` WRITE;
+/*!40000 ALTER TABLE `sites` DISABLE KEYS */;
+INSERT INTO `sites` VALUES
+(1,'djfhaif517',5,9),
+(2,'djfhwak148',1,8),
+(3,'tiorhhj488',4,3),
+(4,'fjkdsaf898',3,10),
+(5,'dhijfak489',2,8);
+/*!40000 ALTER TABLE `sites` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `soccer_action_fouls`
@@ -2530,6 +3445,15 @@ CREATE TABLE `soccer_action_fouls` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `soccer_action_fouls`
+--
+
+LOCK TABLES `soccer_action_fouls` WRITE;
+/*!40000 ALTER TABLE `soccer_action_fouls` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_action_fouls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `soccer_action_participants`
 --
 
@@ -2548,6 +3472,15 @@ CREATE TABLE `soccer_action_participants` (
   CONSTRAINT `FK_soccer_action_plays_soccer_action_participants` FOREIGN KEY (`soccer_action_play_id`) REFERENCES `soccer_action_plays` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `soccer_action_participants`
+--
+
+LOCK TABLES `soccer_action_participants` WRITE;
+/*!40000 ALTER TABLE `soccer_action_participants` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_action_participants` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `soccer_action_penalties`
@@ -2574,6 +3507,15 @@ CREATE TABLE `soccer_action_penalties` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `soccer_action_penalties`
+--
+
+LOCK TABLES `soccer_action_penalties` WRITE;
+/*!40000 ALTER TABLE `soccer_action_penalties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_action_penalties` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `soccer_action_plays`
 --
 
@@ -2592,6 +3534,15 @@ CREATE TABLE `soccer_action_plays` (
   CONSTRAINT `FK_soccer_event_states_soccer_action_plays` FOREIGN KEY (`soccer_event_state_id`) REFERENCES `soccer_event_states` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `soccer_action_plays`
+--
+
+LOCK TABLES `soccer_action_plays` WRITE;
+/*!40000 ALTER TABLE `soccer_action_plays` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_action_plays` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `soccer_action_substitutions`
@@ -2625,6 +3576,15 @@ CREATE TABLE `soccer_action_substitutions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `soccer_action_substitutions`
+--
+
+LOCK TABLES `soccer_action_substitutions` WRITE;
+/*!40000 ALTER TABLE `soccer_action_substitutions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_action_substitutions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `soccer_defensive_stats`
 --
 
@@ -2648,6 +3608,15 @@ CREATE TABLE `soccer_defensive_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `soccer_defensive_stats`
+--
+
+LOCK TABLES `soccer_defensive_stats` WRITE;
+/*!40000 ALTER TABLE `soccer_defensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_defensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `soccer_event_states`
@@ -2677,6 +3646,15 @@ CREATE TABLE `soccer_event_states` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `soccer_event_states`
+--
+
+LOCK TABLES `soccer_event_states` WRITE;
+/*!40000 ALTER TABLE `soccer_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `soccer_foul_stats`
 --
 
@@ -2695,6 +3673,15 @@ CREATE TABLE `soccer_foul_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `soccer_foul_stats`
+--
+
+LOCK TABLES `soccer_foul_stats` WRITE;
+/*!40000 ALTER TABLE `soccer_foul_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_foul_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `soccer_offensive_stats`
@@ -2735,6 +3722,15 @@ CREATE TABLE `soccer_offensive_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `soccer_offensive_stats`
+--
+
+LOCK TABLES `soccer_offensive_stats` WRITE;
+/*!40000 ALTER TABLE `soccer_offensive_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `soccer_offensive_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sports_property`
 --
 
@@ -2750,6 +3746,15 @@ CREATE TABLE `sports_property` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sports_property`
+--
+
+LOCK TABLES `sports_property` WRITE;
+/*!40000 ALTER TABLE `sports_property` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sports_property` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `standing_subgroups`
@@ -2777,6 +3782,15 @@ CREATE TABLE `standing_subgroups` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `standing_subgroups`
+--
+
+LOCK TABLES `standing_subgroups` WRITE;
+/*!40000 ALTER TABLE `standing_subgroups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `standing_subgroups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `standings`
 --
 
@@ -2797,6 +3811,15 @@ CREATE TABLE `standings` (
   CONSTRAINT `FK_sta_sub_sea_id__sub_sea_id` FOREIGN KEY (`sub_season_id`) REFERENCES `sub_seasons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `standings`
+--
+
+LOCK TABLES `standings` WRITE;
+/*!40000 ALTER TABLE `standings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `standings` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `stats`
@@ -2828,6 +3851,15 @@ CREATE TABLE `stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `stats`
+--
+
+LOCK TABLES `stats` WRITE;
+/*!40000 ALTER TABLE `stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sub_periods`
 --
 
@@ -2845,6 +3877,15 @@ CREATE TABLE `sub_periods` (
   CONSTRAINT `FK_sub_per_per_id__per_id` FOREIGN KEY (`period_id`) REFERENCES `periods` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sub_periods`
+--
+
+LOCK TABLES `sub_periods` WRITE;
+/*!40000 ALTER TABLE `sub_periods` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sub_periods` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sub_seasons`
@@ -2867,6 +3908,15 @@ CREATE TABLE `sub_seasons` (
   CONSTRAINT `FK_sub_sea_sea_id__sea_id` FOREIGN KEY (`season_id`) REFERENCES `seasons` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sub_seasons`
+--
+
+LOCK TABLES `sub_seasons` WRITE;
+/*!40000 ALTER TABLE `sub_seasons` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sub_seasons` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimmer_stats`
@@ -2895,6 +3945,56 @@ CREATE TABLE `swimmer_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `swimmer_stats`
+--
+
+LOCK TABLES `swimmer_stats` WRITE;
+/*!40000 ALTER TABLE `swimmer_stats` DISABLE KEYS */;
+INSERT INTO `swimmer_stats` VALUES
+(161,1,2.1,6,25,'00:00:23',43,2,1,1),
+(162,2,2,4,21,'00:00:25',50,2.3,1,3),
+(163,3,1.9,3,23,'00:00:26',55,2.17,1,5),
+(164,4,1.82,2,19,'00:00:27',42,2.63,1,6),
+(165,5,1.8,1,27,'00:00:27',40,1.85,1,8),
+(166,6,1.79,0,29,'00:00:27',53,1.72,1,2),
+(167,7,1.75,0,22,'00:00:28',59,2.27,1,4),
+(168,8,1.7,0,25,'00:00:29',52,2,1,7),
+(169,1,2.25,6,21,'00:00:22',34,2,2,4),
+(170,2,1.82,4,19,'00:00:27',50,2.3,2,6),
+(171,3,1.8,3,18,'00:00:27',55,2.17,2,9),
+(172,4,1.79,2,29,'00:00:27',42,2.63,2,10),
+(173,5,1.7,1,25,'00:00:29',40,1.85,2,2),
+(174,6,1.65,0,26,'00:00:27',53,1.72,2,3),
+(175,7,1.63,0,28,'00:00:28',59,2.27,2,1),
+(176,8,1.62,0,23,'00:00:29',52,2,2,7),
+(177,1,2.25,6,22,'00:00:22',40,2,3,10),
+(178,2,2.1,4,29,'00:00:23',58,2.3,3,1),
+(179,3,2,3,26,'00:00:25',48,2.17,3,8),
+(180,4,1.9,2,27,'00:00:26',46,2.63,3,5),
+(181,5,1.82,1,25,'00:00:27',45,1.85,3,4),
+(182,6,1.8,0,24,'00:00:27',53,1.72,3,6),
+(183,7,1.79,0,28,'00:00:27',45,2.27,3,3),
+(184,8,1.7,0,30,'00:00:29',56,1.67,3,2),
+(185,1,1.9,6,30,'00:00:26',58,1.67,4,9),
+(186,2,1.82,4,32,'00:00:27',59,1.56,4,10),
+(187,3,1.8,3,21,'00:00:27',52,2.38,4,3),
+(188,4,1.79,2,20,'00:00:27',54,2.5,4,8),
+(189,5,1.7,1,24,'00:00:29',41,2.08,4,2),
+(190,6,1.65,0,26,'00:00:30',45,1.92,4,1),
+(191,7,1.63,0,28,'00:00:30',49,1.79,4,4),
+(192,8,1.62,0,23,'00:00:30',42,2.17,4,5),
+(193,1,2.1,6,24,'00:00:23',48,2,5,2),
+(194,2,2,4,22,'00:00:25',49,2.3,5,3),
+(195,3,1.9,3,31,'00:00:26',42,2.17,5,9),
+(196,4,1.82,2,30,'00:00:27',44,2.63,5,1),
+(197,5,1.8,1,34,'00:00:27',51,1.85,5,6),
+(198,6,1.79,0,26,'00:00:27',55,1.72,5,8),
+(199,7,1.65,0,24,'00:00:30',59,2.27,5,5),
+(200,8,1.63,0,33,'00:00:30',52,2,5,7);
+/*!40000 ALTER TABLE `swimmer_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `swimming_disqualified`
 --
 
@@ -2908,6 +4008,20 @@ CREATE TABLE `swimming_disqualified` (
   CONSTRAINT `play_type_disqualified_id` FOREIGN KEY (`play_type_disqualified_id`) REFERENCES `swimming_play_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_disqualified`
+--
+
+LOCK TABLES `swimming_disqualified` WRITE;
+/*!40000 ALTER TABLE `swimming_disqualified` DISABLE KEYS */;
+INSERT INTO `swimming_disqualified` VALUES
+('Start Too Early',98),
+('Did Not Finish',99),
+('Cross Lanes',100),
+('Did not touch the Wall',101);
+/*!40000 ALTER TABLE `swimming_disqualified` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimming_event_states`
@@ -2934,6 +4048,113 @@ CREATE TABLE `swimming_event_states` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `swimming_event_states`
+--
+
+LOCK TABLES `swimming_event_states` WRITE;
+/*!40000 ALTER TABLE `swimming_event_states` DISABLE KEYS */;
+INSERT INTO `swimming_event_states` VALUES
+(98,1,'00:00:00','1',NULL,'Before',1,1),
+(99,2,'00:00:00','2',NULL,'Before',2,1),
+(100,3,'00:00:00','3',NULL,'Before',3,1),
+(101,4,'00:00:00','4',NULL,'Before',4,1),
+(102,5,'00:00:00','5',NULL,'Before',5,1),
+(103,6,'00:00:00','6',NULL,'Before',6,1),
+(104,7,'00:00:00','7',NULL,'Before',7,1),
+(105,8,'00:00:00','8',NULL,'Before',8,1),
+(106,9,'00:00:09','1','2','During',9,1),
+(107,10,'00:00:10','6','8','During',10,1),
+(108,11,'00:00:12','7','6','During',11,1),
+(109,12,'00:00:23','1',NULL,'After',12,1),
+(110,13,'00:00:25','3',NULL,'After',13,1),
+(111,14,'00:00:26','5',NULL,'After',14,1),
+(112,15,'00:00:27','6',NULL,'After',15,1),
+(113,16,'00:00:27','8',NULL,'After',16,1),
+(114,17,'00:00:27','2',NULL,'After',17,1),
+(115,18,'00:00:28','4',NULL,'After',18,1),
+(116,19,'00:00:29','7',NULL,'After',19,1),
+(117,1,'00:00:00','1',NULL,'Before',20,2),
+(118,2,'00:00:00','2',NULL,'Before',21,2),
+(119,3,'00:00:00','3',NULL,'Before',22,2),
+(120,4,'00:00:00','4',NULL,'Before',23,2),
+(121,5,'00:00:00','5',NULL,'Before',24,2),
+(122,6,'00:00:00','6',NULL,'Before',25,2),
+(123,7,'00:00:00','7',NULL,'Before',26,2),
+(124,8,'00:00:00','8',NULL,'Before',27,2),
+(125,9,'00:00:09','4','6','During',28,2),
+(126,10,'00:00:10','6','8','During',29,2),
+(127,11,'00:00:12','1','7','During',30,2),
+(128,12,'00:00:22','4',NULL,'After',31,2),
+(129,13,'00:00:27','6',NULL,'After',32,2),
+(130,14,'00:00:27','9',NULL,'After',33,2),
+(131,15,'00:00:27','10',NULL,'After',34,2),
+(132,16,'00:00:29','2',NULL,'After',35,2),
+(133,17,'00:00:30','3',NULL,'After',36,2),
+(134,18,'00:00:30','1',NULL,'After',37,2),
+(135,19,'00:00:30','7',NULL,'After',38,2),
+(136,1,'00:00:00','1',NULL,'Before',39,3),
+(137,2,'00:00:00','2',NULL,'Before',40,3),
+(138,3,'00:00:00','3',NULL,'Before',41,3),
+(139,4,'00:00:00','4',NULL,'Before',42,3),
+(140,5,'00:00:00','5',NULL,'Before',43,3),
+(141,6,'00:00:00','6',NULL,'Before',44,3),
+(142,7,'00:00:00','7',NULL,'Before',45,3),
+(143,8,'00:00:00','8',NULL,'Before',46,3),
+(144,9,'00:00:09','10','1','During',47,3),
+(145,10,'00:00:10','1','8','During',48,3),
+(146,11,'00:00:12','5','4','During',49,3),
+(147,12,'00:00:22','10',NULL,'After',50,3),
+(148,13,'00:00:23','1',NULL,'After',51,3),
+(149,14,'00:00:24','8',NULL,'After',52,3),
+(150,15,'00:00:25','5',NULL,'After',53,3),
+(151,16,'00:00:26','4',NULL,'After',54,3),
+(152,17,'00:00:27','6',NULL,'After',55,3),
+(153,18,'00:00:27','3',NULL,'After',56,3),
+(154,19,'00:00:27','2',NULL,'After',57,3),
+(155,1,'00:00:00','1',NULL,'Before',58,4),
+(156,2,'00:00:00','2',NULL,'Before',59,4),
+(157,3,'00:00:00','3',NULL,'Before',60,4),
+(158,4,'00:00:00','4',NULL,'Before',61,4),
+(159,5,'00:00:00','5',NULL,'Before',62,4),
+(160,6,'00:00:00','6',NULL,'Before',63,4),
+(161,7,'00:00:00','7',NULL,'Before',64,4),
+(162,8,'00:00:00','8',NULL,'Before',65,4),
+(163,9,'00:00:09','9','10','During',66,4),
+(164,10,'00:00:26','9',NULL,'After',67,4),
+(165,11,'00:00:27','10',NULL,'After',68,4),
+(166,12,'00:00:27','3',NULL,'After',69,4),
+(167,13,'00:00:27','8',NULL,'After',70,4),
+(168,14,'00:00:29','2',NULL,'After',71,4),
+(169,15,'00:00:30','1',NULL,'After',72,4),
+(170,16,'00:00:30','4',NULL,'After',73,4),
+(171,17,'00:00:30','5',NULL,'After',74,4),
+(172,1,'00:00:00','1',NULL,'Before',75,5),
+(173,2,'00:00:00','2',NULL,'Before',76,5),
+(174,3,'00:00:00','3',NULL,'Before',77,5),
+(175,4,'00:00:00','4',NULL,'Before',78,5),
+(176,5,'00:00:00','5',NULL,'Before',79,5),
+(177,6,'00:00:00','6',NULL,'Before',80,5),
+(178,7,'00:00:00','7',NULL,'Before',81,5),
+(179,8,'00:00:00','8',NULL,'Before',82,5),
+(180,9,'00:00:09','2','3','During',83,5),
+(181,10,'00:00:10','9','1','During',84,5),
+(182,11,'00:00:11','6','5','During',85,5),
+(183,12,'00:00:12','1','7','During',86,5),
+(184,13,'00:00:12','5','3','During',87,5),
+(185,14,'00:00:13','3','5','During',88,5),
+(186,15,'00:00:14','3','9','During',89,5),
+(187,16,'00:00:23','2',NULL,'After',90,5),
+(188,17,'00:00:24','3',NULL,'After',91,5),
+(189,18,'00:00:25','9',NULL,'After',92,5),
+(190,19,'00:00:26','1',NULL,'After',93,5),
+(191,20,'00:00:27','6',NULL,'After',94,5),
+(192,21,'00:00:27','8',NULL,'After',95,5),
+(193,22,'00:00:27','5',NULL,'After',96,5),
+(194,23,'00:00:30','7',NULL,'After',97,5);
+/*!40000 ALTER TABLE `swimming_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `swimming_finish`
 --
 
@@ -2947,6 +4168,56 @@ CREATE TABLE `swimming_finish` (
   CONSTRAINT `play_type_finish_id` FOREIGN KEY (`play_type_finish_id`) REFERENCES `swimming_play_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_finish`
+--
+
+LOCK TABLES `swimming_finish` WRITE;
+/*!40000 ALTER TABLE `swimming_finish` DISABLE KEYS */;
+INSERT INTO `swimming_finish` VALUES
+(6,12),
+(4,13),
+(3,14),
+(2,15),
+(1,16),
+(0,17),
+(0,18),
+(0,19),
+(6,31),
+(4,32),
+(3,33),
+(2,34),
+(1,35),
+(0,36),
+(0,37),
+(0,38),
+(6,50),
+(4,51),
+(3,52),
+(2,53),
+(1,54),
+(0,55),
+(0,56),
+(0,57),
+(6,67),
+(4,68),
+(3,69),
+(2,70),
+(1,71),
+(0,72),
+(0,73),
+(0,74),
+(6,90),
+(4,91),
+(3,92),
+(2,93),
+(1,94),
+(0,95),
+(0,96),
+(0,97);
+/*!40000 ALTER TABLE `swimming_finish` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimming_overtake`
@@ -2965,6 +4236,34 @@ CREATE TABLE `swimming_overtake` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `swimming_overtake`
+--
+
+LOCK TABLES `swimming_overtake` WRITE;
+/*!40000 ALTER TABLE `swimming_overtake` DISABLE KEYS */;
+INSERT INTO `swimming_overtake` VALUES
+(1,2,9),
+(4,2,10),
+(6,7,11),
+(1,2,28),
+(4,2,29),
+(6,7,30),
+(1,2,47),
+(4,2,48),
+(6,7,49),
+(1,2,66),
+(1,2,90),
+(4,2,91),
+(6,7,92),
+(1,2,93),
+(4,2,94),
+(6,7,95),
+(1,2,96),
+(1,2,97);
+/*!40000 ALTER TABLE `swimming_overtake` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `swimming_play_type`
 --
 
@@ -2976,6 +4275,117 @@ CREATE TABLE `swimming_play_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_play_type`
+--
+
+LOCK TABLES `swimming_play_type` WRITE;
+/*!40000 ALTER TABLE `swimming_play_type` DISABLE KEYS */;
+INSERT INTO `swimming_play_type` VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10),
+(11),
+(12),
+(13),
+(14),
+(15),
+(16),
+(17),
+(18),
+(19),
+(20),
+(21),
+(22),
+(23),
+(24),
+(25),
+(26),
+(27),
+(28),
+(29),
+(30),
+(31),
+(32),
+(33),
+(34),
+(35),
+(36),
+(37),
+(38),
+(39),
+(40),
+(41),
+(42),
+(43),
+(44),
+(45),
+(46),
+(47),
+(48),
+(49),
+(50),
+(51),
+(52),
+(53),
+(54),
+(55),
+(56),
+(57),
+(58),
+(59),
+(60),
+(61),
+(62),
+(63),
+(64),
+(65),
+(66),
+(67),
+(68),
+(69),
+(70),
+(71),
+(72),
+(73),
+(74),
+(75),
+(76),
+(77),
+(78),
+(79),
+(80),
+(81),
+(82),
+(83),
+(84),
+(85),
+(86),
+(87),
+(88),
+(89),
+(90),
+(91),
+(92),
+(93),
+(94),
+(95),
+(96),
+(97),
+(98),
+(99),
+(100),
+(101);
+/*!40000 ALTER TABLE `swimming_play_type` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimming_start`
@@ -2991,6 +4401,56 @@ CREATE TABLE `swimming_start` (
   CONSTRAINT `play_type_start_id` FOREIGN KEY (`play_type_start_id`) REFERENCES `swimming_play_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_start`
+--
+
+LOCK TABLES `swimming_start` WRITE;
+/*!40000 ALTER TABLE `swimming_start` DISABLE KEYS */;
+INSERT INTO `swimming_start` VALUES
+(3,1),
+(2,2),
+(1,3),
+(5,4),
+(6,5),
+(8,6),
+(7,7),
+(4,8),
+(7,20),
+(6,21),
+(4,22),
+(2,23),
+(1,24),
+(3,25),
+(2,26),
+(5,27),
+(6,39),
+(4,40),
+(2,41),
+(8,42),
+(3,43),
+(5,44),
+(1,45),
+(7,46),
+(5,58),
+(3,59),
+(1,60),
+(5,61),
+(7,62),
+(8,63),
+(2,64),
+(4,65),
+(3,75),
+(1,76),
+(2,77),
+(3,78),
+(4,79),
+(7,80),
+(6,81),
+(5,82);
+/*!40000 ALTER TABLE `swimming_start` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimming_stats_of_events`
@@ -3017,6 +4477,21 @@ CREATE TABLE `swimming_stats_of_events` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `swimming_stats_of_events`
+--
+
+LOCK TABLES `swimming_stats_of_events` WRITE;
+/*!40000 ALTER TABLE `swimming_stats_of_events` DISABLE KEYS */;
+INSERT INTO `swimming_stats_of_events` VALUES
+(1,1,3,5,8,'Butterfly',50,8,'00:00:29',1),
+(2,4,6,9,8,'Backstroke',50,8,'00:00:30',2),
+(3,10,1,8,8,'Breaststroke',50,8,'00:00:26',3),
+(4,9,10,3,8,'Freestyle',50,8,'00:00:23',4),
+(5,2,3,9,8,'Freestyle',50,8,'00:00:29',5);
+/*!40000 ALTER TABLE `swimming_stats_of_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `swimming_team_members`
 --
 
@@ -3034,6 +4509,26 @@ CREATE TABLE `swimming_team_members` (
   CONSTRAINT `swimming_team_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_team_members`
+--
+
+LOCK TABLES `swimming_team_members` WRITE;
+/*!40000 ALTER TABLE `swimming_team_members` DISABLE KEYS */;
+INSERT INTO `swimming_team_members` VALUES
+(1,1,1),
+(2,1,3),
+(3,2,2),
+(4,2,5),
+(5,3,4),
+(6,3,7),
+(7,4,6),
+(8,4,8),
+(9,5,9),
+(10,5,10);
+/*!40000 ALTER TABLE `swimming_team_members` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimming_team_stats`
@@ -3059,6 +4554,40 @@ CREATE TABLE `swimming_team_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `swimming_team_stats`
+--
+
+LOCK TABLES `swimming_team_stats` WRITE;
+/*!40000 ALTER TABLE `swimming_team_stats` DISABLE KEYS */;
+INSERT INTO `swimming_team_stats` VALUES
+(1,10,10,'00:00:23','00:00:25',1,1),
+(2,3,10,'00:00:26','00:00:27',1,2),
+(3,0,10,'00:00:28','00:00:29',1,3),
+(4,3,10,'00:00:27','00:00:27',1,4),
+(5,0,10,'00:00:30','00:00:30',2,1),
+(6,1,6,'00:00:29','00:00:29',2,2),
+(7,6,10,'00:00:22','00:00:29',2,3),
+(8,4,6,'00:00:27','00:00:27',2,4),
+(9,3,10,'00:00:27','00:00:27',2,5),
+(10,4,10,'00:00:23','00:00:27',3,1),
+(11,2,10,'00:00:26','00:00:29',3,2),
+(12,1,6,'00:00:27','00:00:27',3,3),
+(13,3,10,'00:00:25','00:00:27',3,4),
+(14,6,6,'00:00:22','00:00:22',3,5),
+(15,3,10,'00:00:27','00:00:30',4,1),
+(16,1,10,'00:00:29','00:00:30',4,2),
+(17,0,6,'00:00:30','00:00:30',4,3),
+(18,2,6,'00:00:27','00:00:27',4,4),
+(19,10,10,'00:00:22','00:00:22',4,5),
+(20,6,10,'00:00:25','00:00:30',5,1),
+(21,6,10,'00:00:23','00:00:30',5,2),
+(22,0,6,'00:00:30','00:00:30',5,3),
+(23,1,10,'00:00:27','00:00:27',5,4),
+(24,3,6,'00:00:25','00:00:25',5,5);
+/*!40000 ALTER TABLE `swimming_team_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `swimming_teams`
 --
 
@@ -3074,6 +4603,21 @@ CREATE TABLE `swimming_teams` (
   CONSTRAINT `team_number` FOREIGN KEY (`team_number`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_teams`
+--
+
+LOCK TABLES `swimming_teams` WRITE;
+/*!40000 ALTER TABLE `swimming_teams` DISABLE KEYS */;
+INSERT INTO `swimming_teams` VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1);
+/*!40000 ALTER TABLE `swimming_teams` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `swimming_tournament`
@@ -3094,6 +4638,17 @@ CREATE TABLE `swimming_tournament` (
   CONSTRAINT `tournament_site_id` FOREIGN KEY (`location`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `swimming_tournament`
+--
+
+LOCK TABLES `swimming_tournament` WRITE;
+/*!40000 ALTER TABLE `swimming_tournament` DISABLE KEYS */;
+INSERT INTO `swimming_tournament` VALUES
+(1,'All Stars Tournament','2022-02-23',4,'2022-05-20',3);
+/*!40000 ALTER TABLE `swimming_tournament` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `team_phases`
@@ -3127,6 +4682,15 @@ CREATE TABLE `team_phases` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `team_phases`
+--
+
+LOCK TABLES `team_phases` WRITE;
+/*!40000 ALTER TABLE `team_phases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `team_phases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `teams`
 --
 
@@ -3148,6 +4712,21 @@ CREATE TABLE `teams` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `teams`
+--
+
+LOCK TABLES `teams` WRITE;
+/*!40000 ALTER TABLE `teams` DISABLE KEYS */;
+INSERT INTO `teams` VALUES
+(1,'fjleiuo485',3,4),
+(2,'jhdsafh415',2,5),
+(3,'fkjsdal486',4,3),
+(4,'derkjtg849',1,2),
+(5,'kljdsfj953',5,1);
+/*!40000 ALTER TABLE `teams` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `teams_documents`
 --
 
@@ -3163,6 +4742,15 @@ CREATE TABLE `teams_documents` (
   CONSTRAINT `FK_tea_doc_tea_id__tea_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `teams_documents`
+--
+
+LOCK TABLES `teams_documents` WRITE;
+/*!40000 ALTER TABLE `teams_documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `teams_documents` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `teams_media`
@@ -3182,6 +4770,15 @@ CREATE TABLE `teams_media` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `teams_media`
+--
+
+LOCK TABLES `teams_media` WRITE;
+/*!40000 ALTER TABLE `teams_media` DISABLE KEYS */;
+/*!40000 ALTER TABLE `teams_media` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tennis_action_points`
 --
 
@@ -3196,6 +4793,15 @@ CREATE TABLE `tennis_action_points` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tennis_action_points`
+--
+
+LOCK TABLES `tennis_action_points` WRITE;
+/*!40000 ALTER TABLE `tennis_action_points` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_action_points` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tennis_action_volleys`
@@ -3216,6 +4822,15 @@ CREATE TABLE `tennis_action_volleys` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tennis_action_volleys`
+--
+
+LOCK TABLES `tennis_action_volleys` WRITE;
+/*!40000 ALTER TABLE `tennis_action_volleys` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_action_volleys` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tennis_event_states`
@@ -3247,6 +4862,15 @@ CREATE TABLE `tennis_event_states` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `tennis_event_states`
+--
+
+LOCK TABLES `tennis_event_states` WRITE;
+/*!40000 ALTER TABLE `tennis_event_states` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_event_states` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tennis_player_stats`
 --
 
@@ -3266,6 +4890,15 @@ CREATE TABLE `tennis_player_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tennis_player_stats`
+--
+
+LOCK TABLES `tennis_player_stats` WRITE;
+/*!40000 ALTER TABLE `tennis_player_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_player_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tennis_return_stats`
@@ -3299,6 +4932,15 @@ CREATE TABLE `tennis_return_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tennis_return_stats`
+--
+
+LOCK TABLES `tennis_return_stats` WRITE;
+/*!40000 ALTER TABLE `tennis_return_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_return_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tennis_service_stats`
@@ -3344,6 +4986,15 @@ CREATE TABLE `tennis_service_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `tennis_service_stats`
+--
+
+LOCK TABLES `tennis_service_stats` WRITE;
+/*!40000 ALTER TABLE `tennis_service_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_service_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tennis_set_stats`
 --
 
@@ -3363,6 +5014,15 @@ CREATE TABLE `tennis_set_stats` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tennis_set_stats`
+--
+
+LOCK TABLES `tennis_set_stats` WRITE;
+/*!40000 ALTER TABLE `tennis_set_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_set_stats` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tennis_team_stats`
@@ -3386,6 +5046,15 @@ CREATE TABLE `tennis_team_stats` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `tennis_team_stats`
+--
+
+LOCK TABLES `tennis_team_stats` WRITE;
+/*!40000 ALTER TABLE `tennis_team_stats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tennis_team_stats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -3403,6 +5072,18 @@ CREATE TABLE `users` (
   CONSTRAINT `users_publisher_id` FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES
+('tester@hotmail.com','Test','Subject','bcf25cdda5dc9688846c6c28527ed0c1fc8e1abf2944f37105accdc3a1a6136c',6),
+('u21479373@tuks.co.za','Sameet','Keshav','54de7f606f2523cba8efac173fab42fb7f59d56ceff974c8fdb7342cf2cfe345',6);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `wagering_moneylines`
@@ -3433,6 +5114,15 @@ CREATE TABLE `wagering_moneylines` (
   CONSTRAINT `FK_wag_mon_tea_id__tea_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wagering_moneylines`
+--
+
+LOCK TABLES `wagering_moneylines` WRITE;
+/*!40000 ALTER TABLE `wagering_moneylines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wagering_moneylines` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `wagering_odds_lines`
@@ -3466,6 +5156,15 @@ CREATE TABLE `wagering_odds_lines` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `wagering_odds_lines`
+--
+
+LOCK TABLES `wagering_odds_lines` WRITE;
+/*!40000 ALTER TABLE `wagering_odds_lines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wagering_odds_lines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wagering_runlines`
 --
 
@@ -3497,6 +5196,15 @@ CREATE TABLE `wagering_runlines` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `wagering_runlines`
+--
+
+LOCK TABLES `wagering_runlines` WRITE;
+/*!40000 ALTER TABLE `wagering_runlines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wagering_runlines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wagering_straight_spread_lines`
 --
 
@@ -3525,6 +5233,15 @@ CREATE TABLE `wagering_straight_spread_lines` (
   CONSTRAINT `FK_wag_str_spr_lin_tea_id__tea_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wagering_straight_spread_lines`
+--
+
+LOCK TABLES `wagering_straight_spread_lines` WRITE;
+/*!40000 ALTER TABLE `wagering_straight_spread_lines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wagering_straight_spread_lines` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `wagering_total_score_lines`
@@ -3559,6 +5276,15 @@ CREATE TABLE `wagering_total_score_lines` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `wagering_total_score_lines`
+--
+
+LOCK TABLES `wagering_total_score_lines` WRITE;
+/*!40000 ALTER TABLE `wagering_total_score_lines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wagering_total_score_lines` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `weather_conditions`
 --
 
@@ -3582,6 +5308,15 @@ CREATE TABLE `weather_conditions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `weather_conditions`
+--
+
+LOCK TABLES `weather_conditions` WRITE;
+/*!40000 ALTER TABLE `weather_conditions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weather_conditions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'sportsdb'
 --
 
@@ -3598,4 +5333,4 @@ CREATE TABLE `weather_conditions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-02 23:19:40
+-- Dump completed on 2022-06-04 13:42:43
