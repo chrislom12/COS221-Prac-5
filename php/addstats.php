@@ -24,8 +24,8 @@ if (isset($_POST['swim'])){
 
   $publisher = $_SESSION['PubID'];
     if (!isset($publisher)){
-      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='swimmers.php';</script>";
-      echo "<meta http-equiv = 'refresh' content = '1; url = swimmers.php' />";
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='stats.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = stats.php' />";
     }
 
     if($person == '' || $event == '' || $timeMin == '' || $timeSec == '' || $speed == '' || $stroke == '' || $heartRate == '')
@@ -116,6 +116,12 @@ else if (isset($_POST['team'])){
   $num = 0;
   $nums = 0;
 
+  $publisher = $_SESSION['PubID'];
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='stats.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = stats.php' />";
+    }
+
   if($teamID == '' || $event == '' || $pointsGained == '' || $pointsMax == '')
   {
       $canExecute = false;
@@ -176,6 +182,12 @@ else if (isset($_POST['team'])){
 
   $canExecute = true;
   $nums = 0;
+
+  $publisher = $_SESSION['PubID'];
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='stats.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = stats.php' />";
+    }
 
   if($eventID == '' || $distance == '' || $first == '' || $second == '' || $third == '')
   {

@@ -29,35 +29,79 @@
           }
 
           $media_type = $target_file;
-          $publisher = '1';
           $date = date('Y/m/d'); //date taken
-          $credit = $_POST['id'];
+          $id = $_POST['id'];
+          $credit = $_POST['credit'];
           $loadtime = date('Y/m/d');
-          $location = '1';
+          $location = $_POST['location'];
+          $canExecute = true;
+          $num = 0;
+          $nums = 0;
+          $nr = 0;
 
-          if (isset($credit)){
-            $valid = "SELECT id FROM persons WHERE id=$credit";
-            $res = $conn->query($valid);
+          $publisher = $_SESSION['PubID'];
+          if (!isset($publisher)){
+            echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='media.php';</script>";
+            echo "<meta http-equiv = 'refresh' content = '1; url = media.php' />";
+          }
 
-            if (!$res){
-              echo "<script>alert('That is not registered swimmer.')</script>";
-              header("Location: media.php");
+          
+          if($id == '' || $credit == '' || $location == '')
+          {
+              $canExecute = false;
+          }else{
+            
+            $ssql = "SELECT id FROM `persons`";
+            $siteq = $conn->query($ssql);
+            while ($row = $siteq->fetch_assoc()){
+              if ($row['id'] == $id){
+                $nums++;
+              }
             }
-          } else if (isset($location)){
-            $valid = "SELECT id FROM locations WHERE id=$location";
-            $res = $conn->query($valid);
+            if ($nums<=0){
+              $canExecute = false;
+            }
+            else {
+              $tsql = "SELECT id FROM persons";
+              $teamq = $conn->query($ssql);
 
-            if (!$res){
-              echo "<script>alert('That is not a valid location.')</script>";
-              header("Location: media.php");
-            } 
+              while ($row = $teamq->fetch_assoc()){
+                if ($row['id'] == $credit){
+                  $num++;
+                }
+              }
+              if ($num<=0){
+                $canExecute = false;
+              }
+              else {
+                $lsql = "SELECT id FROM locations";
+                $locq = $conn->query($lsql);
 
-          $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
-          $result = $conn->query($sql);
-          $media = $conn->insert_id;
+                while ($row = $locq->fetch_assoc()){
+                  if ($row['id'] == $location){
+                    $nr++;
+                  }
+                }
+                if ($nr<=0){
+                  $canExecute = false;
+                }
+              }
+            }
+          }
 
-          $sql2 = "INSERT INTO persons_media (person_id, media_id) VALUES ('$credit', '$media')";
-          $result2 = $conn->query($sql2);
+          if ($canExecute == true){
+            $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
+            $result = $conn->query($sql);
+            $media = $conn->insert_id;
+
+            $sql2 = "INSERT INTO persons_media (person_id, media_id) VALUES ('$credit', '$media')";
+            $result2 = $conn->query($sql2);
+          } else {
+            echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='media.php';</script>";
+            echo "<meta http-equiv = 'refresh' content = '1; url = media.php' />"; 
+          }
+
+          
 
     } else if($imageType=="Team"){
 
@@ -74,35 +118,77 @@
           }
 
           $media_type = $target_file;
-          $publisher = '1';
           $date = date('Y/m/d'); //date taken
           $credit = $_POST['id'];
           $loadtime = date('Y/m/d');
-          $location = '1';
+          $location = $_POST['location'];
+          $canExecute = true;
+          $num = 0;
+          $nums = 0;
+          $nr = 0;
 
-          if (isset($credit)){
-            $valid = "SELECT id FROM persons WHERE id=$credit";
-            $res = $conn->query($valid);
+          $publisher = $_SESSION['PubID'];
+          if (!isset($publisher)){
+            echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='media.php';</script>";
+            echo "<meta http-equiv = 'refresh' content = '1; url = media.php' />";
+          }
 
-            if (!$res){
-              echo "<script>alert('That is not registered swimmer.')</script>";
-              header("Location: media.php");
+          
+          if($id == '' || $credit == '' || $location == '')
+          {
+              $canExecute = false;
+          }else{
+            
+            $ssql = "SELECT id FROM `persons`";
+            $siteq = $conn->query($ssql);
+            while ($row = $siteq->fetch_assoc()){
+              if ($row['id'] == $id){
+                $nums++;
+              }
             }
-          } else if (isset($location)){
-            $valid = "SELECT id FROM locations WHERE id=$location";
-            $res = $conn->query($valid);
-
-            if (!$res){
-              echo "<script>alert('That is not a valid location.')</script>";
-              header("Location: media.php");
+            if ($nums<=0){
+              $canExecute = false;
             }
+            else {
+              $tsql = "SELECT id FROM persons";
+              $teamq = $conn->query($ssql);
 
-          $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
-          $result = $conn->query($sql);
-          $media = $conn->insert_id;
+              while ($row = $teamq->fetch_assoc()){
+                if ($row['id'] == $credit){
+                  $num++;
+                }
+              }
+              if ($num<=0){
+                $canExecute = false;
+              }else {
+                $lsql = "SELECT id FROM locations";
+                $locq = $conn->query($lsql);
 
-          $sql2 = "INSERT INTO teams_media (team_id, media_id) VALUES ('$credit', '$media');";
-          $result2 = $conn->query($sql2);
+                while ($row = $teamq->fetch_assoc()){
+                  if ($row['id'] == $location){
+                    $nr++;
+                  }
+                }
+                if ($nr<=0){
+                  $canExecute = false;
+                }
+              }
+            }
+          }
+
+          if ($canExecute == true){
+            $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
+            $result = $conn->query($sql);
+            $media = $conn->insert_id;
+
+            $sql2 = "INSERT INTO teams_media (team_id, media_id) VALUES ('$credit', '$media');";
+            $result2 = $conn->query($sql2);
+          } else {
+            echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='media.php';</script>";
+            echo "<meta http-equiv = 'refresh' content = '1; url = media.php' />"; 
+          }
+
+          
 
     } else if($imageType=="Event"){
 
@@ -123,31 +209,74 @@
           $date = date('Y/m/d'); //date taken
           $credit = $_POST['id'];
           $loadtime = date('Y/m/d');
-          $location = '1';
+          $location = $_POST['location'];
+          $canExecute = true;
+          $num = 0;
+          $nums = 0;
+          $nr = 0;
 
-          if (isset($credit)){
-            $valid = "SELECT id FROM persons WHERE id=$credit";
-            $res = $conn->query($valid);
+          $publisher = $_SESSION['PubID'];
+          if (!isset($publisher)){
+            echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='media.php';</script>";
+            echo "<meta http-equiv = 'refresh' content = '1; url = media.php' />";
+          }
 
-            if (!$res){
-              echo "<script>alert('That is not registered swimmer.')</script>";
-              header("Location: media.php");
+          
+          if($id == '' || $credit == '' || $location == '')
+          {
+              $canExecute = false;
+          }else{
+            
+            $ssql = "SELECT id FROM `persons`";
+            $siteq = $conn->query($ssql);
+            while ($row = $siteq->fetch_assoc()){
+              if ($row['id'] == $id){
+                $nums++;
+              }
             }
-          } else if (isset($location)){
-            $valid = "SELECT id FROM locations WHERE id=$location";
-            $res = $conn->query($valid);
-
-            if (!$res){
-              echo "<script>alert('That is not a valid location.')</script>";
-              header("Location: media.php");
+            if ($nums<=0){
+              $canExecute = false;
             }
+            else {
+              $tsql = "SELECT id FROM persons";
+              $teamq = $conn->query($ssql);
 
-          $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
-          $result = $conn->query($sql);
-          $media = $conn->insert_id;
+              while ($row = $teamq->fetch_assoc()){
+                if ($row['id'] == $credit){
+                  $num++;
+                }
+              }
+              if ($num<=0){
+                $canExecute = false;
+              }else {
+                $lsql = "SELECT id FROM locations";
+                $locq = $conn->query($lsql);
 
-          $sql2 = "INSERT INTO events_media (event_id, media_id) VALUES ('$credit', '$media');";
-          $result2 = $conn->query($sql2);
+                while ($row = $teamq->fetch_assoc()){
+                  if ($row['id'] == $location){
+                    $nr++;
+                  }
+                }
+                if ($nr<=0){
+                  $canExecute = false;
+                }
+              }
+            }
+          }
+
+          if ($canExecute == true){
+            $sql = "INSERT INTO media (id, object_id, source_id, revision_id, media_type, publisher_id, date_time, credit_id, db_loading_date_time, creation_location_id) VALUES (NULL, NULL, NULL, NULL, '$media_type', '$publisher', '$date', '$credit', '$loadtime', '$location');";
+            $result = $conn->query($sql);
+            $media = $conn->insert_id;
+
+            $sql2 = "INSERT INTO events_media (event_id, media_id) VALUES ('$credit', '$media');";
+            $result2 = $conn->query($sql2);
+          } else {
+            echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='media.php';</script>";
+            echo "<meta http-equiv = 'refresh' content = '1; url = media.php' />"; 
+          }
+
+          
 
     }
 
