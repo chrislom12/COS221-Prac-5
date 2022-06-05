@@ -4,7 +4,7 @@ function allClick(){
     document.getElementById("peopleBtn").style.background = "#004e6d";
     document.getElementById("teamsBtn").style.background = "#004e6d";
     document.getElementById("eventsBtn").style.background = "#004e6d";
-    document.getElementById("tournamentsBtn").style.background = "#004e6d";
+
 
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
@@ -19,7 +19,7 @@ function peopleClick(){
     document.getElementById("allBtn").style.background = "#004e6d";
     document.getElementById("teamsBtn").style.background = "#004e6d";
     document.getElementById("eventsBtn").style.background = "#004e6d";
-    document.getElementById("tournamentsBtn").style.background = "#004e6d";
+
 
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
@@ -34,7 +34,7 @@ function teamsClick(){
     document.getElementById("peopleBtn").style.background = "#004e6d";
     document.getElementById("allBtn").style.background = "#004e6d";
     document.getElementById("eventsBtn").style.background = "#004e6d";
-    document.getElementById("tournamentsBtn").style.background = "#004e6d";
+
 
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
@@ -49,7 +49,6 @@ function eventsClick(){
     document.getElementById("peopleBtn").style.background = "#004e6d";
     document.getElementById("teamsBtn").style.background = "#004e6d";
     document.getElementById("allBtn").style.background = "#004e6d";
-    document.getElementById("tournamentsBtn").style.background = "#004e6d";
 
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
