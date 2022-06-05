@@ -12,10 +12,38 @@ if ($type == 'addLocation') {
   $state = $_POST['state'];
   $area = $_POST['area'];
   $country = $_POST['country'];
+  $canExecute = true;
 
 
-  $sql = "INSERT INTO locations (id, city, state, area, country, timezone, latitude, longitude, country_code) VALUES (NULL, '$city', '$state', '$area', '$country', NULL, NULL, NULL, NULL)";
-  $result = $conn->query($sql);
+  $publisher = $_SESSION['PubID'];
+  if (!isset($publisher)){
+    echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='locations.php';</script>";
+    echo "<meta http-equiv = 'refresh' content = '1; url = locations.php' />";
+  }
+
+  if($city == '' || $state == '' || $area == '' || $country == '')
+  {
+      $canExecute = false;  
+  }
+
+  if ($canExecute == true){
+    $sql = "INSERT INTO locations (id, city, state, area, country, timezone, latitude, longitude, country_code) VALUES (NULL, '$city', '$state', '$area', '$country', NULL, NULL, NULL, NULL)";
+    $result = $conn->query($sql);
+  } else {
+    echo "<script type='text/javascript'>alert('Fields cannot be empty.');window.location.href='locations.php';</script>";
+    echo "<meta http-equiv = 'refresh' content = '1; url = locations.php' />"; 
+  }
+
+  
+
+
+  
+
+
+
+
+
+
 } 
 else if ($type == 'updateLocation') 
 {
@@ -93,19 +121,46 @@ else if ($type == 'addAddress') {
   $SName = $_POST['streetName'];
   $SNum = $_POST['streetNum'];
   $locId = '5';
+  $canExecute = true;
 
-  if (isset($locId)) {
-    $valid = "SELECT id FROM locations WHERE id=$locId";
-    $res = $conn->query($valid);
-
-    if (!$res) {
-      echo "<script>alert('That is not a valid location.')</script>";
-      header("Location: locations.php");
-    }
+  $publisher = $_SESSION['PubID'];
+  if (!isset($publisher)){
+    echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='locations.php';</script>";
+    echo "<meta http-equiv = 'refresh' content = '1; url = locations.php' />";
   }
 
-  $sql = "INSERT INTO addresses (id, location_id, language, suite, floor, building, street_number, street_prefix, street, street_suffix, neighborhood, district, locality, county, region, postal_code, country) VALUES (NULL, '$locId', NULL, NULL, NULL, NULL, '$SNum', NULL, '$SName', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
-  $result = $conn->query($sql);
+  if($SName == '' || $SNum == '' || $locId == '')
+    {
+        $canExecute = false;
+    }else{
+      
+      $valid = "SELECT id FROM locations";
+      $res = $conn->query($valid);
+      while ($row = $res->fetch_assoc()){
+        if ($row['id'] == $locId){
+          $nums++;
+        }
+      }
+      if ($nums<=0){
+        $canExecute = false;
+      }
+    }
+
+    if ($canExecute == true){
+      $sql = "INSERT INTO addresses (id, location_id, language, suite, floor, building, street_number, street_prefix, street, street_suffix, neighborhood, district, locality, county, region, postal_code, country) VALUES (NULL, '$locId', NULL, NULL, NULL, NULL, '$SNum', NULL, '$SName', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
+      $result = $conn->query($sql);
+    } else {
+      echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='locations.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = locations.php' />"; 
+    }
+
+  
+
+  
+
+
+
+
 } 
 else if ($type == 'updateAddress') 
 {
@@ -173,28 +228,39 @@ else if ($type == 'addSite') {
 
   $site = $_POST['site'];
   $location = $_POST['location'];
-  $publisher = '1';
-
-  if (isset($publisher)) {
-    $valid = "SELECT id FROM publishers WHERE id=$publisher";
-    $res = $conn->query($valid);
-
-    if (!$res) {
-      echo "<script>alert('You are not a registered user.')</script>";
-      header("Location: locations.php");
-    }
-  } else if (isset($location)) {
-    $valid = "SELECT id FROM locations WHERE id=$location";
-    $res = $conn->query($valid);
-
-    if (!$res) {
-      echo "<script>alert('That is not a valid location.')</script>";
-      header("Location: locations.php");
-    }
+  $canExecute = true;
+  
+  $publisher = $_SESSION['PubID'];
+  if (!isset($publisher)){
+    echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='locations.php';</script>";
+    echo "<meta http-equiv = 'refresh' content = '1; url = locations.php' />";
   }
 
-  $sql = "INSERT INTO sites (id, site_key, publisher_id, location_id) VALUES (NULL, '$site', '$publisher', '$location');";
-  $result = $conn->query($sql);
+  if($site == '' || $location == '')
+    {
+        $canExecute = false;
+    }else{
+      
+      $valid = "SELECT id FROM locations";
+      $res = $conn->query($valid);
+      while ($row = $res->fetch_assoc()){
+        if ($row['id'] == $location){
+          $nums++;
+        }
+      }
+      if ($nums<=0){
+        $canExecute = false;
+      }
+    }
+
+    if ($canExecute == true){
+      $sql = "INSERT INTO sites (id, site_key, publisher_id, location_id) VALUES (NULL, '$site', '$publisher', '$location');";
+    $result = $conn->query($sql);
+    } else {
+      echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='locations.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = locations.php' />"; 
+    }
+
 } 
 else if ($type == 'updateSite') 
 {

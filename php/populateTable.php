@@ -12,18 +12,18 @@ if($type == "tournament")
     <thead>
         <tr>
         <th>series_index</th>
+        <th>start_date</th>
         <th>end_date</th>
         <th>location</th>
-        <th>start_date</th>
         <th>winner</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>' . $rows['series_index'] . '</td>
+            <td>' .  $rows['start_date'] . '</td>
             <td>' . $rows['end_date'] . '</td>
             <td>' .  $rows['location'] . '</td>
-            <td>' .  $rows['start_date'] . '</td>
             <td>' . $rows['winner'] . '</td>
         </tr>
     </tbody>

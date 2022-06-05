@@ -19,10 +19,12 @@ if (isset($type)) {
     $canExecute = true;
     $name = $_POST['name'];
     $site = $_POST['site'];
-    $publisher = '1';
+    $publisher = $_SESSION['PubID'];
 
-    // $psql = "SELECT id FROM publishers WHERE id=$publisher";
-    // $publisherq = $conn->query($psql);
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='swimmers.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = teams.php' />";
+    }
     
 
     if($name == '' || $site == '')

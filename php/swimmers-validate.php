@@ -10,27 +10,38 @@ if (isset($type)) {
     //inserting a swimmer
     $num = 0;
     $nums = 0;
+
+
     $name = $_POST['name'];
     $surname = $_POST['surname'];
+    $teamid = $_POST['teamid'];
     $DOB = $_POST['dob'];
-    $address = $_POST['address'];
+    $site = $_POST['address'];
+
+
     $canExecute = true;
 
     $key = $name . " " . $surname;
-    $publisher = '1';
+    
     $gender = 'N/A';
     $locationdef = "1";
 
-    $teamid = $_POST['team'];
+    $publisher = $_SESSION['PubID'];
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='swimmers.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = swimmers.php' />";
+    }
 
-    if($name == '' || $surname == '' || $DOB == '' || $teamid = '' || $address == '')
+
+    if($name == '' || $surname == '' || $DOB == '' || $teamid == '' || $site == '')
     {
         $canExecute = false;
     }else{
+      
       $ssql = "SELECT id FROM `sites`";
       $siteq = $conn->query($ssql);
       while ($row = $siteq->fetch_assoc()){
-        if ($row['id'] == $address){
+        if ($row['id'] == $site){
           $nums++;
         }
       }
@@ -55,7 +66,7 @@ if (isset($type)) {
     
 
     if ($canExecute == true){
-      $sql = "INSERT INTO persons (id, person_key, publisher_id, gender, birth_date, death_date, final_resting_location_id, birth_location_id, hometown_location_id, residence_location_id, death_location_id, team_id) VALUES (NULL, '$key', '$publisher', '$gender', '$DOB', 'N/A', '$locationdef', '$locationdef', '$locationdef', '$address', '$locationdef', '$teamid')";
+      $sql = "INSERT INTO persons (id, person_key, publisher_id, gender, birth_date, death_date, final_resting_location_id, birth_location_id, hometown_location_id, residence_location_id, death_location_id, team_id) VALUES (NULL, '$key', '$publisher', '$gender', '$DOB', 'N/A', '$locationdef', '$locationdef', '$locationdef', '$site', '$locationdef', '$teamid')";
       $result = $conn->query($sql);
     } else {
       echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='swimmers.php';</script>";
@@ -130,9 +141,9 @@ if (isset($type)) {
         echo '<script>alert("Failed to delete location!"); window.location.href = "swimmers.php"</script>';
       }
     } 
-    else if ($_POST['updateNeeded'] === "address") 
+    else if ($_POST['updateNeeded'] === "site") 
     {
-      echo '<script> alert(In address"); </script>';
+      echo '<script> alert(In site"); </script>';
       $checkIfExists = "SELECT `id` FROM `persons` WHERE id = '" . $personID . "'";
       $resultFromPersons = mysqli_query($conn, $checkIfExists);
       $rowFromPersons = mysqli_num_rows($resultFromPersons);

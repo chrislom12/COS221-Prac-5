@@ -14,21 +14,64 @@ include 'scores.php';
     $name = $_POST['name'];
     $location = $_POST['location'];
     $winner = $_POST['winner'];
+    $num = 0;
+    $nums = 0;
 
-    //tournament name
+    $canExecute = true;
 
-    $sql = "INSERT INTO swimming_tournament (end_date, location, start_date, winner) VALUES ('$end_date', '$location', '$start_date', '$winner')";
+    $publisher = $_SESSION['PubID'];
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='scores.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />";
+    }
 
-    $result = $conn->query($sql);
+
+    if($name == '' || $start_date == '' || $end_date == '' || $location == '' || $winner == '')
+    {
+        $canExecute = false;
+    }else{
+      
+      $ssql = "SELECT id FROM `locations`";
+      $siteq = $conn->query($ssql);
+      while ($row = $siteq->fetch_assoc()){
+        if ($row['id'] == $location){
+          $nums++;
+        }
+      }
+      if ($nums<=0){
+        $canExecute = false;
+      }else{
+        $tsql = "SELECT id FROM `teams`";
+        $teamq = $conn->query($tsql);
+        while ($row = $teamq->fetch_assoc()){
+          if ($row['id'] == $winner){
+            $num++;
+          }
+        }
+        if ($num<=0){
+          $canExecute = false;
+        }
+      }
+    }
+
+    
+
+    if ($canExecute == true){
+      $sql = "INSERT INTO swimming_tournament (end_date, location, start_date, winner) VALUES ('$end_date', '$location', '$start_date', '$winner')";
+      $result = $conn->query($sql);
+    } else {
+      echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='scores.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />"; 
+    }
 
   }
 
   //add event
   if ($type == 'event'){
     //foreign keys: publisher id, site id
+    date_default_timezone_set('Africa/Johannesburg');
 
     $event_key = $_POST['event'];
-    $publisher = '1';
     $startdate = null;
     $site = $_POST['site'];
     $sitealign = null;
@@ -43,30 +86,40 @@ include 'scores.php';
     $local = null;
     $medal = null;
     $series = $_POST['series'];
+    $num = 0;
+    $nums = 0;
+    $canExecute = true;
 
-    if (isset($publisher)){
-      $valid = "SELECT id FROM publishers WHERE id=$publisher";
-      $res = $conn->query($valid);
+    $publisher = $_SESSION['PubID'];
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='scores.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />";
+    }
 
-      if (!$res){
-        echo "<script>alert('You are not a registered user.')</script>";
-        header("Location: scores.php");
+    if($event_key == '' || $attendance == '' || $series == '' || $site == '')
+    {
+        $canExecute = false;
+    }else{
+      
+      $ssql = "SELECT id FROM `sites`";
+      $siteq = $conn->query($ssql);
+      while ($row = $siteq->fetch_assoc()){
+        if ($row['id'] == $site){
+          $nums++;
+        }
       }
-
-    } else (isset($site)){
-      $valid = "SELECT id FROM sites WHERE id=$site";
-      $res = $conn->query($valid);
-
-      if (!$res){
-        echo "<script>alert('That is not a vaid site ID.')</script>";
-        header("Location: scores.php");
+      if ($nums<=0){
+        $canExecute = false;
       }
     }
 
-
-    $sql = "INSERT INTO events (id, event_key, publisher_id, start_date_time, site_id, site_alignment, event_status, duration, attendance, last_update, event_number, round_number, time_certainty, broadcast_listing, start_date_time_local, medal_event, series_index) VALUES (NULL, '$event_key', '$publisher', NULL, '$site', NULL, NULL, NULL, '$attendance', '$lastUpdate', NULL, NULL, NULL, NULL, NULL, NULL, '$series')";
-
-    $result = $conn->query($sql);
+    if ($canExecute == true){
+      $sql = "INSERT INTO events (id, event_key, publisher_id, start_date_time, site_id, site_alignment, event_status, duration, attendance, last_update, event_number, round_number, time_certainty, broadcast_listing, start_date_time_local, medal_event, series_index) VALUES (NULL, '$event_key', '$publisher', NULL, '$site', NULL, NULL, NULL, '$attendance', '$lastUpdate', NULL, NULL, NULL, NULL, NULL, NULL, '$series')";
+      $result = $conn->query($sql);
+    } else {
+      echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='scores.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />"; 
+    }
 
 
 
@@ -81,18 +134,36 @@ include 'scores.php';
 
     $event = $_POST['event'];
     $sequence = $_POST['sequence'];
-    $time = $_POST['time'];
+    $timeMin = $_POST['timeMin'];
+    $timeSec = $_POST['timeSec'];
+    $time = "00:" . $timeMin . ":" . $timeSec;
     $state = $_POST['raceState'];
+    $num = 0;
+    $nums = 0;
 
-    if (isset($event)){
-      $valid = "SELECT id FROM events WHERE id=$event";
-      $res = $conn->query($valid);
+    $canExecute = true;
 
-      if (!$res){
-        echo "<script>alert('That is not a valid event ID.')</script>";
-        header("Location: scores.php");
+    $publisher = $_SESSION['PubID'];
+    if (!isset($publisher)){
+      echo "<script type='text/javascript'>alert('You are not logged in');window.location.href='scores.php';</script>";
+      echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />";
+    }
+
+    if($event == '' || $sequence == '' || $time == '' || $state == '')
+    {
+        $canExecute = false;
+    }else{
+      
+      $ssql = "SELECT id FROM `events`";
+      $siteq = $conn->query($ssql);
+      while ($row = $siteq->fetch_assoc()){
+        if ($row['id'] == $event){
+          $nums++;
+        }
       }
-
+      if ($nums<=0){
+        $canExecute = false;
+      }
     }
 
     //start
@@ -100,17 +171,48 @@ include 'scores.php';
       $person = $_POST['person1'];
       $position = $_POST['position'];
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
-      $result = $conn->query($sql);
-      $res = $conn->insert_id;
+      if($person == '' || $position == '')
+      {
+          $canExecute = false;
+      }else{
+        
+        $psql = "SELECT id FROM `persons`";
+        $personq = $conn->query($psql);
+        while ($row = $personq->fetch_assoc()){
+          if ($row['id'] == $person){
+            $num++;
+          }
+        }
+        if ($num<=0){
+          $canExecute = false;
+        }
+      }
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
-      $result2 = $conn->query($sql2);
+      if ($canExecute == true){
+        echo "yes";
+        $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
+        $result = $conn->query($sql);
+        $res = $conn->insert_id;
 
-      $sql3 = "INSERT INTO swimming_start (start_position, play_type_start_id) VALUES ('$position', '$res')";
-      $result3 = $conn->query($sql3);
+        $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
+        $result2 = $conn->query($sql2);
+
+        $sql3 = "INSERT INTO swimming_start (start_position, play_type_start_id) VALUES ('$position', '$res')";
+        $result3 = $conn->query($sql3);
+      } else {
+        echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='scores.php';</script>";
+        echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />"; 
+      }
+
+      
 
     }
+
+
+
+
+
+
 
 
     //overtake
@@ -120,15 +222,50 @@ include 'scores.php';
       $newposition = $_POST['position'];
       $oldposition = $newposition-1;
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
-      $result = $conn->query($sql);
-      $res = $conn->insert_id;
+      if($person1 == '' || $person2 == '')
+      {
+          $canExecute = false;
+      }else{
+        
+        $psql = "SELECT id FROM `persons`";
+        $personq = $conn->query($psql);
+        while ($row = $personq->fetch_assoc()){
+          if ($row['id'] == $person1){
+            $nums++;
+          }
+        }
+        if ($nums<=0){
+          $canExecute = false;
+        }else{
+          $p2sql = "SELECT id FROM `persons`";
+          $personq2 = $conn->query($p2sql);
+          while ($row = $personq2->fetch_assoc()){
+            if ($row['id'] == $person2){
+              $num++;
+            }
+          }
+          if ($num<=0){
+            $canExecute = false;
+          }
+        }
+      }
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person1', '$person2', '$state', '$res', '$event')";
-      $result2 = $conn->query($sql2);
+      if ($canExecute == true){
+        $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
+        $result = $conn->query($sql);
+        $res = $conn->insert_id;
 
-      $sql3 = "INSERT INTO swimming_overtake (new_position, old_position, play_type_overtake_id) VALUES ('$newposition', '$oldposition', '$res')";
-      $result3 = $conn->query($sql3);
+        $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person1', '$person2', '$state', '$res', '$event')";
+        $result2 = $conn->query($sql2);
+
+        $sql3 = "INSERT INTO swimming_overtake (new_position, old_position, play_type_overtake_id) VALUES ('$newposition', '$oldposition', '$res')";
+        $result3 = $conn->query($sql3);
+      } else {
+        echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='scores.php';</script>";
+        echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />"; 
+      }
+
+      
 
 
     }
@@ -138,6 +275,23 @@ include 'scores.php';
     if ($playType == 'finish'){
       $person = $_POST['person1'];
       $position = $_POST['position'];
+
+      if($person == '' || $position == '')
+      {
+          $canExecute = false;
+      }else{
+        
+        $psql = "SELECT id FROM `persons`";
+        $personq = $conn->query($psql);
+        while ($row = $personq->fetch_assoc()){
+          if ($row['id'] == $person){
+            $nums++;
+          }
+        }
+        if ($nums<=0){
+          $canExecute = false;
+        }
+      }
 
       if ($position == 1){
         $points =6;
@@ -161,15 +315,22 @@ include 'scores.php';
         $points = 0;
       }
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
-      $result = $conn->query($sql);
-      $res = $conn->insert_id;
+      if ($canExecute == true){
+        $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
+        $result = $conn->query($sql);
+        $res = $conn->insert_id;
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
-      $result2 = $conn->query($sql2);
+        $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
+        $result2 = $conn->query($sql2);
 
-      $sql3 = "INSERT INTO swimming_finish (points_gained, play_type_finish_id) VALUES ('$points', '$res')";
-      $result3 = $conn->query($sql3);
+        $sql3 = "INSERT INTO swimming_finish (points_gained, play_type_finish_id) VALUES ('$points', '$res')";
+        $result3 = $conn->query($sql3);
+      } else {
+        echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='scores.php';</script>";
+        echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />"; 
+      }
+
+      
 
     }
 
@@ -179,15 +340,39 @@ include 'scores.php';
       $person = $_POST['person1'];
       $reason = $_POST['reason'];
 
-      $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
-      $result = $conn->query($sql);
-      $res = $conn->insert_id;
+      if($person == '' || $reason == '')
+      {
+          $canExecute = false;
+      }else{
+        
+        $psql = "SELECT id FROM `persons`";
+        $personq = $conn->query($psql);
+        while ($row = $personq->fetch_assoc()){
+          if ($row['id'] == $person){
+            $nums++;
+          }
+        }
+        if ($nums<=0){
+          $canExecute = false;
+        }
+      }
 
-      $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
-      $result2 = $conn->query($sql2);
+      if ($canExecute == true){
+        $sql = "INSERT INTO swimming_play_type (id) VALUES (NULL)";
+        $result = $conn->query($sql);
+        $res = $conn->insert_id;
 
-      $sql3 = "INSERT INTO swimming_disqualified (reason, play_type_disqualified_id) VALUES ('$reason', '$res');";
-      $result3 = $conn->query($sql3);
+        $sql2 = "INSERT INTO swimming_event_states (id, sequence_nr, time_elapsed, person_1, person_2, current_race_state, play_type_id, event_iden) VALUES (NULL, '$sequence', '$time', '$person', NULL, '$state', '$res', '$event')";
+        $result2 = $conn->query($sql2);
+
+        $sql3 = "INSERT INTO swimming_disqualified (reason, play_type_disqualified_id) VALUES ('$reason', '$res');";
+        $result3 = $conn->query($sql3);
+      } else {
+        echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='scores.php';</script>";
+        echo "<meta http-equiv = 'refresh' content = '1; url = scores.php' />"; 
+      }
+
+      
 
     }
   }
