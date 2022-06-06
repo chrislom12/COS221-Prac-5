@@ -50,20 +50,17 @@ if (isset($type)) {
     //updating a team 
     $teamID = $_POST['team'];
     $teamNewVal = $_POST['newVal'];
-    //echo '<script>alert("' . $teamNewVal . '"); </script>';
 
-    // if(empty($teamID) && empty($teamNewVal))
-    // {
-    //   echo '<script>alert("Team ID and New Value cannot be empty!"); window.location.href = "teams.php"</script>';
-    // }
-    // else if(empty($teamID))
-    // {
-    //   echo '<script>alert("Team ID cannot be empty!"); window.location.href = "teams.php"</script>';
-    // }
-    // else if(empty($teamNewVal))
-    // {
-    //   echo '<script>alert("New Value cannot be empty!"); window.location.href = "teams.php"</script>';
-    // }
+    if (empty($teamID) && empty($teamNewVal)) {
+      echo '<script>alert("Team ID and New Value cannot be empty!"); window.location.href = "teams.php"</script>';
+      die();
+    } else if (empty($teamID)) {
+      echo '<script>alert("Team ID cannot be empty!"); window.location.href = "teams.php"</script>';
+      die();
+    } else if ($teamNewVal == '') {
+      echo '<script>alert("New Value cannot be empty!"); window.location.href = "teams.php"</script>';
+      die();
+    }
 
     if (isset($_POST['updateNeeded'])) {
       if ($_POST['updateNeeded'] === "teamName") {
@@ -85,15 +82,14 @@ if (isset($type)) {
           echo '<script type="text/javascript"> alert ("Failed to update team name!"); window.location.href = "teams.php"</script>';
         }
       } else if ($_POST['updateNeeded'] === "teamHomeSite") {
+        //changing home_site_id(foreign key)
         $querySite = "SELECT `id` FROM `sites` WHERE id = '" . $teamNewVal . "'";
         $resultsFromSite = mysqli_query($conn, $querySite);
         $rowsFromSite = mysqli_num_rows($resultsFromSite);
-        echo '<script>alert("' . $rowsFromSite . '"); </script>';
 
         $checkIfExists = "SELECT `id` FROM `teams` WHERE id = '" . $teamID . "'";
         $resultFromTeam = mysqli_query($conn, $checkIfExists);
         $rowFromTeam = mysqli_num_rows($resultFromTeam);
-        echo '<script>alert("' . $rowFromTeam . '"); </script>';
 
         if ($rowsFromSite > 0 && $rowFromTeam > 0) {
           $query = "UPDATE `teams` SET home_site_id='" . $teamNewVal . "' where id ='" . $teamID . "' ";
@@ -118,11 +114,10 @@ if (isset($type)) {
     $teamID = $_POST['delete'];
 
     if (!empty($teamID)) {
-      //check if id(primary key) is referenced by anything.....teams_media && swimming_teams
-      //remove it from the tables it references then delete it
       $checkIfExists = "SELECT `id` FROM `teams` WHERE id = '" . $teamID . "'";
       $resultFromTeams = mysqli_query($conn, $checkIfExists);
       $rowFromTeams = mysqli_num_rows($resultFromTeams);
+
       if ($rowFromTeams > 0) {
         $queryTeams = "DELETE FROM `teams` WHERE id = '" . $teamID . "'";
         $statementFromTeams = mysqli_query($conn, $queryTeams);
