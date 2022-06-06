@@ -100,7 +100,7 @@ if ($type == 'addLocation') {
       echo '<script>alert("Failed to delete location!"); window.location.href = "locations.php"</script>';
     }
   } else {
-    echo '<script type="text/javascript"> alert ("Location ID cannot be empty")</script>';
+    echo '<script type="text/javascript"> alert ("Location ID cannot be empty!"); window.location.href = "locations.php"</script>';
   }
 }
 
@@ -205,7 +205,7 @@ else if ($type == 'addAddress') {
       echo '<script>alert("Failed to delete address!"); window.location.href = "locations.php"</script>';
     }
   } else {
-    echo '<script type="text/javascript"> alert ("Address ID cannot be empty")</script>';
+    echo '<script type="text/javascript"> alert ("Address ID cannot be empty!"); window.location.href = "locations.php"</script>';
   }
 }
 
@@ -324,7 +324,7 @@ else if ($type == 'addSite') {
       echo '<script>alert("Failed to delete site!"); window.location.href = "locations.php"</script>';
     }
   } else {
-    echo '<script type="text/javascript"> alert ("Site ID cannot be empty")</script>';
+    echo '<script type="text/javascript"> alert ("Site ID cannot be empty!"); window.location.href = "locations.php"</script>';
   }
 }
 ?>
