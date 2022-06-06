@@ -3,11 +3,8 @@
 
     if(isset($_REQUEST["type"])){
         $type = $_REQUEST["type"];
-        echo "yes";
     }
-    else{
-        echo "no";
-    }
+    
 
 
     if($type == "all"){
@@ -54,6 +51,7 @@
             </div>
         </div>';
       }
+      
 
 
     }
