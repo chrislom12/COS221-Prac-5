@@ -1,9 +1,10 @@
 <?php
-include 'connect.php';
+
 
     if(isset($_REQUEST["type"])){
         $type = $_REQUEST["type"];
     }
+    
 
 
     if($type == "all"){
@@ -40,46 +41,42 @@ include 'connect.php';
     }
     else if($type == "people"){
 
-      $sql = "SELECT media_type FROM media";
-      $result = $conn->query($sql);
+      $dir_name = "../img/persons";
+      $images = glob($dir_name."*jpg");
 
-        while ($rows = $result->fetch_assoc()){
-          echo ('<div class="mainBlock">
+      foreach($images as $image){
+        echo '<div class="mainBlock">
+            <div class="menuItem"
+                style="background-image: url(' . $image . ') !important; background-size: cover;">
+            </div>
+        </div>';
+      }
+      
 
-
-          <div class="menuItem"
-              style="background-image: url(' . $rows['media_type'] . ') !important; background-size: cover;">
-          </div>
-          </div>';
-        }
 
     }
     else if($type == "teams"){
-      $sql = "SELECT media_type FROM media";
-      $result = $conn->query($sql);
-
-        while ($rows = $result->fetch_assoc()){
-          echo ('<div class="mainBlock">
-
-
-          <div class="menuItem"
-              style="background-image: url(' . $rows['media_type'] . ') !important; background-size: cover;">
-          </div>
+        $dir_name = "../img/teams";
+        $images = glob($dir_name."*jpg");
+  
+        foreach($images as $image){
+          echo '<div class="mainBlock">
+              <div class="menuItem"
+                  style="background-image: url(' . $image . ') !important; background-size: cover;">
+              </div>
           </div>';
         }
 
     }
     else if($type == "events"){
-      $sql = "SELECT media_type FROM media";
-      $result = $conn->query($sql);
-
-        while ($rows = $result->fetch_assoc()){
-          echo ('<div class="mainBlock">
-
-
-          <div class="menuItem"
-              style="background-image: url(' . $rows['media_type'] . ') !important; background-size: cover;">
-          </div>
+        $dir_name = "../img/Events";
+        $images = glob($dir_name."*jpg");
+  
+        foreach($images as $image){
+          echo '<div class="mainBlock">
+              <div class="menuItem"
+                  style="background-image: url(' . $image . ') !important; background-size: cover;">
+              </div>
           </div>';
         }
 

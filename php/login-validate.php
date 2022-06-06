@@ -59,7 +59,7 @@ if($valid == true){
          <br>
          <label for="email" id="emailLabel">Logged In</label>
         <br>
-         <a href = "home.php">Continue</a>
+         <a href = "index.php">Continue</a>
          <br>
        </div>       
      </form>

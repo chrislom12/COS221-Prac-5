@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/headfoot.css">
     <title>COS221 Prac 5</title>
     <script src= "../js/stats.js"></script>
+    <script src= "../js/graph.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 </head>
 
@@ -48,11 +50,11 @@
             </div>
         </div>
     </div>
-    <div class="mainBlock" id="statsBlock1">
-
-    </div>
+    <div class="graph">
+	    <canvas id="myChart" style="width:100%;max-width:700px; background:white; margin-left: 55px;"></canvas>
+    </div>  
     <div class="mainBlock" id="statsBlock2">
-
+        
     </div>
 
     <?php

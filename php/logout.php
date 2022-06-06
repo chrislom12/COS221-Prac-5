@@ -4,5 +4,5 @@
         session_unset();
         session_destroy();
         echo '<script> alert("Logged Out")</script>';
-        include ("home.php");
+        include ("index.php");
         ?>
