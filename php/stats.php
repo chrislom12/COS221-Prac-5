@@ -51,7 +51,7 @@
         </div>
     </div>
     
-    <h1 class=headingPage id="heading">Our op Three Teams</h1>
+    <h1 class=headingPage id="heading">Our Top Three Teams</h1>
     <h3 class=headingPage id="heading" style="font-size:20px;">according to points earned</h3>
     <div class="graph">
         <?php include 'graph.php'; ?>
