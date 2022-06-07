@@ -38,17 +38,18 @@
             </a>
 
 
-            <a href="scores.php" class="menuItem"
-                style="background-image: url('../img/score.png') !important; background-size: cover;">
-                <h1 class=menuHead>Scores</h1>
-                <p class="menuPar">Captures scores for a tournament</p>
-            </a>
+            
 
         </div>
     </div>
     <div class="mainBlock">
         <div class="menuBlock">
 
+            <a href="scores.php" class="menuItem"
+                style="background-image: url('../img/score.png') !important; background-size: cover;">
+                <h1 class=menuHead>Scores</h1>
+                <p class="menuPar">Captures scores for a tournament</p>
+            </a>
             <a href="media.php" class="menuItem"
                 style="background-image: url('../img/pool.png') !important; background-size: cover;">
                 <h1 class=menuHead>Media</h1>
@@ -63,31 +64,7 @@
             </a>
 
 
-            <?php
-                        $temp = 0;/* if logged in */
-                        if(isset($_SESSION['loggedIn'])){
-                            if($_SESSION['loggedIn']=="TRUE"){
-                                $temp=1;
-                            }
-                        }
-                        if($temp==1){
-                            echo "
-                            <a href='my-account.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
-                            <h1 class=menuHead>My Account</h1>
-                            <p class='menuPar'>View your account</p>
-                            </a>
-                            ";
-                        }
-                        else if($temp!=1){
-                            echo "
-                            <a href='login.php' class='menuItem' style='background-image: url(\"../img/account.png\") !important; background-size: cover;'>
-                            <h1 class=menuHead>Log in</h1>
-                            <p class='menuPar'>Log into your account</p>
-                            </a>
-                            ";
-                        }
-                    ?>
-
+            
         </div>
     </div>
     <?php
