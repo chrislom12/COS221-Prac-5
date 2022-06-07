@@ -1,0 +1,741 @@
+commit 9f09ab81ad7fdcff46f5a1a06641ad8e2949028d
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue Jun 7 21:23:12 2022 +0200
+
+    Updated my account page
+    
+    Updated my account page to show name and surname
+
+commit f7fc8aaf0eb98e6489b168355153e1565d1a9f4c
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue Jun 7 20:51:11 2022 +0200
+
+    updated sql dump and removed confrim
+    
+    updated sql dump and removed confrim
+
+commit b4ef3529a7d25f6992027d0beb27c4c0138955a5
+Merge: 46b1bfe 4571fff
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 20:04:39 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 46b1bfe2f05f3a2c0261a9999f95c9ffc00f6375
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 20:04:25 2022 +0200
+
+    Updates
+    
+    Fixed both graph and table output problems
+
+commit 4571ffff5e1022f2d989af7cb42d149bcccf0fe0
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue Jun 7 20:01:00 2022 +0200
+
+    Fixed spelling
+    
+    Changed op to Top
+
+commit 9c87725e29653d251efe9459bc4210937b284513
+Merge: 96d5f89 aa89d1a
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue Jun 7 19:57:06 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 96d5f8977a351c097ca4cc9a62c80ac3d1721737
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue Jun 7 19:57:02 2022 +0200
+
+    Updated home page and media
+    
+    Removed login card from home page (not enough space) and reformatted the way media is displayed
+
+commit aa89d1a9b8847f012514892d1a8119dc106a75b0
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 19:36:48 2022 +0200
+
+    added podium graph
+
+commit 5ddf97718908042845fa4e5f3cbf9a1944d3e2b7
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 18:30:42 2022 +0200
+
+    Updates
+
+commit a77444e1dc13e982920d61d1692d467bbee50811
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 16:08:29 2022 +0200
+
+    Testing media
+
+commit 832b51de1e05215ad5e6b746024d5f155d3d44dd
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 16:01:50 2022 +0200
+
+    Media page
+    
+    photos display now, added temp photos to display
+
+commit 204b98417f06feb6c1cac5c4d95bd653a204916d
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 12:14:29 2022 +0200
+
+    Update populateTable.php
+
+commit 38cf5fb0ceae3146d547a67700498cb1f31866b4
+Merge: ecec277 4ceafae
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 10:46:47 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit ecec277726e726bf7666b77b0f7033924432cb10
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Tue Jun 7 10:46:44 2022 +0200
+
+    table updates
+
+commit 4ceafae1365da9e54c9bcea796c8d305498886cf
+Merge: d751b6b 3f57848
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Tue Jun 7 09:44:51 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 3f57848ff98b15f9ed13eafec43de8523e11ce4d
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue Jun 7 09:44:01 2022 +0200
+
+    Update to populate stats table
+    
+    Rearranged while loop
+
+commit d751b6b86cf6136b9db69d69c71a3e3e4ebb4026
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Tue Jun 7 09:37:58 2022 +0200
+
+    Updated the README.md file
+    
+    A copy of the readMe.txt file
+
+commit fdefaf6fabbda78108076050b19a46758f328732
+Merge: 62937d5 4357b24
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Mon Jun 6 22:01:21 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 4357b24a7e890d9bc98b22368d99e52255c26e2c
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Mon Jun 6 20:07:36 2022 +0200
+
+    updated header for address and site delete buttons
+
+commit 0b59371974a7bdf52825dbc3f278d4348e7c3bf8
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Mon Jun 6 19:54:58 2022 +0200
+
+    empty field validation for update and delete buttons in locations complete
+
+commit c81fb86a63768e84f7924f1482171a05307aaadd
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Mon Jun 6 19:13:17 2022 +0200
+
+    empty field validation for swimmer's update and delete buttons complete
+
+commit 0189830d22c14749b28624badbd804045c75365f
+Merge: 49f87ca ee32cf0
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Mon Jun 6 18:57:39 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 49f87cad37a5e0542f3c5455cbb514ed5ecd90bb
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Mon Jun 6 18:57:33 2022 +0200
+
+    updated home_site_id and empty field validation
+
+commit ee32cf0b9eba52c4145723b21dd2d0ef95f0d76f
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Mon Jun 6 11:56:28 2022 +0200
+
+    Update retrieveImages.php
+
+commit c26ba8e1711d5e8aff1bf179dbfe8118c43a3640
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Mon Jun 6 09:36:14 2022 +0200
+
+    updated team home site id validation
+
+commit a4ff90cdff689c5378a97b94c1187a8c8b267a46
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun Jun 5 22:44:24 2022 +0200
+
+    Fixed media page issue
+    
+    Removed tournament button from page that was causing javascript to break
+
+commit 96bf324feac51a59e00531b31f57b88c7df78725
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Sun Jun 5 19:59:24 2022 +0200
+
+    media updates
+
+commit 29b2888eaa19f0f7e19b45ea9c60f7b5522ab0ba
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Sun Jun 5 19:15:04 2022 +0200
+
+    updated validation
+
+commit a53f9ec0ec9a32812d7f14260e8d3ff466b19780
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Sat Jun 4 21:30:50 2022 +0200
+
+    Validation & graph
+
+commit 62937d5622ac081c9842b5e08e8823f4d5007b06
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Sat Jun 4 14:04:40 2022 +0200
+
+    imported the correct latest schema
+    
+    the previous one was the incorrect one, sorry!
+
+commit 92edd0cdaba790e88cd26481c9df5f816b6c5fd0
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Sat Jun 4 14:02:35 2022 +0200
+
+    The latest final dump
+    
+    Updated a constraint that was complicating a query in the display_names table
+
+commit db5d2b7b546b8c5a4ed75b51c1ecfcd75abbc6e3
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Sat Jun 4 00:50:40 2022 +0200
+
+    update a team and delete a team buttons working
+
+commit fc409676b76d9fac6abdd4edf1fcd09def911556
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Fri Jun 3 23:15:38 2022 +0200
+
+    updated labels
+
+commit 95d36be61d5ceab850ee431d3e28c645aac6f339
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Fri Jun 3 23:15:16 2022 +0200
+
+    update and delete swimmer buttons working
+
+commit 5ee487e82e843db52b4e28d34860a7c57612d93f
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Fri Jun 3 23:13:04 2022 +0200
+
+    updated option in update Swimmer form
+
+commit 4305f4ac7ef31e8b113697f402cc51d69cef84d1
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Fri Jun 3 20:38:18 2022 +0200
+
+    delete buttons in location now working
+
+commit b2428f51192ce19e24fc6c774e16f5089dfbbb99
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Fri Jun 3 18:58:57 2022 +0200
+
+    update buttons in location now working
+
+commit 551dbeca4b113e504e04955582e96c943b893b88
+Merge: 9913ecd 2f6374a
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Fri Jun 3 18:25:44 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 2f6374a9a6aad2494d895d145ce38f9b8a229623
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Fri Jun 3 10:50:13 2022 +0200
+
+    Updated media.php
+    
+    Added extra necessary input elements
+
+commit b77a0a83541fa75fcf99ef0f7c5cc12cbd36c5dd
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Thu Jun 2 23:21:19 2022 +0200
+
+    the correct final version
+    
+    sorry, I forgot to update the FK restrictions
+
+commit a678c59178a4393a137587d0e50fc2e3c535aebb
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Thu Jun 2 22:59:24 2022 +0200
+
+    final schema version
+    
+    uploaded on the 2nd of June
+
+commit 9913ecd68cc40d9c59bb58ab6d2c5f843c04363f
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Thu Jun 2 19:45:13 2022 +0200
+
+    changed option values for update buttons
+
+commit 663fcfa32cb4b2bf96a04025f44ddd2b07fd5fac
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Thu Jun 2 11:16:23 2022 +0200
+
+    added update and delete functionality for teams
+
+commit ad5cf46fa79d74d9bcd5439f36fdb4cd5514899b
+Author: Ofentse Ramothibe <u21467422@tuks.co.za>
+Date:   Thu Jun 2 11:15:38 2022 +0200
+
+    added update and delete buttons functionality
+
+commit dcfe5b9bf412d3cb40f39a090d442b2e0763f180
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 23:04:48 2022 +0200
+
+    adding media display
+
+commit 0a2e18f5c43965e42c309289b9c0b141658dc452
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 22:54:54 2022 +0200
+
+    Update populateTable.php
+
+commit 7480098dbd739b80b37bd6f556b89e0f1ced3d25
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 22:16:28 2022 +0200
+
+    Delete testfile.php
+
+commit bcf36bb119385115ab143ebed7baa66c32ca76cd
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 22:08:53 2022 +0200
+
+    testing
+
+commit 0bb743021366bbe131c69bda3bf67459e6a89f20
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 22:06:30 2022 +0200
+
+    table populate
+
+commit a5fd45827e097a52e2c90ea8fb0b51b166fe8f09
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 21:37:35 2022 +0200
+
+    validation of foreign keys
+
+commit 095c5139d8641b8d35f2390e1a597b19a86a101d
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 20:26:37 2022 +0200
+
+    all insert sql done
+
+commit b99579a7b900f0fc5fa132d1b65e5366cacf8afd
+Merge: c99d69a 32e40a2
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 19:16:10 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit c99d69ad14686c88b4247ff9b7a7ecd8a4fb186e
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 19:15:14 2022 +0200
+
+    resubmit suppressor
+
+commit 32e40a241eaeb6c36c2df0f5f04e4bf4b07d63ab
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Wed Jun 1 19:14:34 2022 +0200
+
+    Removed tournaments from all media
+    
+    Tournament media can no longer be uploaded
+    - removed file on server
+    - removed upload option for tournaments
+
+commit 664e583e6877b735727ad6fe3bce0d68177dc6fe
+Merge: 6640da4 c9a2f83
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 19:14:02 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 6640da4487041360f7820e74a5a399a74cfff033
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 19:12:20 2022 +0200
+
+    media sql
+
+commit c9a2f83df975ec9040c0d8de9a4ce96e755d652f
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Wed Jun 1 19:08:38 2022 +0200
+
+    Updated time inputs
+    
+    Changed time inputs from timer html inputs to two text fields
+
+commit 8261a61e9726eb0904ecd9386b9e26929c527803
+Merge: 4fa5b4e 96957be
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Wed Jun 1 18:38:03 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 4fa5b4e79d2ccb97d0c449712284ead04021b808
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Wed Jun 1 18:32:02 2022 +0200
+
+    Updated some missing code
+    
+    Added hidden fields for event state types, tested hidden fields and expanded uploading of images to all cases
+
+commit 96957be16048259d4109b6060062b5bbf88c9b88
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 18:23:21 2022 +0200
+
+    locations sql done
+
+commit d3867e5ce32b55762b5aeb66cedec773783bd67b
+Author: JuliannaVenter <104779369+JulesVenter@users.noreply.github.com>
+Date:   Wed Jun 1 17:56:52 2022 +0200
+
+    sql for teams, swimmers and scores
+
+commit 71b4d7827a0d058a364cdb9665b2784924c536ee
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed Jun 1 17:02:15 2022 +0200
+
+    Small update to scores
+
+commit c56569dbfd2be2f2bd9aabe57742d148ba6e063b
+Merge: bec91a2 6fecd7c
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed Jun 1 14:57:32 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit bec91a23b724ef8077f18b14d485260201b083cf
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed Jun 1 14:56:40 2022 +0200
+
+    added stats pages
+
+commit 6fecd7c752e8b037fc06f204e294fb00886a558a
+Author: RoninBrookes <roninbrookes@gmail.com>
+Date:   Wed Jun 1 14:47:30 2022 +0200
+
+    Update login-validate.php
+
+commit 333429efd976388064f476a59c49d731b59ff54b
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed Jun 1 14:07:50 2022 +0200
+
+    Button management
+    
+    setting up pages for teams, swimmers, locations and scores to be connected to the db
+
+commit 36546ffbe6f06bef73fd6a9ba1589d1847d6c39e
+Merge: 6af1fe5 9caadd5
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed Jun 1 12:02:07 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 6af1fe50480dbd1f7b4a9406b25d80988256194e
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed Jun 1 12:01:47 2022 +0200
+
+    N/A changes after testing
+
+commit 9caadd5cea427d06b2abcfbcc20d1fed449d7aad
+Author: RoninBrookes <roninbrookes@gmail.com>
+Date:   Tue May 31 12:10:21 2022 +0200
+
+    Update login-validate.php
+
+commit 0cdbe5624d9937bd1ec43e301647a158699872f7
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Mon May 30 13:18:04 2022 +0200
+
+    Stats Page fully implemented
+    
+    Stats page allows you to now add stats and view stats for swimmers, teams and events, two divs added at the bottom to be used for graphs later on
+
+commit 4a34471f4bdf8083ec3b5b3052104b1e21df900d
+Merge: 5c9e46b 20fc28d
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 29 23:02:12 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 5c9e46bddedbf294e18d05e49f3324891db5e2c5
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 29 23:01:54 2022 +0200
+
+    Started Stats Page
+    
+    Partial implementation of stats page, not ready for use yet, nothing will work
+
+commit 20fc28da5bf4525ef05dfedc00e1711db108b610
+Author: SameetUP <u21479373@tuks.co.za>
+Date:   Sun May 29 22:52:43 2022 +0200
+
+    Update register-validate.php, Sameet
+    
+    I added the insert into the publishers table and updated the insert into the users table.
+    
+    I used the surname and name to create the publisher id.
+
+commit 665f711a0bc05a68bb1c0d9f174df54c51982d9e
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sat May 28 15:28:43 2022 +0200
+
+    Removed images
+    
+    Removed images I uploaded to folder structure
+
+commit 3f3def174aafdf69c27ce923239723a54f5c9fb7
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Sat May 28 11:01:19 2022 +0200
+
+    version4 sportsDB schema
+    
+    uploaded the schema from Chris' version of the database
+
+commit 07c2bb036ed91055322931a0fce9f5a59c777238
+Merge: a9dfed3 4204b04
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Sat May 28 10:31:59 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit be261bf44b813d9ea5bd6b726382707e8a74ecb6
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Fri May 27 20:30:07 2022 +0200
+
+    Test for post data
+
+commit 4204b04c07908d8fe3bbc7af0f1ab40f8a2ab115
+Merge: 6f0361f faf0d36
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed May 25 16:37:55 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 6f0361f373c662b55e50fe6ce5895fc40df9cfe3
+Author: JuliannaVenter <juliannaventer@gmail.com>
+Date:   Wed May 25 16:37:47 2022 +0200
+
+    Scores pages
+    
+    (not tested!!)
+
+commit faf0d360bf56c3f002e80ff956c49727ec6424df
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Mon May 23 22:29:16 2022 +0200
+
+    Added media upload
+    
+    Added php, js and css for media uploads. You can now upload images of people, teams, events or tournaments
+
+commit b54bee5e193a1907d93141b50d5f2ecc59acc37e
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 22 19:38:02 2022 +0200
+
+    Finished locations implementation
+    
+    Added php, js and css for locations, a user can now add a location, site and address
+
+commit 2503bd17eb4f4ecc42cf16d9f52d11e87a106e1a
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sat May 21 23:42:16 2022 +0200
+
+    Partial implementation of locations
+    
+    Added php, js and css for locations (partially)
+
+commit 8addf71c22cd39f6763a309816b71087f67fd191
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sat May 21 20:49:01 2022 +0200
+
+    Added swimmers page
+    
+    Added php, js and css for the swimmers page
+
+commit 1976551647a1d3c87591f305f054cfd26a2cddd2
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sat May 21 19:11:03 2022 +0200
+
+    Removed unnecessary files
+    
+    Removed temporary php files used to generate tables during testing
+
+commit 9af4e2d8e32bbb32d59621184b15b73c34711c8e
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sat May 21 19:09:35 2022 +0200
+
+    Fully implemented Scores
+    
+    Finished the options selection for scores page and implemented ajax for dynamic tables (for scores and teams so far) and updated some CSS for scores and teams
+
+commit a9dfed3d2a88c3e13fda033468904a3f910af417
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Sat May 21 11:27:21 2022 +0200
+
+    Updated the schema
+    
+    Made the changes Chris asked for in the TASK4 discord channel
+
+commit c6a71bd7f53aa6cac0bbe52beae580ed1951b0e7
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Fri May 20 22:54:37 2022 +0200
+
+    Partially added scores functionality
+    
+    Scores page which allows adding of tournaments, events and event states, js and event states still need to be completed
+
+commit bf12e1af04b970df051080f7d1d466a8a673fa25
+Author: RoninBrookes <roninbrookes@gmail.com>
+Date:   Wed May 18 16:11:07 2022 +0200
+
+    Fixed Issues for login
+    
+    Fixed login issues - Ronin
+
+commit 360e42b490c60f57da327136f3e3367c3c55affd
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Tue May 17 20:40:51 2022 +0200
+
+    Added My Account page
+    
+    Simple my account page for login, log out and register
+
+commit c70e2e4fcd41a9c2eb3b5ca9f569db32c9f3a100
+Author: keamothapo <u21543462@tuks.co.za>
+Date:   Tue May 17 16:33:38 2022 +0200
+
+    Create sportsdb.sql
+
+commit 1b2aa1f77d9cb89262f03c5fbb6ca150c352cb25
+Merge: 5dda368 202ad41
+Author: RoninBrookes <roninbrookes@gmail.com>
+Date:   Tue May 17 14:01:24 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 5dda3687572d209a935b8e7fb3f307789ae5e6c9
+Author: RoninBrookes <roninbrookes@gmail.com>
+Date:   Tue May 17 14:00:21 2022 +0200
+
+    Fixed Login Problem. Ronin
+    
+    Fixed Login Problem
+
+commit 202ad41ef2fce4242613ab8a61a3c5668214f029
+Merge: 623577a 8ddb994
+Author: SameetUP <u21479373@tuks.co.za>
+Date:   Tue May 17 13:50:53 2022 +0200
+
+    Merge branch 'main' of https://github.com/chrislom12/COS221-Prac-5
+
+commit 623577a6ab0a785237d27e61b383284a44be38f9
+Author: SameetUP <u21479373@tuks.co.za>
+Date:   Tue May 17 13:50:39 2022 +0200
+
+    Register Added, Sameet
+    
+    Coded in the Validate Register.php, It adds a new user to the database
+
+commit 8ddb99400a736eb06db33380c92d6aecba6158df
+Author: RoninBrookes <roninbrookes@gmail.com>
+Date:   Tue May 17 13:45:57 2022 +0200
+
+    Summary of all changes, Ronin
+    
+    Login validation and implementation. Also added session_start to every relevant page and we have a login session variable now
+
+commit ac9232246ac51666c75df2aac42c29640dfb4e7f
+Author: SameetUP <u21479373@tuks.co.za>
+Date:   Mon May 16 13:05:44 2022 +0200
+
+    Update Confirm.txt
+
+commit 8a60ea78e4ac3bff837c70bf0744c47e640f13a2
+Merge: 40d3e2a 794c22d
+Author: Christiaan Lombard <105363824+chrislom12@users.noreply.github.com>
+Date:   Mon May 16 00:23:18 2022 +0200
+
+    Merge pull request #1 from chrislom12/frontend
+    
+    Testing Branches
+
+commit 794c22d6b850a7a00c06f41be4487850f88e3632
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Mon May 16 00:22:16 2022 +0200
+
+    Testing Branches
+    
+    Added comment to test the branch functionality
+
+commit 40d3e2a0452923bc10a0d0b5f4849264953ec24d
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 15 23:52:57 2022 +0200
+
+    Added the forms to swimmers for input
+    
+    Added the forms to be used in insert, update and delete, aswell as javascript
+
+commit f6af463919984821ece6d9391f7b9547838bd09d
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 15 19:22:21 2022 +0200
+
+    Started adding teams frontend
+    
+    Added php, js and css for the teams functionality
+
+commit 4272213b50090185eae23376fed93f112b29652c
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 15 16:12:10 2022 +0200
+
+    Update login and register css
+    
+    Removed unnecessary css
+
+commit bfd9675234f4f70d1fdbf6cac1fafec38177661d
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Sun May 15 15:48:18 2022 +0200
+
+    Added login and register pages
+    
+    Added the php,css and js for login and register pages. Also moved files around to create a more consistent folder structure and updated href file paths
+
+commit 6599556f9a74bae2e02ff04ed539b28dd58f2806
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Fri May 13 21:02:23 2022 +0200
+
+    Created Home Page
+    
+    Added header.php (nav bar), home page, with a flexbox div menu, footer.php (footer) and added images for the div menus, along with the css
+
+commit 2eb6fc521d573856d2df0bc66dcfa501b9aa2a12
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Wed May 11 17:44:57 2022 +0200
+
+    Create Confrim.txt
+    
+    Added my name to the txt
+
+commit d9f79bbab7eca0056fb9a2411534790caed8feae
+Author: chrislom12 <christiaanlombard12@gmail.com>
+Date:   Wed May 11 17:42:21 2022 +0200
+
+    Initial commit
