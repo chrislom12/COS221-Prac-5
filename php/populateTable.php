@@ -7,7 +7,7 @@ if($type == "tournament")
   $sql = "SELECT * FROM swimming_tournament";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+ 
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -17,28 +17,27 @@ if($type == "tournament")
         <th>location</th>
         <th>winner</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['series_index'] . '</td>
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['series_index'] . '</td>
             <td>' .  $rows['start_date'] . '</td>
             <td>' . $rows['end_date'] . '</td>
             <td>' .  $rows['location'] . '</td>
             <td>' . $rows['winner'] . '</td>
-        </tr>
-    </tbody>
-</table>';
-  }
-
-
-
-
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+   
+  
 }
 else if ($type == "event"){
   $sql = "SELECT * FROM events";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -49,27 +48,28 @@ else if ($type == "event"){
         <th>last_update</th>
         <th>series_index</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
-            <td>' . $rows['event_key'] . '</td>
-            <td>' .  $rows['publisher_id'] . '</td>
-            <td>' . $rows['attendance'] . '</td>
-            <td>' . $rows['last_update'] . '</td>
-            <td>' . $rows['series_index'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
-
-  }
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
+          <td>' . $rows['event_key'] . '</td>
+          <td>' .  $rows['publisher_id'] . '</td>
+          <td>' . $rows['attendance'] . '</td>
+          <td>' . $rows['last_update'] . '</td>
+          <td>' . $rows['series_index'] . '</td>
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+  
 }
 
 else if($type == "eventState"){
   $sql = "SELECT * FROM swimming_event_states";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -80,20 +80,22 @@ else if($type == "eventState"){
         <th>person2</th>
         <th>current_race_state</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
-            <td>' . $rows['sequence_nr'] . '</td>
-            <td>' .  $rows['time_elapsed'] . '</td>
-            <td>' . $rows['person_1'] . '</td>
-            <td>' . $rows['person_2'] . '</td>
-            <td>' . $rows['current_race_state'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
+          <td>' . $rows['sequence_nr'] . '</td>
+          <td>' .  $rows['time_elapsed'] . '</td>
+          <td>' . $rows['person_1'] . '</td>
+          <td>' . $rows['person_2'] . '</td>
+          <td>' . $rows['current_race_state'] . '</td>
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
 
-  }
+  
 
 
 }
@@ -101,7 +103,7 @@ else if($type=="team"){
   $sql = "SELECT * FROM teams";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -110,24 +112,27 @@ else if($type=="team"){
         <th>publisher_id</th>
         <th>home_site_id</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
-            <td>' . $rows['team_key'] . '</td>
-            <td>' .  $rows['publisher_id'] . '</td>
-            <td>' . $rows['home_site_id'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
+          <td>' . $rows['team_key'] . '</td>
+          <td>' .  $rows['publisher_id'] . '</td>
+          <td>' . $rows['home_site_id'] . '</td>
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+    
 
-  }
+  
 }
 else if($type=="swimmer"){
   $sql = "SELECT * FROM persons";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -136,28 +141,28 @@ else if($type=="swimmer"){
         <th>publisher_id</th>
         <th>DOB</th>
         <th>Residence</th>
-        <th>Team id</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
             <td>' . $rows['person_key'] . '</td>
             <td>' .  $rows['publisher_id'] . '</td>
             <td>' . $rows['birth_date'] . '</td>
             <td>' . $rows['residence_location_id'] . '</td>
-            <td>' . $rows['team_id'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
 
-  }
+  
 }
 else if($type=="location"){
   $sql = "SELECT * FROM locations";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -167,25 +172,27 @@ else if($type=="location"){
         <th>area</th>
         <th>country</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
             <td>' . $rows['city'] . '</td>
             <td>' .  $rows['state'] . '</td>
             <td>' . $rows['area'] . '</td>
             <td>' . $rows['country'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
-
-  }
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+    
+  
 }
 else if($type=="address"){
   $sql = "SELECT * FROM addresses";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -193,17 +200,19 @@ else if($type=="address"){
         <th>street</th>
         <th>street_number</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
-            <td>' . $rows['street'] . '</td>
-            <td>' .  $rows['street_number'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
+          <td>' . $rows['street'] . '</td>
+          <td>' .  $rows['street_number'] . '</td>
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
 
-  }
+  
 }
 else if($type=="swimmerStats"){
   $sql = "SELECT * FROM swimmer_stats";
@@ -250,7 +259,7 @@ else if($type=="teamStats"){
   $result = $conn->query($sql);
 
 
-  while ($rows = $result->fetch_assoc()){
+ 
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -262,28 +271,31 @@ else if($type=="teamStats"){
         <th>event_id</th>
         <th>team_id</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
-            <td>' . $rows['points'] . '</td>
-            <td>' .  $rows['max_points'] . '</td>
-            <td>' . $rows['best_time'] . '</td>
-            <td>' . $rows['worst_time'] . '</td>
-            <td>' . $rows['event_id'] . '</td>
-            <td>' . $rows['team_id'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
+          <td>' . $rows['points'] . '</td>
+          <td>' .  $rows['max_points'] . '</td>
+          <td>' . $rows['best_time'] . '</td>
+          <td>' . $rows['worst_time'] . '</td>
+          <td>' . $rows['event_id'] . '</td>
+          <td>' . $rows['team_id'] . '</td>
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+    
 
-  }
+  
 }
 
 else if($type=="eventStats"){
   $sql = "SELECT * FROM swimming_stats_of_events";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -298,10 +310,10 @@ else if($type=="eventStats"){
         <th>race_time</th>
         <th>event_id</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
             <td>' . $rows['first_place'] . '</td>
             <td>' .  $rows['second_place'] . '</td>
             <td>' . $rows['third_place'] . '</td>
@@ -311,18 +323,19 @@ else if($type=="eventStats"){
             <td>' . $rows['no_finished'] . '</td>
             <td>' . $rows['race_time'] . '</td>
             <td>' . $rows['event_number'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
-
-  }
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+  
 }
 
 else if($type=="site"){
   $sql = "SELECT * FROM sites";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -331,18 +344,21 @@ else if($type=="site"){
         <th>publisher_id</th>
         <th>location_id</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>' . $rows['id'] . '</td>
-            <td>' . $rows['site_key'] . '</td>
-            <td>' .  $rows['publisher_id'] . '</td>
-            <td>' . $rows['location_id'] . '</td>
-        </tr>
-    </tbody>
-    </table>';
+        </thead>';
+        while ($rows = $result->fetch_assoc()){
+          echo '<tr>
+          <td>' . $rows['id'] . '</td>
+          <td>' . $rows['site_key'] . '</td>
+          <td>' .  $rows['publisher_id'] . '</td>
+          <td>' . $rows['location_id'] . '</td>
+          </tr>';
+        }
+        echo '
+      </tbody>
+      </table>';
+   
 
-  }
+  
 }
 
 

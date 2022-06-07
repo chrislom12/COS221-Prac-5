@@ -14,16 +14,17 @@
         ?>
 
     
-    <h1 class=headingPage id="heading">My Account</h1>
+    <h1 class=headingPage id="heading">Welcome<?php if(isset($_SESSION['name']) AND isset($_SESSION['surname'])){echo ' '.$_SESSION['name']. ' ' . $_SESSION['surname'];}?>!</h1>
     
     
     <div id= "mainDiv" class="loginBlock">
         <div class="subdiv">
+            <br>
             <a href="register.php"><button id="loginbtn" class="loginbtn" onclick="">Register</button></a>
-            <a href="login.php"><button id="loginbtn" class="loginbtn" onclick="">Log In</button></a>
-
+            <br>
             <!-- implement log out below -->
             <a href="logout.php"><button id="loginbtn" type="submit" class="loginbtn" onclick="">Log out</button></a>
+            <br>
         </div>
         
     </div>

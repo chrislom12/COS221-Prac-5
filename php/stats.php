@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/headfoot.css">
     <title>COS221 Prac 5</title>
     <script src= "../js/stats.js"></script>
-    <script src= "../js/graph.js"></script>
+    <script type="text/javascript" src="../js/graph.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 </head>
@@ -50,8 +50,12 @@
             </div>
         </div>
     </div>
+    
+    <h1 class=headingPage id="heading">Our Top Three Teams</h1>
+    <h3 class=headingPage id="heading" style="font-size:20px;">according to points earned</h3>
     <div class="graph">
-	    <canvas id="myChart" style="width:100%;max-width:700px; background:white; margin-left: 55px;"></canvas>
+        <?php include 'graph.php'; ?>
+        
     </div>  
     <div class="mainBlock" id="statsBlock2">
         
