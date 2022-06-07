@@ -224,11 +224,8 @@ else if($type=="swimmerStats"){
         <th>person_id</th>
         </tr>
     </thead>';
-
-  while ($rows = $result->fetch_assoc()){
-    echo '<table class="content-table" id="table">
-    <tbody>
-        <tr>
+      while ($rows = $result->fetch_assoc()){
+        echo '<tr>
             <td>' . $rows['id'] . '</td>
             <td>' . $rows['position'] . '</td>
             <td>' .  $rows['speed'] . '</td>
@@ -239,11 +236,13 @@ else if($type=="swimmerStats"){
             <td>' .  $rows['distance_per_stroke'] . '</td>
             <td>' . $rows['event_identity'] . '</td>
             <td>' . $rows['person_identity'] . '</td>
-        </tr>
+        </tr>';
+      }
+      echo '
     </tbody>
     </table>';
 
-  }
+ 
 
 }
 else if($type=="teamStats"){
