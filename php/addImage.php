@@ -94,7 +94,7 @@
             $result = $conn->query($sql);
             $media = $conn->insert_id;
 
-            $sql2 = "INSERT INTO persons_media (person_id, media_id) VALUES ('$credit', '$media')";
+            $sql2 = "INSERT INTO persons_media (person_id, media_id) VALUES ('$id', '$media')";
             $result2 = $conn->query($sql2);
           } else {
             echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='media.php';</script>";
@@ -119,6 +119,7 @@
 
           $media_type = $target_file;
           $date = date('Y/m/d'); //date taken
+          $id = $_POST['id'];
           $credit = $_POST['id'];
           $loadtime = date('Y/m/d');
           $location = $_POST['location'];
@@ -181,7 +182,7 @@
             $result = $conn->query($sql);
             $media = $conn->insert_id;
 
-            $sql2 = "INSERT INTO teams_media (team_id, media_id) VALUES ('$credit', '$media');";
+            $sql2 = "INSERT INTO teams_media (team_id, media_id) VALUES ('$id', '$media');";
             $result2 = $conn->query($sql2);
           } else {
             echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='media.php';</script>";
@@ -205,7 +206,7 @@
           }
 
           $media_type = $target_file;
-          $publisher = '1';
+          $id = $_POST['id'];
           $date = date('Y/m/d'); //date taken
           $credit = $_POST['id'];
           $loadtime = date('Y/m/d');
@@ -269,7 +270,7 @@
             $result = $conn->query($sql);
             $media = $conn->insert_id;
 
-            $sql2 = "INSERT INTO events_media (event_id, media_id) VALUES ('$credit', '$media');";
+            $sql2 = "INSERT INTO events_media (event_id, media_id) VALUES ('$id', '$media');";
             $result2 = $conn->query($sql2);
           } else {
             echo "<script type='text/javascript'>alert('You entered invalid data');window.location.href='media.php';</script>";
