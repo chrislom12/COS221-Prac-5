@@ -1,24 +1,16 @@
 <?php
 include 'connect.php';
-$firstsql = "SELECT id, points FROM swimming_team_stats ORDER BY points DESC LIMIT 0,1";
-$firstresult = $conn->query($firstsql);
+$firstsql = "SELECT id FROM swimming_team_stats ORDER BY points DESC LIMIT 3";
+$result = $conn->query($firstsql);
+$data = array();
 
-$row1 = $firstresult->fetch_assoc();
-$first = $row1['id'];
+while  ($rows = $result->fetch_assoc()){
+  array_push($data, $rows['id']);
+}
 
-
-$secondsql = "SELECT id, points FROM swimming_team_stats ORDER BY points DESC LIMIT 1,1";
-$secondresult = $conn->query($secondsql);
-
-$row2 = $secondresult->fetch_assoc();
-$second = $row2['id'];
-
-
-$thirdsql = "SELECT id, points FROM swimming_team_stats ORDER BY points DESC LIMIT 2,1";
-$thirdresult = $conn->query($thirdsql);
-
-$row3 = $thirdresult->fetch_assoc();
-$third = $row3['id'];
+$first = $data[0];
+$second = $data[1];
+$third = $data[2];
 
 
 echo '<style> .graph {

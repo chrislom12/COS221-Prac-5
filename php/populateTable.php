@@ -7,7 +7,7 @@ if($type == "tournament")
   $sql = "SELECT * FROM swimming_tournament";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+ 
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -31,17 +31,13 @@ if($type == "tournament")
       </tbody>
       </table>';
    
-  }
-
-
-
-
+  
 }
 else if ($type == "event"){
   $sql = "SELECT * FROM events";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -66,15 +62,14 @@ else if ($type == "event"){
         echo '
       </tbody>
       </table>';
-
-  }
+  
 }
 
 else if($type == "eventState"){
   $sql = "SELECT * FROM swimming_event_states";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -100,7 +95,7 @@ else if($type == "eventState"){
       </tbody>
       </table>';
 
-  }
+  
 
 
 }
@@ -108,7 +103,7 @@ else if($type=="team"){
   $sql = "SELECT * FROM teams";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -131,13 +126,13 @@ else if($type=="team"){
       </table>';
     
 
-  }
+  
 }
 else if($type=="swimmer"){
   $sql = "SELECT * FROM persons";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -161,13 +156,13 @@ else if($type=="swimmer"){
       </tbody>
       </table>';
 
-  }
+  
 }
 else if($type=="location"){
   $sql = "SELECT * FROM locations";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -191,14 +186,13 @@ else if($type=="location"){
       </tbody>
       </table>';
     
-
-  }
+  
 }
 else if($type=="address"){
   $sql = "SELECT * FROM addresses";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -218,7 +212,7 @@ else if($type=="address"){
       </tbody>
       </table>';
 
-  }
+  
 }
 else if($type=="swimmerStats"){
   $sql = "SELECT * FROM swimmer_stats";
@@ -265,7 +259,7 @@ else if($type=="teamStats"){
   $result = $conn->query($sql);
 
 
-  while ($rows = $result->fetch_assoc()){
+ 
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -294,14 +288,14 @@ else if($type=="teamStats"){
       </table>';
     
 
-  }
+  
 }
 
 else if($type=="eventStats"){
   $sql = "SELECT * FROM swimming_stats_of_events";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -334,14 +328,14 @@ else if($type=="eventStats"){
         echo '
       </tbody>
       </table>';
-  }
+  
 }
 
 else if($type=="site"){
   $sql = "SELECT * FROM sites";
   $result = $conn->query($sql);
 
-  while ($rows = $result->fetch_assoc()){
+  
     echo '<table class="content-table" id="table">
     <thead>
         <tr>
@@ -364,7 +358,7 @@ else if($type=="site"){
       </table>';
    
 
-  }
+  
 }
 
 
