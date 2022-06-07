@@ -6,21 +6,17 @@ ReadMe File
 
 Please read and followung the instructions below to retrieve the database:
 
-1. Download and save the perfect_strangers_sportsdb.sql file. Know the file path - it is crucial.
+1. Download and save the sportsdb.sql file. Know the file path - it is crucial.
 
 2. Open your MariaDB connection on MySQL Workbench.
 
-3. Create a database called "perfect_strangers_sportsdb" (or whichever name you desire)
+3. Open your administration tab on your bottom left and choose "Data Import/Restore"
 
-4. Open your administration tab on your bottom left and choose "Data Import/Restore"
+4. Choose the "Import from Self-Contained File" option. NOTE: Ensure that the file path on your right is the one from step 1! (the file path should end with: sportsdb.sql)
 
-5. Choose the "Import from Self-Contained File" option. NOTE: Ensure that the file path on your right is the one from step 1! (the file path should end with: perfect_strangers_sportsdb.sql)
+5. Ensure you have chosen the "Dump Structure and Data" option.
 
-6. For the Default Target Schema, make sure you have chosen the database that you have created in step 3 (perfect_strangers_sportsdb).
-
-7. Ensure you have chosen the "Dump Structure and Data".
-
-8. Click on the "Start Import" button.
+6. Click on the "Start Import" button.
 
 The import should now run and the database is now on your workbench.
 
@@ -41,7 +37,7 @@ Creating Environment Variables:
 
 	SPORTS_DB_HOST 		127.0.0.1 //or the localhost address to be used to run the website
 
-	SPORTS_DB_NAME		perfect_strangers_sportsdb
+	SPORTS_DB_NAME		sportsdb
 	
 	SPORTS_DB_PASSWORD	***** (enter the password for your mariaDB connection)
 
