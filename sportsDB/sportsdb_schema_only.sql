@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `sportsdb` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
+USE `sportsdb`;
 -- MariaDB dump 10.19  Distrib 10.7.3-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: sportsdb
@@ -2396,7 +2398,7 @@ CREATE TABLE `publishers` (
   `publisher_name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_publishers_1` (`publisher_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3598,4 +3600,4 @@ CREATE TABLE `weather_conditions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-04 13:43:47
+-- Dump completed on 2022-06-07 10:18:03
