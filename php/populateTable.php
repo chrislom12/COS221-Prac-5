@@ -146,7 +146,6 @@ else if($type=="swimmer"){
         <th>publisher_id</th>
         <th>DOB</th>
         <th>Residence</th>
-        <th>Team id</th>
         </tr>
         </thead>';
         while ($rows = $result->fetch_assoc()){
@@ -156,7 +155,6 @@ else if($type=="swimmer"){
             <td>' .  $rows['publisher_id'] . '</td>
             <td>' . $rows['birth_date'] . '</td>
             <td>' . $rows['residence_location_id'] . '</td>
-            <td>' . $rows['team_id'] . '</td>
           </tr>';
         }
         echo '
