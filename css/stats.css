@@ -103,6 +103,8 @@ body {
     box-shadow: 10px 10px 47px -8px rgba(0, 0, 0, 0.75);
   }
 
+  
+
   .innerTableBlock {
     
     overflow:hidden;
@@ -184,5 +186,6 @@ body {
   justify-content: flex-start;
   
 }
+
 
   

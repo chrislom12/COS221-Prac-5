@@ -1,19 +1,9 @@
 <?php
 include 'connect.php';
-$graph = "SELECT id, swim_time FROM swimmer_stats";
-  $Rgraph = $conn->query($graph);
-  $jsonarray = array();
+$graph = "SELECT id, points FROM swimming_team_stats ORDER BY points DESC LIMIT 10";
+$result = $conn->query($graph);
 
-  if ($Rgraph->num_rows > 0){
-    while($row = $Rgraph->fetch_assoc()){
-        $jsonitem = array(
-            'lable' => $row['id'],
-            'value' => $row['swim_time']
-        );
 
-        array_push($jsonarray, $jsonitem);
-    }
-  }
-  
-  echo json_encode($jsonarray);
-  ?>
+
+
+?>
